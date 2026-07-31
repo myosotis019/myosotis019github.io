@@ -1,133 +1,4260 @@
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>:root{--bg:#07090e;--surface:#0d1019;--card:#141824;--card-h:#1a1f2c;--bd:#1e2438;--bd-lit:#2d3350;--red:#e03444;--red2:#ff5566;--red-bg:rgba(224,52,68,.08);--red-bd:rgba(224,52,68,.25);--blue:#4499ff;--blue-bg:rgba(68,153,255,.08);--blue-bd:rgba(68,153,255,.25);--gold:#e8a020;--gold-bg:rgba(232,160,32,.08);--gold-bd:rgba(232,160,32,.25);--pur:#9b5de8;--pur-bg:rgba(155,93,232,.08);--pur-bd:rgba(155,93,232,.25);--grn:#22cc66;--grn-bg:rgba(34,204,102,.08);--grn-bd:rgba(34,204,102,.22);--orn:#e87830;--orn-bg:rgba(232,120,48,.08);--orn-bd:rgba(232,120,48,.25);--t1:#d5d8e8;--t2:#8590a8;--t3:#454860;--font:'Noto Sans KR',-apple-system,system-ui,sans-serif;--mono:'JetBrains Mono','Consolas',monospace;--r:8px;--rs:4px}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:14px;line-height:1.8;word-break:keep-all;overflow-x:hidden}::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bd-lit);border-radius:2px}::selection{background:rgba(224,52,68,.25);color:var(--t1)}.wrap{max-width:700px;margin:0 auto;padding-bottom:70px}.board-nav{background:var(--surface);border-bottom:1px solid var(--bd);padding:10px 16px;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--t3);position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}.board-nav .sep{color:var(--bd-lit)}.board-nav .active{color:var(--red);font-weight:600}.pulse{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 2s ease-in-out infinite;flex-shrink:0}@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}.post{padding:0 16px}.post-cat{display:flex;align-items:center;gap:8px;padding:14px 0 10px}.cat-badge{background:var(--red-bg);border:1px solid var(--red-bd);color:var(--red2);font-size:10px;font-weight:700;font-family:var(--mono);padding:3px 9px;border-radius:var(--rs);letter-spacing:.05em}.cat-sub{font-size:11px;color:var(--t3);font-family:var(--mono)}.post-title{font-size:clamp(17px,5vw,23px);font-weight:900;line-height:1.35;margin-bottom:14px}.post-title .em{color:var(--red)}.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:10px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);font-size:12px;color:var(--t2);font-family:var(--mono);margin-bottom:14px}.meta-author{color:var(--blue);font-weight:600}.meta-likes{color:var(--red)}.tag-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}.tag{background:var(--card);border:1px solid var(--bd-lit);color:var(--t2);font-size:11px;font-family:var(--mono);padding:2px 9px;border-radius:20px}.dl-box{background:var(--card);border:1px solid var(--bd-lit);border-radius:var(--r);padding:18px 16px;margin-bottom:24px;font-family:var(--mono)}.dl-warning{font-size:10px;color:var(--t3);margin-bottom:8px;display:flex;align-items:center;gap:5px}.dl-warning::before{content:'⚠';color:var(--red)}.dl-title{font-size:13px;font-weight:600;color:var(--red);letter-spacing:.05em;margin-bottom:14px}.dl-track{background:var(--bg);border:1px solid var(--bd);border-radius:3px;height:5px;overflow:hidden;margin-bottom:8px}.dl-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--red2));width:0%;animation:dlgo 2.8s cubic-bezier(.25,.8,.25,1) .4s forwards}@keyframes dlgo{0%{width:0%}35%{width:42%}65%{width:76%}88%{width:95%}100%{width:100%}}.dl-status{font-size:11px;color:var(--t2);animation:statusOut 3.4s ease forwards}@keyframes statusOut{0%,85%{opacity:1}100%{opacity:0}}.dl-done{font-size:12px;color:var(--red);font-weight:600;margin-top:10px;opacity:0;animation:fadeup .4s ease 3.2s forwards}@keyframes fadeup{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}details{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:10px;overflow:hidden}details[open]{border-color:var(--bd-lit)}summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;-webkit-tap-highlight-color:transparent;min-height:52px;transition:background .15s}summary::-webkit-details-marker{display:none}summary::after{content:'▸';font-size:12px;color:var(--t3);transition:transform .2s,color .2s;flex-shrink:0}details[open]>summary::after{transform:rotate(90deg);color:var(--red)}summary:hover{background:var(--card-h)}summary:active{background:rgba(224,52,68,.06)}.sl{display:flex;align-items:center;gap:10px}.si{font-size:18px;flex-shrink:0}.st{line-height:1.3}.st-sub{font-size:11px;font-weight:400;color:var(--t3);margin-top:1px}.di{padding:14px 16px 18px;border-top:1px solid var(--bd);font-size:13.5px;color:var(--t2);line-height:1.85}.di p{margin-bottom:10px}.di p:last-child{margin-bottom:0}.di strong{color:var(--t1)}details.sub{background:rgba(255,255,255,.02);border-color:var(--bd);margin:0 0 8px}details.sub summary{font-size:13px;font-weight:600;padding:11px 14px;min-height:44px}details.sub .di{padding:12px 14px 15px;font-size:13px}.callout{background:var(--card-h);border-left:3px solid var(--red);padding:11px 14px;border-radius:0 var(--r) var(--r) 0;font-size:13px;color:var(--t2);margin:10px 0}.callout.blue{border-left-color:var(--blue)}.callout.gold{border-left-color:var(--gold)}.callout.pur{border-left-color:var(--pur)}.callout.grn{border-left-color:var(--grn)}.callout.orn{border-left-color:var(--orn)}.callout strong{color:var(--t1)}.pills{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.pill{font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:20px;display:flex;align-items:center;gap:4px}.p-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd)}.p-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bd)}.p-gold{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-bd)}.p-pur{background:var(--pur-bg);color:var(--pur);border:1px solid var(--pur-bd)}.p-grn{background:var(--grn-bg);color:var(--grn);border:1px solid var(--grn-bd)}.p-orn{background:var(--orn-bg);color:var(--orn);border:1px solid var(--orn-bd)}.tbl{width:100%;border-collapse:collapse;font-size:12px;font-family:var(--mono);margin:10px 0}.tbl th{background:var(--bg);color:var(--t3);font-size:10px;font-weight:600;padding:7px 9px;text-align:left;border-bottom:1px solid var(--bd-lit)}.tbl td{padding:7px 9px;border-bottom:1px solid var(--bd);vertical-align:middle}.tbl tr:last-child td{border-bottom:none}.zt{font-weight:700;font-size:10.5px;padding:2px 6px;border-radius:3px;display:inline-block}.z1{background:rgba(100,120,220,.14);color:#8899ff}.z2{background:rgba(50,200,100,.10);color:#44cc77}.z3{background:rgba(220,180,0,.10);color:#ccaa22}.z4{background:rgba(220,100,0,.12);color:#ee7722}.z5{background:rgba(224,52,68,.14);color:var(--red2)}.zt-coin{color:var(--gold)}.zt-th{color:var(--t2);font-size:11px}.rumor{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:14px;margin-bottom:10px}.rumor-hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px}.rumor-name{font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px}.rel{font-size:10px;font-family:var(--mono);padding:2px 8px;border-radius:20px}.rel-lo{background:var(--red-bg);color:var(--red);border:1px solid var(--red-bd)}.rel-mid{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-bd)}.rel-hi{background:var(--grn-bg);color:var(--grn);border:1px solid var(--grn-bd)}.rumor-body{font-size:13px;color:var(--t2);line-height:1.85}.rumor-body p{margin-bottom:8px}.rumor-body p:last-child{margin-bottom:0}.rtags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.rtag{font-size:10px;font-family:var(--mono);color:var(--t3);background:var(--card);padding:2px 7px;border-radius:var(--rs)}.char-grid{display:flex;flex-direction:column;gap:10px}.char-card{background:var(--bg);border:1px solid var(--bd-lit);border-radius:var(--r);padding:14px;display:grid;grid-template-columns:50px 1fr;gap:0 13px}.c-av{width:48px;height:48px;border-radius:50%;background:var(--card);border:2px solid var(--bd-lit);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.c-hd{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}.c-name{font-size:15px;font-weight:700}.c-age{font-size:11px;color:var(--t3);font-family:var(--mono)}.c-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}.badge{font-size:10px;font-family:var(--mono);padding:2px 6px;border-radius:var(--rs);font-weight:600}.b-fac{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-bd)}.b-adn{background:var(--pur-bg);color:var(--pur);border:1px solid var(--pur-bd)}.b-solo{background:var(--orn-bg);color:var(--orn);border:1px solid var(--orn-bd)}.c-desc{font-size:12.5px;color:var(--t2);line-height:1.7}.c-wpn{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--t3);font-family:var(--mono);margin-top:5px}.c-wpn::before{content:'🗡';font-size:10px}.fac-label{font-size:11px;color:var(--t3);font-family:var(--mono);letter-spacing:.05em;margin-bottom:7px;margin-top:14px}.fac-label:first-child{margin-top:0}.post-foot{display:flex;align-items:center;gap:8px;padding:18px 16px 14px;flex-wrap:wrap}.foot-btn{display:flex;align-items:center;gap:5px;font-size:12px;font-family:var(--mono);padding:6px 14px;border-radius:20px;border:1px solid var(--bd-lit);background:var(--card);color:var(--t2);cursor:default}.foot-btn.lik{background:var(--red-bg);border-color:var(--red-bd);color:var(--red)}.comments{border-top:1px solid var(--bd);padding:16px 16px 0}.com-hd{font-size:12px;font-family:var(--mono);color:var(--t3);margin-bottom:16px;display:flex;align-items:center;gap:6px}.com-hd strong{color:var(--t2)}.cmt{display:grid;grid-template-columns:34px 1fr;gap:0 10px;margin-bottom:16px}.cmt.reply{margin-left:44px}.c-ava{width:32px;height:32px;border-radius:50%;background:var(--card);border:1px solid var(--bd-lit);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}.cmt-meta{font-size:11px;font-family:var(--mono);color:var(--t3);margin-bottom:3px;display:flex;align-items:center;gap:7px}.cm-n{color:var(--blue);font-weight:600}.cmt.reply .cm-n{color:var(--pur)}.cmt-t{font-size:13px;color:var(--t2);line-height:1.75}hr.thin{border:none;border-top:1px solid var(--bd);margin:14px 0}ul.li{padding-left:18px}ul.li li{margin-bottom:5px;font-size:13px;color:var(--t2)}.mono{font-family:var(--mono)}.t-red{color:var(--red)}.t-blue{color:var(--blue)}.t-gold{color:var(--gold)}.t-muted{color:var(--t2)}.t-dim{color:var(--t3)}.kw{background:var(--red-bg);color:var(--red);border-radius:3px;padding:0 4px;font-family:var(--mono);font-size:12px}.kw.b{background:var(--blue-bg);color:var(--blue)}.kw.g{background:var(--gold-bg);color:var(--gold)}.kw.p{background:var(--pur-bg);color:var(--pur)}@media(max-width:480px){.post-title{font-size:17px}.tbl th:last-child,.tbl td:last-child{display:none}}</style>
-<div class="wrap">
-<nav class="board-nav"><div class="pulse"></div><span>종말 커뮤니티</span><span class="sep">›</span><span>창작 / 세계관</span><span class="sep">›</span><span class="active">작품 소개</span></nav>
-<div class="post">
-<div class="post-cat"><span class="cat-badge">🔴 세계관소개</span><span class="cat-sub">현대판타지 · 아포칼립스 · 로우파워</span></div>
-<h1 class="post-title">【작품소개】 DEADZONE : WORLD<br>— <span class="em">현실에 다운로드된 종말</span></h1>
-<div class="post-meta"><span>작성자 <span class="meta-author">DEAD_ZONE_FAN</span></span><span>·</span><span>2026.06.10 오후</span><span>·</span><span>조회 3,847</span><span>·</span><span class="meta-likes">❤ 142</span></div>
-<div class="tag-bar"><span class="tag">#아포칼립스</span><span class="tag">#현대판타지</span><span class="tag">#좀비생존</span><span class="tag">#로우파워</span><span class="tag">#서울배경</span><span class="tag">#세계관공유</span><span class="tag">#2026</span><span class="tag">#나비효과</span></div>
-<div class="dl-box"><div class="dl-warning">서비스 이상 감지 — 시스템 경고</div><div class="dl-title">DEADZONE : WORLD &nbsp;—&nbsp; DOWNLOADING TO REALITY</div><div class="dl-track"><div class="dl-fill"></div></div><div class="dl-status">다운로드 중...</div><div class="dl-done">████████████████████ 100%<br><span>다운로드 완료. &nbsp;서비스는 종료되지 않았습니다. &nbsp;이전되었습니다.</span></div></div>
-<details open>
-<summary><div class="sl"><span class="si">📖</span><div class="st">작품 개요</div></div></summary>
-<div class="di">
-<p>2026년 6월 10일 오후 2시. 서비스 종료를 맞이한 한국 좀비 생존 게임 <strong>「DEADZONE : WORLD」</strong>가 현실 서울에 그대로 '다운로드'된다.</p>
-<p>게임 속 좀비·시스템·규칙이 한꺼번에 구현되며 도시는 붕괴한다. 그 시작점이 된 인물은 단 하나 — <strong>서비스 종료 당일, 끝까지 로그아웃하지 않은 마지막 유저</strong>. 개발진이 남긴 '특전'을 손에 쥔 채 종말의 진원지 한복판에 던져진다.</p>
-<div class="callout"><strong>장르 키워드</strong><br>현대 판타지 아포칼립스 &nbsp;·&nbsp; 로우 파워 &nbsp;·&nbsp; 서울 배경 &nbsp;·&nbsp; 생존</div>
-<p class="t-dim mono" style="font-size:11px;">— 서울. 2026년 6월 10일. 현재 접속자 : 1</p>
-</div>
-</details>
-<details>
-<summary><div class="sl"><span class="si">🎮</span><div class="st">게임 시스템 가이드<div class="st-sub">데드존 플레이해본 사람 기준으로 정리함</div></div></div></summary>
-<div class="di">
-<p>데드존 좀 해봤거나 커뮤니티 돌아다닌 사람이라면 알겠지만, 게임 속 시스템들이 현실에도 <strong>그대로 작동</strong>하는 것 같음. 아래는 게임 내 시스템 기준으로 정리한 거고, 현실에서도 동일하게 적용된다고 보면 돼.</p>
-<hr class="thin">
-<details class="sub">
-<summary><div class="sl"><span class="si">🌟</span><div class="st">애드온(Add-On) &nbsp;—&nbsp; 생존자의 약한 초능력</div></div></summary>
-<div class="di">
-<p>데드존에서 제일 특색 있던 시스템. 생존자 1인당 하나씩 부여되는 특수 능력인데, 공식 명칭이 <span class="kw p">🌟 애드온</span>이야.</p>
-<p>진짜 만화 같은 강함은 아님 — <strong>'보통 사람의 한계를 살짝 넘은 수준'</strong>이라고 보면 돼. 데드존이 로우 파워 판타지였으니까, 하늘을 날거나 불덩이를 쏘는 건 없어. 뭔가 하나 특출나게 잘하는 사람 느낌이랄까.</p>
-<div class="pills"><span class="pill p-pur">🌟 1인 1개</span><span class="pill p-gold">🪙 코인(C) 소모 발동</span><span class="pill p-red">☠ 사망 시 좀비에게 이전</span></div>
-<div class="callout pur"><strong>⚠ 애드온 이전 — 중요</strong><br>애드온 보유 생존자가 좀비에게 죽으면, 그 좀비가 해당 능력을 흡수해. 특수 좀비가 탄생하는 거야. 게임에서도 이 때문에 애드온 보유자 사수가 핵심 전략이었는데... 현실에선 더 무겁겠지.</div>
-<p class="t-dim" style="font-size:12px;">외형 변화가 동반되는 경우도 있음. 개인차 있는 듯.</p>
-</div>
-</details>
-<details class="sub">
-<summary><div class="sl"><span class="si">🪙</span><div class="st">코인(C) &nbsp;—&nbsp; 시스템이 인정하는 유일한 화폐</div></div></summary>
-<div class="di">
-<p>게임 내 <strong>유일한 화폐 단위</strong>가 <span class="kw g">코인(C)</span>임. 현실에서도 그대로라고 봐야 함.</p>
-<ul class="li"><li>좀비 처치 시 드롭 (단계에 따라 차등)</li><li>애드온 발동 비용으로 소모</li><li>떠돌이 상인 아이템 구매 시 사용</li><li>다수 동시 처치·특수 임무에서 보너스 지급</li></ul>
-<div class="callout gold"><strong>블러드 문 보너스</strong><br>블러드 문 기간엔 코인 획득량 ×1.5~2.0. 대신 위험도도 같이 올라가니까 리스크-리워드 구조. 게임에서도 블러드 문 버티기 콘텐츠가 명작이었음.</div>
-<p class="t-muted">참고로 현실 경제는 <strong>식량이 코인보다 높은 가치</strong>를 가짐. 편의점·마트는 이미 약탈 완료 상태라는 거 감안해야 해.</p>
-</div>
-</details>
-<details class="sub">
-<summary><div class="sl"><span class="si">☠️</span><div class="st">좀비 분류표 &nbsp;—&nbsp; 1단계부터 재난급까지</div></div></summary>
-<div class="di">
-<p>좀비가 5단계 체계로 분류돼. 단계 높을수록 신체·내구·위협 상승. 단순 수치가 아니라 <strong>'공포의 질감'</strong>이 달라진다고 표현하는 게 맞음.</p>
-<table class="tbl"><thead><tr><th>단계</th><th>명칭</th><th>핵심 위협</th><th>코인</th></tr></thead><tbody><tr><td><span class="zt z1">1단계</span></td><td>일반형</td><td class="zt-th">느리지만 포위 시 급격히 위험</td><td class="zt-coin">1~3C</td></tr><tr><td><span class="zt z2">2단계</span></td><td>강화형</td><td class="zt-th">무기·협력 없으면 위험</td><td class="zt-coin">4~8C</td></tr><tr><td><span class="zt z3">3단계</span></td><td>특수형</td><td class="zt-th">전술·함정·지형 이용 필수</td><td class="zt-coin">9~15C</td></tr><tr><td><span class="zt z4">4단계</span></td><td>고위험</td><td class="zt-th">정면 승부 위험 — 탈출·고립 우선</td><td class="zt-coin">16~30C</td></tr><tr><td><span class="zt z5">5단계</span></td><td>재난급</td><td class="zt-th">지역 단위 재앙 — 봉쇄·탈출이 핵심</td><td class="zt-coin">31~100C</td></tr></tbody></table>
-<div class="callout"><strong>1단계도 방심하면 즉사</strong><br>초반에 1단계 무시했다가 포위당해서 터지는 게 데드존 클리셰였음. 현실이면 더 말할 것도 없고.</div>
-</div>
-</details>
-<details class="sub">
-<summary><div class="sl"><span class="si">📡</span><div class="st">종말 갤러리 &nbsp;—&nbsp; 생존자 정보 공유망</div></div></summary>
-<div class="di">
-<p>게임 내에 있던 커뮤니티 시스템. 좀 특이하게 <strong>DC갤러리·아카라이브 느낌의 UI</strong>로 구현돼 있어서 처음엔 좀 당황했음. 개인 전용 초현실 시스템 UI인데 누구나 접근 가능함.</p>
-<div class="callout blue"><strong>핵심 제약</strong><br>작성자는 <strong>본인이 직접 경험·목격·추측한 것만</strong> 쓸 수 있어. 모르는 사실 단정 금지. 대신 빠른 말투·오타·공포·분노·과장은 다 살아있음 — 정보가 왜곡되어 퍼지는 것도 이 시스템의 일부야.</div>
-<p class="t-muted">진실 여부는 직접 부딪쳐봐야 알 수 있음. 소문인지 사실인지 확인하는 과정 자체가 서사의 일부.</p>
-</div>
-</details>
-<details class="sub">
-<summary><div class="sl"><span class="si">🌕</span><div class="st">블러드 문 &nbsp;—&nbsp; 매달 1회 재난 이벤트</div></div></summary>
-<div class="di">
-<p>월 1회 발생하는 특수 이벤트. 좀비 수·공격성·이동성이 대폭 강화되고 고단계 개체 출현 빈도가 급상승.</p>
-<div class="pills"><span class="pill p-orn">🌕 월 1회 무작위</span><span class="pill p-red">☠ 위험도 급상승</span><span class="pill p-gold">🪙 보상 ×1.5~2.0</span></div>
-<p class="t-muted">현실에선 그냥 거점에 틀어박히는 게 답인 거 같음. 게임에서 버티기 콘텐츠 하던 느낌이랑은 차원이 다를 거야.</p>
-</div>
-</details>
-<details class="sub">
-<summary><div class="sl"><span class="si">🎪</span><div class="st">떠돌이 상인 &nbsp;—&nbsp; 시스템 소속 행상인</div></div></summary>
-<div class="di">
-<p>정체불명의 행상인. 게임 시스템에 소속된 존재로 무작위 위치에 월 1회 등장, 반나절~하루 체류 후 사라짐.</p>
-<ul class="li"><li>코인(C)만 사용 가능 — 물물교환 불가</li><li>가격 시세보다 높음 (희귀도·생존 필수도 가산)</li><li>흥정 가능하나 큰 폭 할인 없음</li><li>강탈 시도 시 즉각 보복 — 다음부터 이용 제한</li></ul>
-<div class="callout">만나기 전까진 존재 자체를 모름. 갤러리에서 목격담·추측 형태로만 언급 가능한 존재야.</div>
-</div>
-</details>
-</div>
-</details>
-<details>
-<summary><div class="sl"><span class="si">🏰</span><div class="st">현실 세력 정보<div class="st-sub">소문으로만 들은 거 — 신뢰도 주의</div></div></div></summary>
-<div class="di">
-<p>여기 있는 정보는 전부 <strong>직접 보고 들은 게 아님</strong>. 이 종말 상황에서 입에서 입으로 전해지는 소문들 정리한 거라 정확하지 않을 수 있어. 참고만 해.</p>
-<hr class="thin">
-<div class="rumor"><div class="rumor-hd"><span class="rumor-name">🌳 은행나무 자치회</span><span class="rel rel-mid">신뢰도 ★★★☆</span></div><div class="rumor-body"><p>마포구 쪽 중형 아파트 단지에 꽤 규모 있는 집단이 생겼다는 얘기가 들려. 입주민들 중심으로 뭉쳤다는데 30명 넘는다더라고. 차량으로 정문을 막아놨다는 말도 있고, 나름대로 조직적으로 굴러가는 것 같다고.</p><p>들어가기가 쉽진 않다더라 — <strong>증명된 사람만 받아준다는 소문</strong>. 뭔가 기여할 수 있는 걸 보여줘야 한다나. 간호사도 있다는 얘기가 있던데, 그거야 확실히 자산이지. 근데 결정이 느리고 폐쇄적이다는 말도 같이 나옴. 안에서 뭔가 긁히고 있는 것 같다는 느낌도 받긴 했는데...</p></div><div class="rtags"><span class="rtag">📍 마포구</span><span class="rtag">👥 30명+</span><span class="rtag">🏥 의료 있음</span><span class="rtag">🔒 폐쇄적</span><span class="rtag">🛡️ 방어 중시</span></div></div>
-<div class="rumor"><div class="rumor-hd"><span class="rumor-name">🍸 이태원 크루</span><span class="rel rel-hi">신뢰도 ★★★★</span></div><div class="rumor-body"><p>이태원 쪽 3층 클럽을 아예 거점으로 차지한 무리야. 클럽 직원들이 중심이 된 거 같은데 외국인들도 꽤 섞여 있다고 들었어. 19명 내외로 추산되는데, 이쪽은 행동력이 진짜라는 평판이 있음.</p><p>거래를 적극적으로 한다더라. 필요한 게 있으면 이태원으로 가봐라는 말도 있고. 근데 이익이 안 맞으면 바로 태도가 바뀐다는 경고도 같이 나옴. <strong>'쓸모없으면 내쫓긴다'는 규칙이 있다는 얘기가 돌고</strong>... 믿을 수 있는 사람들인지는 모르겠어. 이익 앞에서만 움직이는 집단이니까.</p></div><div class="rtags"><span class="rtag">📍 용산구 이태원</span><span class="rtag">👥 19명</span><span class="rtag">💼 거래 가능</span><span class="rtag">⚡ 능력주의</span><span class="rtag">⚠️ 이탈 위험 상시</span></div></div>
-<div class="rumor"><div class="rumor-hd"><span class="rumor-name">🏥 성북 의료단</span><span class="rel rel-hi">신뢰도 ★★★★</span></div><div class="rumor-body"><p>성북구 소형 병원 건물에 의사랑 간호사들이 자리 잡고 있다는 거야. <strong>전 세력에 의료를 제공한다는 완전 중립 노선</strong>을 유지하는 집단이라 아는 사람들 사이에서 꽤 유명함. 11명 정도 된다고 하던데.</p><p>치료 대가로 식량이나 자재를 받는다고 들었어. 부상자 있으면 거기로 보내라는 얘기가 돌더라고. 근데 문제는 거기 자체가 너무 취약하다는 거 — 무장 인력이 없다고 하고, 방어 설비도 제대로 안 되어 있다는 소문. <strong>언제 누가 점거하러 갈지 모른다는 걱정</strong>이 있음. 중립이 지켜질 수 있을지...</p></div><div class="rtags"><span class="rtag">📍 성북구</span><span class="rtag">👥 11명</span><span class="rtag">🏳️ 완전 중립</span><span class="rtag">🚑 치료 제공</span><span class="rtag">⚠️ 방어 취약</span></div></div>
-<div class="rumor"><div class="rumor-hd"><span class="rumor-name">🏮 종로 반장단</span><span class="rel rel-mid">신뢰도 ★★★☆</span></div><div class="rumor-body"><p>종로3가 재래시장 쪽에 자리 잡은 집단인데, 이쪽이 식량 면에선 제일 탄탄하다는 얘기야. 노점상·상인들 중심이고 노인 분들도 많이 계신다고 들었음. 27명 정도 된다나.</p><p><strong>식량 생산·가공 능력이 압도적</strong>이라는 소문인데, 쌀도 있고 조리 공간도 갖추고 있다더라고. 근데 그 때문에 표적이 되기도 쉽다는 얘기가 동시에 나와. 약탈 세력이 노린다는 소문이 돌고 있고... 나이 드신 분들이 많아서 싸우기가 쉽지 않은 구조라고 하더만. 우호적이지만 먼저 나서진 않는다고.</p></div><div class="rtags"><span class="rtag">📍 종로3가</span><span class="rtag">👥 27명</span><span class="rtag">🌾 식량 풍부</span><span class="rtag">🍚 조리 가능</span><span class="rtag">⚠️ 표적 위험</span></div></div>
-</div>
-</details>
-<details>
-<summary><div class="sl"><span class="si">👤</span><div class="st">주요 등장인물<div class="st-sub">알려진 생존자들 — 총 10명</div></div></div></summary>
-<div class="di">
-<p style="margin-bottom:16px;font-size:13px;">각 세력 및 독립 생존자 중 확인된 인물 목록. 직접 만나기 전까진 외양·능력 모두 불확실하다는 거 감안해.</p>
-<div class="char-grid">
-<div class="fac-label">🌳 은행나무 자치회</div>
-<div class="char-card"><div class="c-av">⛸️</div><div><div class="c-hd"><span class="c-name">이수진</span><span class="c-age">여 · 28세</span></div><div class="c-badges"><span class="badge b-fac">🌳 은행나무</span><span class="badge b-adn">🌟 잔상 보행</span></div><div class="c-desc">전직 쇼트트랙 선수 출신. 부상 은퇴 후 체육 강사로 일하던 중 종말을 맞았다. 말이 없고 표정 변화가 적지만 위기 상황에선 누구보다 빠르게 움직인다. 자치회 경계·순찰 담당.</div><div class="c-wpn">야구 방망이 (테이프 그립 보강)</div></div></div>
-<div class="char-card"><div class="c-av">🎙️</div><div><div class="c-hd"><span class="c-name">한예슬</span><span class="c-age">여 · 27세</span></div><div class="c-badges"><span class="badge b-fac">🌳 은행나무</span><span class="badge b-adn">🌟 청각 증폭</span></div><div class="c-desc">전직 음향 엔지니어. 밝고 수다스럽지만 필요할 때 날카롭게 집중한다. 자치회 조기 경보 역할. 종말 첫날 가족을 잃었지만 혼자 삼키고 있다.</div><div class="c-wpn">등산 스틱 (끝단 철제)</div></div></div>
-<div class="fac-label">🍸 이태원 크루</div>
-<div class="char-card"><div class="c-av">🥊</div><div><div class="c-hd"><span class="c-name">라이언 오</span><span class="c-age">남 · 29세</span></div><div class="c-badges"><span class="badge b-fac">🍸 이태원 크루</span><span class="badge b-adn">🌟 충격 흡수</span></div><div class="c-desc">한국계 미국인 2세. 전직 아마추어 MMA 선수. 겉으로는 태평하지만 귀국 가능성에 집착하고 있다. 크루 내 외국인-한국인 통역·중재 역할. 강민욱에게 신뢰는 받지만 완전한 내 사람 취급은 아님.</div><div class="c-wpn">쇠파이프 (한 손 길이)</div></div></div>
-<div class="char-card"><div class="c-av">🔥</div><div><div class="c-hd"><span class="c-name">전미래</span><span class="c-age">여 · 26세</span></div><div class="c-badges"><span class="badge b-fac">🍸 이태원 크루</span><span class="badge b-adn">🌟 점화</span></div><div class="c-desc">전직 클럽 바텐더. 날이 서 있고 직설적. 약점 보이는 걸 극도로 싫어한다. 크루 핵심 정보 수집원. 강민욱과 말다툼도 서슴지 않는 관계. 불을 이용한 위협·탈출 전술에 능하다.</div><div class="c-wpn">나이프 (한 손 리버스 그립)</div></div></div>
-<div class="fac-label">🏥 성북 의료단</div>
-<div class="char-card"><div class="c-av">💉</div><div><div class="c-hd"><span class="c-name">윤서아</span><span class="c-age">여 · 24세</span></div><div class="c-badges"><span class="badge b-fac">🏥 성북 의료단</span><span class="badge b-adn">🌟 통증 전이</span></div><div class="c-desc">의대 본과 2학년. 조용하고 섬세하며 말보다 손이 먼저 움직인다. 오재원 의사의 실질 처치 보조 역할. 타인의 고통을 덜기 위해 주저하지 않는다.</div><div class="c-wpn">수술 가위 (호신용)</div></div></div>
-<div class="char-card"><div class="c-av">🩺</div><div><div class="c-hd"><span class="c-name">박도연</span><span class="c-age">여 · 30세</span></div><div class="c-badges"><span class="badge b-fac">🏥 성북 의료단</span><span class="badge b-adn">🌟 혈액 응고 가속</span></div><div class="c-desc">종합병원 응급실 간호사 출신. 웃음이 많고 담이 세다. 극한 상황에서도 손이 떨리지 않는다. 의료단 내 가장 실전 경험이 많은 인물. 중립 노선이 흔들릴 때 가장 현실적인 목소리를 낸다.</div><div class="c-wpn">소독 알코올 스프레이 (호신용)</div></div></div>
-<div class="fac-label">🏮 종로 반장단</div>
-<div class="char-card"><div class="c-av">🔩</div><div><div class="c-hd"><span class="c-name">최지유</span><span class="c-age">여 · 26세</span></div><div class="c-badges"><span class="badge b-fac">🏮 종로 반장단</span><span class="badge b-adn">🌟 질량 이동</span></div><div class="c-desc">프리랜서 번역가. 부지런하고 성실하지만 가끔 고집이 세다. 임순례를 가장 먼저 따른 멤버 중 하나. 시장 내 물자 이동·정리에서 능력을 발휘한다. 노인들의 막내딸 포지션이지만 그 기대가 가끔 버겁다.</div><div class="c-wpn">중식도 (묵직한)</div></div></div>
-<div class="char-card"><div class="c-av">👂</div><div><div class="c-hd"><span class="c-name">임하린</span><span class="c-age">여 · 28세</span></div><div class="c-badges"><span class="badge b-fac">🏮 종로 반장단</span><span class="badge b-adn">🌟 촉각 감지</span></div><div class="c-desc">전직 건축 현장 측량 보조. 눈치 빠르고 신중하다. 반장단 실질 경계 담당. 청년 멤버 중 이탈을 가장 진지하게 고민하고 있지만 아직은 여기 남아 있다.</div><div class="c-wpn">쇠파이프 (짧은 1단)</div></div></div>
-<div class="fac-label">⚡ 독립 생존자</div>
-<div class="char-card"><div class="c-av">🛡️</div><div><div class="c-hd"><span class="c-name">강하은</span><span class="c-age">여 · 29세</span></div><div class="c-badges"><span class="badge b-solo">⚡ 독립 생존자</span><span class="badge b-adn">🌟 차단막</span></div><div class="c-desc">전직 사설 경호원. 차갑고 경계심이 강하다. 세력에 속하지 않은 건 선택이 아니라 아직 믿을 수 있는 곳을 찾지 못해서다. 짧은 말, 긴 침묵. 한번 믿으면 끝까지 간다.</div><div class="c-wpn">소방 도끼 (짧은 손잡이형)</div></div></div>
-<div class="char-card"><div class="c-av">📓</div><div><div class="c-hd"><span class="c-name">정이안</span><span class="c-age">남 · 25세</span></div><div class="c-badges"><span class="badge b-solo">⚡ 독립 생존자</span><span class="badge b-adn">🌟 분열 감지</span></div><div class="c-desc">사회학 대학원생. 관찰하고 기록하는 것에 집착한다. 지금도 낡은 노트에 만나는 사람들을 기록 중. 감정이 없어 보이지만 사실은 너무 많이 느껴서 거리를 두는 타입. 애드온 덕에 배신당한 적은 없지만 막지 못하는 무력감이 쌓인다.</div><div class="c-wpn">콤팩트 크로스보우 (볼트 12발)</div></div></div>
-</div>
-</div>
-</details>
-<details>
-<summary><div class="sl"><span class="si">⚙️</span><div class="st">생존 메커닉<div class="st-sub">현실에 적용된 시스템 수치</div></div></div></summary>
-<div class="di">
-<div class="pills" style="margin-bottom:12px;"><span class="pill p-red">🍖 포만도</span><span class="pill p-blue">💧 수분</span><span class="pill p-gold">❓ 부상 키워드</span><span class="pill p-pur">🪙 코인</span></div>
-<p>포만도(🍖)와 수분(💧) 각각 최대 100. 시간대 변경 시 각 -15씩 감소. 수치가 떨어질수록 전투 집중력·판단력에 영향이 생겨.</p>
-<table class="tbl"><thead><tr><th>수치</th><th>🍖 상태</th><th>💧 상태</th></tr></thead><tbody><tr><td class="mono" style="color:var(--grn)">≤100</td><td>편안</td><td>편안</td></tr><tr><td class="mono" style="color:var(--blue)">≤80</td><td>배부름</td><td>목 안 마름</td></tr><tr><td class="mono" style="color:var(--gold)">≤60</td><td>보통</td><td>목마름</td></tr><tr><td class="mono" style="color:var(--orn)">≤40</td><td>배고픔 ⚠ 집중력·판단력↓</td><td>갈증 ⚠ 집중력↓</td></tr><tr><td class="mono" style="color:var(--red)">≤20</td><td>극심 ☠ 극단 선택 개연성↑</td><td>극심 ☠ 판단력 붕괴 위험</td></tr></tbody></table>
-<div class="callout" style="margin-top:12px;"><strong>식량은 코인보다 비싸다</strong><br>종말 이후 편의점·마트는 이미 약탈 완료 상태. 식량이 외교·협상·충성의 핵심 화폐야. 조리 시 냄새·연기·소음 미차단 시 좀비 유인 위험 반드시 고려해야 함. 농업·수렵 가능 거점은 즉각 표적이 되는 전략 요충지.</div>
-</div>
-</details>
-<div class="post-foot"><div class="foot-btn lik">❤ 142</div><div class="foot-btn">🔖 저장</div><div class="foot-btn">↗ 공유</div></div>
-</div>
-<div class="comments">
-<div class="com-hd">댓글 <strong>23</strong></div>
-<div class="cmt"><div class="c-ava">😨</div><div><div class="cmt-meta"><span class="cm-n">zone_lurker</span> · 8분 전</div><div class="cmt-t">야 근데 진짜 오늘 섭종 게임이 데드존이어서 다행이야... 배틀로얄이었으면 사람들이 서로 죽이고 있었겠지 ㅋㅋㅋ 아 웃을 상황이 아닌가</div></div></div>
-<div class="cmt reply"><div class="c-ava">🫠</div><div><div class="cmt-meta"><span class="cm-n">deadzone_survivor_0</span> · 7분 전</div><div class="cmt-t">ㄹㅇ 배로얄이면 진작 세상 끝났음 ㅇㅇ</div></div></div>
-<div class="cmt"><div class="c-ava">🏥</div><div><div class="cmt-meta"><span class="cm-n">medic_enjoyer</span> · 15분 전</div><div class="cmt-t">성북 의료단 중립 유지한다는데 무장이 없다고... 그 위치 공개되는 순간 바로 점거 당할 거 같은데 심각하게 걱정됨. 거기 11명이 어떻게 버틸 건지</div></div></div>
-<div class="cmt reply"><div class="c-ava">🩺</div><div><div class="cmt-meta"><span class="cm-n">ex_ER_nurse</span> · 12분 전</div><div class="cmt-t">거기 의사 오재원 씨가 원칙 절대 안 굽힌다는 거 아는 사람은 알 거야. 그게 강점이면서 취약점임</div></div></div>
-<div class="cmt"><div class="c-ava">🧠</div><div><div class="cmt-meta"><span class="cm-n">system_analyst</span> · 22분 전</div><div class="cmt-t">애드온 보유자 죽으면 좀비한테 능력 넘어간다는 거 진짜 소름... 게임에서는 전략 요소였는데 현실에서 이게 적용되면 강한 사람 살리는 게 더 중요해지는 거 아닌가. 아니 이미 그런 상황인가</div></div></div>
-<div class="cmt reply"><div class="c-ava">⚡</div><div><div class="cmt-meta"><span class="cm-n">Last_Player</span> · 방금 전</div><div class="cmt-t">...ㅇㅇ. 그런 상황임.</div></div></div>
-<div class="cmt"><div class="c-ava">🔥</div><div><div class="cmt-meta"><span class="cm-n">itaewon_watcher</span> · 31분 전</div><div class="cmt-t">이태원 크루 거래 한다는 거 사실임. 직접 가봤는데 물건 있으면 거래 됨. 근데 분위기가 좀... 조심해야 함. 특히 혼자는 가지 마라</div></div></div>
-<div class="cmt"><div class="c-ava">🌾</div><div><div class="cmt-meta"><span class="cm-n">jongno_info</span> · 44분 전</div><div class="cmt-t">종로 반장단 식량 풍부하다는 거 사실인 거 같은데 그 주변에 수상한 무리가 얼쩡거린다는 얘기 들었음. 약탈 노리는 거 아닌가 싶어서 걱정됨</div></div></div>
-</div>
-</div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>속삭이는 현실 — 확장 세계관 설정집</title>
+<meta name="description" content="괴담이 실체를 가지는 세계. 국제 괴이 관리국 문서 형식의 설정집.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Gowun+Batang:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E8E6DF; --paper-2:#DFDCD3; --paper-3:#D3CFC4;
+  --ink:#14181C; --ink-2:#454C55; --ink-3:#6E7078;
+  --prussian:#1F3D5C; --prussian-2:#2E5A85;
+  --oxide:#8C3A2B; --latent:#7A7466;
+  --rule:#B9B4A6; --rule-soft:#CBC7BB;
+  --serif:"Gowun Batang", "Nanum Myeongjo", batang, serif;
+  --display:"Song Myung", "Gowun Batang", serif;
+  --mono:"Nanum Gothic Coding", "D2Coding", ui-monospace, monospace;
+  --sidebar:266px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+ *{animation:none!important;transition:none!important}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.95;
+  word-break:keep-all; overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+}
+/* 감광지 질감 */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(31,61,92,.06), transparent 60%),
+    radial-gradient(ellipse at 85% 100%, rgba(140,58,43,.045), transparent 55%);
+}
+a{color:var(--prussian); text-underline-offset:3px; text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--prussian); outline-offset:3px}
+
+/* ══ 색인 ══ */
+#index{
+  position:fixed; inset:0 auto 0 0; width:var(--sidebar); z-index:20;
+  background:var(--paper-2); border-right:1px solid var(--rule);
+  display:flex; flex-direction:column;
+}
+.idx-head{padding:22px 20px 14px; border-bottom:1px solid var(--rule)}
+.idx-head b{display:block; font-family:var(--display); font-size:19px; letter-spacing:.02em}
+.idx-head span{display:block; font-family:var(--mono); font-size:10px; color:var(--ink-3);
+  letter-spacing:.16em; margin-top:6px}
+.idx-scroll{overflow-y:auto; padding:14px 0 40px; flex:1}
+#index a{display:block; text-decoration:none; color:var(--ink-2)}
+.toc-1{padding:11px 20px 4px; font-family:var(--display); font-size:15px; color:var(--ink)!important;
+  display:flex; gap:9px; align-items:baseline}
+.toc-1 .toc-num{font-family:var(--mono); font-size:10px; color:var(--prussian);
+  letter-spacing:.08em; flex:none}
+.toc-2{padding:3px 20px 3px 49px; font-size:13px; line-height:1.65; border-left:2px solid transparent}
+.toc-2:hover{color:var(--ink)!important; background:rgba(31,61,92,.05)}
+.toc-2.on{border-left-color:var(--oxide); color:var(--ink)!important}
+
+#burger{display:none}
+
+/* ══ 본문 ══ */
+main{margin-left:var(--sidebar); position:relative; z-index:1}
+.wrap{max-width:790px; margin:0 auto; padding:0 40px}
+
+/* ══ 표지 ══ */
+header.cover{
+  padding:110px 0 74px; border-bottom:1px solid var(--rule);
+  background:linear-gradient(180deg, rgba(31,61,92,.055), transparent 72%);
+}
+.stamp{
+  display:inline-flex; gap:14px; align-items:center; font-family:var(--mono);
+  font-size:10.5px; letter-spacing:.2em; color:var(--oxide);
+  border:1px solid var(--oxide); padding:6px 13px; margin-bottom:34px;
+}
+.stamp i{width:5px;height:5px;background:var(--oxide);border-radius:50%;font-style:normal}
+h1.title{
+  font-family:var(--display); font-size:clamp(46px,8.4vw,84px); line-height:1.06;
+  margin:0; letter-spacing:-.015em; font-weight:400;
+}
+.title-en{font-family:var(--mono); font-size:12px; letter-spacing:.34em; color:var(--ink-3);
+  margin-top:20px; text-transform:uppercase}
+.subtitle{font-family:var(--display); font-size:20px; color:var(--ink-2); margin-top:30px}
+
+/* 서사압 공식 — 시그니처 */
+.formula{
+  margin:52px 0 0; padding:30px 32px; background:var(--paper-2);
+  border:1px solid var(--rule); position:relative;
+}
+.formula .lbl{position:absolute; top:-9px; left:22px; background:var(--paper-2);
+  font-family:var(--mono); font-size:10px; letter-spacing:.18em; color:var(--ink-3); padding:0 8px}
+.formula .eq{font-family:var(--mono); font-size:clamp(13px,2.1vw,17px); line-height:2.2;
+  color:var(--ink); white-space:nowrap; overflow-x:auto; padding-bottom:4px}
+.formula .om{color:var(--oxide); font-weight:700; position:relative}
+.formula .cap{font-size:14.5px; color:var(--ink-2); margin-top:16px; line-height:1.8}
+.formula .cap b{color:var(--oxide); font-weight:400; border-bottom:1px solid var(--oxide)}
+
+.thesis{margin:56px 0 0; padding-left:22px; border-left:2px solid var(--oxide);
+  font-family:var(--display); font-size:21px; line-height:1.85; color:var(--ink)}
+.thesis span{display:block; color:var(--ink-2); font-size:17px; margin-top:12px; font-family:var(--serif)}
+
+/* 용어 */
+.gloss{padding:60px 0 10px}
+.gloss h2{font-family:var(--mono); font-size:11px; letter-spacing:.22em; color:var(--ink-3);
+  margin:0 0 20px; font-weight:400}
+
+/* ══ 부 ══ */
+.part{padding:82px 0 30px; border-top:1px solid var(--rule)}
+.part:first-of-type{border-top:none}
+.part-secret{background:linear-gradient(180deg, rgba(140,58,43,.06), transparent 340px)}
+.part-secret h2{border-bottom-color:rgba(140,58,43,.4)}
+.part-secret thead th{background:var(--oxide)}
+.part-coda{background:linear-gradient(180deg, rgba(31,61,92,.06), transparent 300px)}
+
+h1,h2,h3{scroll-margin-top:26px}
+h1{font-family:var(--display); font-weight:400; margin:0 0 34px; letter-spacing:-.01em}
+h1 .eyebrow{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.28em;
+  color:var(--oxide); margin-bottom:14px}
+h1 .h1-title{display:block; font-size:clamp(33px,5vw,46px); line-height:1.2}
+.part-secret h1 .eyebrow{color:var(--oxide)}
+
+h2{font-family:var(--display); font-weight:400; font-size:26px; line-height:1.42;
+  margin:66px 0 20px; padding-bottom:11px; border-bottom:1px solid var(--rule)}
+h3{font-family:var(--display); font-weight:400; font-size:20.5px; margin:44px 0 14px; color:var(--ink)}
+h4{font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.12em;
+  color:var(--prussian); margin:34px 0 12px}
+p{margin:0 0 19px}
+strong{font-weight:700; color:var(--ink)}
+em{font-style:italic; color:var(--ink-2)}
+hr{border:none; border-top:1px solid var(--rule-soft); margin:44px 0}
+ul,ol{margin:0 0 20px; padding-left:1.35em}
+li{margin-bottom:9px}
+li::marker{color:var(--prussian)}
+code{font-family:var(--mono); font-size:.87em; background:var(--paper-3);
+  padding:2px 6px; border-radius:2px}
+pre{background:var(--paper-2); border:1px solid var(--rule); padding:20px 22px;
+  overflow-x:auto; font-family:var(--mono); font-size:13.5px; line-height:1.85}
+pre code{background:none; padding:0}
+
+/* ══ 인용 ══ */
+blockquote{
+  margin:26px 0; padding:4px 0 4px 22px; border-left:2px solid var(--rule);
+  color:var(--ink-2); font-size:16px;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote strong{color:var(--ink)}
+
+/* ══ 현창 — 시그니처 ══ */
+.chant{
+  position:relative; margin:34px 0; padding:30px 30px 26px;
+  background:linear-gradient(160deg, #E4DFD2, #DAD5C6);
+  border:1px solid var(--rule);
+  box-shadow:inset 0 0 44px rgba(122,116,102,.16);
+}
+.chant blockquote{
+  border:none; margin:0; padding:0; color:var(--ink);
+  font-family:var(--display); font-size:19px; line-height:2.05; letter-spacing:.005em;
+}
+.chant blockquote em{font-style:normal; color:var(--ink)}
+.chant blockquote strong{font-weight:400}
+.chant-tag,.chant-note{
+  position:absolute; font-family:var(--mono); font-size:9.5px; letter-spacing:.18em;
+}
+.chant-tag{top:-8px; left:20px; background:var(--paper); color:var(--latent);
+  padding:0 8px; border:1px solid var(--rule)}
+.chant-note{bottom:8px; right:14px; color:var(--latent); opacity:.72}
+/* 상이 떠오르는 연출 */
+.chant{opacity:0; filter:blur(6px)}
+.chant.dev{opacity:1; filter:blur(0); transition:opacity 1.05s ease, filter 1.05s ease}
+@media (prefers-reduced-motion:reduce){.chant{opacity:1; filter:none}}
+
+/* ══ 표 ══ */
+table{width:100%; border-collapse:collapse; margin:26px 0 30px; font-size:14.5px; line-height:1.7}
+thead th{
+  font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.09em;
+  text-align:left; color:var(--paper); background:var(--prussian);
+  padding:10px 13px; vertical-align:bottom; border-right:1px solid rgba(232,230,223,.22);
+}
+thead th:last-child{border-right:none}
+tbody td{padding:11px 13px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+tbody tr:nth-child(even){background:rgba(31,61,92,.035)}
+tbody tr:hover{background:rgba(140,58,43,.055)}
+tbody td:first-child{font-weight:700}
+.tbl-scroll{overflow-x:auto; margin:26px -6px 30px; padding:0 6px}
+.tbl-scroll table{margin:0}
+
+/* ══ 맨 위로 ══ */
+#top{
+  position:fixed; right:26px; bottom:26px; z-index:30;
+  width:46px; height:46px; border:1px solid var(--rule); background:var(--paper-2);
+  color:var(--prussian); font-family:var(--mono); font-size:11px; cursor:pointer;
+  opacity:0; pointer-events:none; transition:opacity .3s;
+}
+#top.on{opacity:1; pointer-events:auto}
+#top:hover{background:var(--prussian); color:var(--paper); border-color:var(--prussian)}
+
+footer{
+  margin-left:var(--sidebar); border-top:1px solid var(--rule); background:var(--paper-2);
+  padding:44px 40px 56px; text-align:center;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; color:var(--ink-3);
+}
+
+/* ══ 반응형 ══ */
+@media (max-width:1080px){
+  :root{--sidebar:0px}
+  #index{transform:translateX(-100%); transition:transform .3s ease; width:290px;
+    box-shadow:0 0 40px rgba(20,24,28,.2)}
+  #index.open{transform:none}
+  #burger{
+    display:block; position:fixed; top:16px; left:16px; z-index:40;
+    background:var(--paper-2); border:1px solid var(--rule); color:var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em; padding:11px 15px; cursor:pointer;
+  }
+  main,footer{margin-left:0}
+  .idx-head{padding-top:64px}
+  h1,h2,h3{scroll-margin-top:74px}
+  .wrap{padding:0 24px}
+  header.cover{padding:96px 0 60px}
+  body{font-size:16.5px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  h2{font-size:22px}
+  .chant{padding:26px 20px 24px}
+  .chant blockquote{font-size:17px}
+  table{font-size:13px}
+  thead th,tbody td{padding:9px 10px}
+}
+@media print{
+  #index,#burger,#top{display:none}
+  main,footer{margin-left:0}
+  body{background:#fff; font-size:11pt}
+  .chant{opacity:1!important; filter:none!important}
+  .part{page-break-before:always}
+}
+</style>
+</head>
+<body>
+
+<button id="burger" aria-expanded="false" aria-controls="index">≡&nbsp;&nbsp;색인</button>
+
+<nav id="index" aria-label="문서 색인">
+  <div class="idx-head">
+    <b>속삭이는 현실</b>
+    <span>DOCUMENT INDEX</span>
+  </div>
+  <div class="idx-scroll">
+<a class="toc-1" href="#s1"><span class="toc-num">제1부</span><span class="toc-txt">근본 원리</span></a>
+<a class="toc-2" href="#s3">왜 이야기가 현실이 되는가</a>
+<a class="toc-2" href="#s5">현현의 3요소 : 형(形)·율(律)·관(觀)</a>
+<a class="toc-2" href="#s15">1-2-B. 핵 (核)</a>
+<a class="toc-2" href="#s21">1-2-C. 현창 (顯唱)</a>
+<a class="toc-2" href="#s28">소멸이란 무엇인가</a>
+<a class="toc-2" href="#s29">은폐의 역설</a>
+<a class="toc-2" href="#s30">괴담의 생애주기</a>
+<a class="toc-1" href="#s31"><span class="toc-num">제2부</span><span class="toc-txt">연표</span></a>
+<a class="toc-2" href="#s33">제0기</a>
+<a class="toc-2" href="#s34">제1기</a>
+<a class="toc-2" href="#s35">제2기</a>
+<a class="toc-2" href="#s36">제3기</a>
+<a class="toc-2" href="#s37">제4기</a>
+<a class="toc-1" href="#s38"><span class="toc-num">제3부</span><span class="toc-txt">등급 체계</span></a>
+<a class="toc-2" href="#s39">위협 등급 (1~6급)</a>
+<a class="toc-2" href="#s40">3-1-B. 무해 등급 (無害等級)</a>
+<a class="toc-2" href="#s41">부가 분류축</a>
+<a class="toc-2" href="#s42">등급은 고정값이 아니다</a>
+<a class="toc-1" href="#s43"><span class="toc-num">제4부</span><span class="toc-txt">세력</span></a>
+<a class="toc-2" href="#s44">관리국 (國際怪異管理局)</a>
+<a class="toc-2" href="#s50">컴퍼니 (The Company)</a>
+<a class="toc-2" href="#s52">교단</a>
+<a class="toc-2" href="#s58">미술관 (The Gallery)</a>
+<a class="toc-2" href="#s59">저자회 (著者會)</a>
+<a class="toc-2" href="#s64">심연의 아고라 &amp;amp; 야반 조합</a>
+<a class="toc-2" href="#s81">세력 공통 자산</a>
+<a class="toc-2" href="#s85">세력 관계도</a>
+<a class="toc-1" href="#s86"><span class="toc-num">제5부</span><span class="toc-txt">인간은 어떻게 싸우는가</span></a>
+<a class="toc-2" href="#s87">5계층 대응 체계</a>
+<a class="toc-2" href="#s89">1층</a>
+<a class="toc-2" href="#s90">5층</a>
+<a class="toc-2" href="#s115">재래 무기의 위상</a>
+<a class="toc-1" href="#s116"><span class="toc-num">제6부</span><span class="toc-txt">사회와 일상</span></a>
+<a class="toc-2" href="#s117">시민의 삶</a>
+<a class="toc-2" href="#s118">언론과 표현</a>
+<a class="toc-2" href="#s119">국제 정치</a>
+<a class="toc-1" href="#s120"><span class="toc-num">제7부</span><span class="toc-txt">ANE 목록</span></a>
+<a class="toc-2" href="#s121">관리국 관리 개체</a>
+<a class="toc-2" href="#s125">교단 보유 개체</a>
+<a class="toc-2" href="#s128">저자회 파종 개체</a>
+<a class="toc-2" href="#s131">6급</a>
+<a class="toc-2" href="#s136">판정 불가 개체</a>
+<a class="toc-1" href="#s138"><span class="toc-num">제8부</span><span class="toc-txt">완결자 5인</span></a>
+<a class="toc-2" href="#s139">한도경 (韓道慶)</a>
+<a class="toc-2" href="#s145">주가영 (朱佳英)</a>
+<a class="toc-2" href="#s152">명주하 (明周夏)</a>
+<a class="toc-2" href="#s158">백서린 (白書潾)</a>
+<a class="toc-2" href="#s166">한백설 (韓白雪)</a>
+<a class="toc-2" href="#s175">다섯의 관계</a>
+<a class="toc-1" href="#s180"><span class="toc-num">부록</span><span class="toc-txt">한 줄 요약</span></a>
+  </div>
+</nav>
+
+<main>
+  <header class="cover">
+    <div class="wrap">
+      <div class="stamp"><i></i>대외비 · 관리국 열람 등급 4 이상</div>
+      <h1 class="title">속삭이는 현실</h1>
+      <div class="title-en">Whispering Reality — Setting Bible</div>
+      <p class="subtitle">괴담이 실체를 가진 세계. 그리고 그것을 없애지 않기로 한 여섯 세력의 기록.</p>
+
+      <div class="formula">
+        <span class="lbl">관리국 근사식</span>
+        <div class="eq">P ≈ [ (인지 총량 N) × (신뢰 계수 B) × (정서 강도 E) ÷ (해석 분산 V) ] × <span class="om">(존재 에너지 Ω)</span></div>
+        <p class="cap">앞의 네 항은 수십만 명의 머릿속에 흩어져 있어 손댈 수 없다.
+        <b>Ω만이 위치를 가진다.</b> 나머지를 상대하는 것은 조직의 일이고, Ω를 상대하는 것은 사람의 일이다.</p>
+      </div>
+
+      <div class="thesis">
+        괴담은 죽지 않는다. 잊혀야만 사라진다.<br>그리고 인류는 잊는 법을 잃었다.
+        <span>그래서 여섯 세력은 각자의 방식으로 그것을 살려두고 있고, 그 위에 문명이 서 있다.</span>
+      </div>
+    </div>
+
+    <div class="wrap gloss">
+      <h2>용어</h2>
+      <table>
+<thead>
+<tr>
+<th>표기</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ANE</strong></td>
+<td><em>Anomalous Narrative Entity</em> / 이상서사체. 관리국 공식 명칭이며 전 세력의 문서·거래·등급 판정에서 사용된다</td>
+</tr>
+<tr>
+<td><strong>괴담</strong></td>
+<td>민간 통칭. 시민 대다수는 여전히 이렇게 부른다</td>
+</tr>
+<tr>
+<td><strong>개체</strong></td>
+<td>현장 실무 용어. "3급 개체 확인"</td>
+</tr>
+<tr>
+<td><strong>서사압 (P)</strong></td>
+<td>이야기가 현실을 밀어 올리는 힘. 제1부 공식 참조</td>
+</tr>
+<tr>
+<td><strong>존재 에너지 (Ω)</strong></td>
+<td>이야기가 물질층에 닿는 접점의 출력. <strong>외부에서 조작 가능한 유일한 항</strong></td>
+</tr>
+<tr>
+<td><strong>핵 (核)</strong></td>
+<td>Ω를 한 점에 응축해 숨긴 것. 개체의 유일한 급소</td>
+</tr>
+<tr>
+<td><strong>불락 (不落)</strong></td>
+<td>규칙이 허용하지 않는 손상은 성립하지 않는 성질</td>
+</tr>
+<tr>
+<td><strong>개변 권역</strong></td>
+<td>규칙이 현실을 다시 쓰는 범위. <strong>이 크기가 곧 등급이다</strong></td>
+</tr>
+<tr>
+<td><strong>현창 (顯唱)</strong></td>
+<td>5급 이상과 완결자가 힘을 쓸 때 새어 나오는 찬양조의 문장</td>
+</tr>
+<tr>
+<td><strong>이명자 (異名者)</strong></td>
+<td>개체와 같은 원리로 힘을 얻은 인간</td>
+</tr>
+<tr>
+<td><strong>완결자 (完結者)</strong></td>
+<td>규칙이 자가완결해 외부에 흔들리지 않게 된 이명자</td>
+</tr>
+<tr>
+<td><strong>회수 (回收)</strong></td>
+<td>완결자가 개체의 핵을 부수고 그 Ω를 흡수하는 것</td>
+</tr>
+<tr>
+<td><strong>역류 (逆流)</strong></td>
+<td>회수한 Ω를 몸에 쌓은 완결자가 죽을 때 그것이 한꺼번에 방출되는 사태</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </header>
+
+  <div class="wrap">
+<section class="part"><h1 id="s1"><span class="eyebrow">제1부</span><span class="h1-title">근본 원리</span></h1>
+<h3 id="s2">현현 이론 (顯現理論)</h3>
+<blockquote>
+<p>이 세계의 모든 설정은 이 부에서 파생된다. 세력도, 등급도, 기술도, 전투도 전부 여기 적힌 원리의 응용이다.</p>
+</blockquote>
+<h2 id="s3">1-1. 왜 이야기가 현실이 되는가</h2>
+<p>세계에는 물질층 아래에 <strong>서사층(敍事層)</strong> 이 존재한다. 서사층은 인간의 집단 인지가 만들어내는 정보의 지층이며, 물리 법칙보다 <strong>얕고 무르지만 더 오래된</strong> 층위다.</p>
+<p>인간이 어떤 이야기를 충분히 많이, 충분히 강하게 믿으면 그 이야기는 서사층에서 <strong>부력(浮力)</strong> 을 얻어 물질층으로 떠오른다. 이것이 <strong>현현(顯現)</strong> 이다.</p>
+<p><strong>서사압(敍事壓) 공식 — 통칭 "관리국 근사식"</strong></p>
+<p><code>서사압 P ≈ [ (인지 총량 N) × (신뢰 계수 B) × (정서 강도 E) ÷ (해석 분산 V) ] × (존재 에너지 Ω)</code></p>
+<table>
+<thead>
+<tr>
+<th>항</th>
+<th>의미</th>
+<th>실무적 함의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>N</strong> 인지 총량</td>
+<td>이 이야기를 아는 사람 수</td>
+<td>은폐로 낮출 수 있으나 역효과 위험</td>
+</tr>
+<tr>
+<td><strong>B</strong> 신뢰 계수</td>
+<td>"진짜일지도 모른다"의 비율</td>
+<td>목격 증언·영상·공식 부인이 올린다</td>
+</tr>
+<tr>
+<td><strong>E</strong> 정서 강도</td>
+<td>공포·경외·연민의 총량</td>
+<td>실화 주장, 아동 피해, 지역성이 증폭</td>
+</tr>
+<tr>
+<td><strong>V</strong> 해석 분산</td>
+<td>버전이 몇 갈래로 갈라졌는가</td>
+<td><strong>관리국 핵심 무기.</strong> V를 키우면 P가 떨어진다</td>
+</tr>
+<tr>
+<td><strong>Ω</strong> 존재 에너지</td>
+<td>이야기가 물질층에 발을 딛는 지점의 출력</td>
+<td><strong>현장에서 직접 조작 가능한 유일한 항</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="s4">Ω — 유일하게 밖에서 건드릴 수 있는 항</h3>
+<p>N·B·E·V는 전부 <strong>집단 인지의 산물</strong>이다. 수십만 명의 머릿속에 흩어져 있어서, 개인이 현장에서 손댈 수 있는 것이 아니다. 관리국의 희석조차 V를 몇 달에 걸쳐 조금씩 미는 대규모 산업 작업이다.</p>
+<p><strong>Ω만이 다르다.</strong>
+Ω는 이야기가 물질층에 닿는 <strong>단 하나의 접점</strong>이며, 따라서 물리적·규칙적 위치를 가진다. 위치가 있다는 것은 <strong>찾아갈 수 있고, 손댈 수 있고, 부술 수 있다</strong>는 뜻이다.</p>
+<blockquote>
+<p>이 세계에서 개체를 실제로 "격퇴"하는 모든 행위는, 결국 Ω를 건드리는 행위다.
+나머지 네 항을 상대하는 것은 조직의 일이고, Ω를 상대하는 것은 <strong>사람의 일</strong>이다.</p>
+</blockquote>
+<p>P가 <strong>현현 임계점</strong>을 넘으면 괴담은 물리 실체를 얻는다. 임계점은 고정값이 아니라 지역의 서사층 밀도에 따라 달라진다 — 오래된 도시, 참사 지역, 종교적 성지는 임계점이 낮다.</p>
+<h2 id="s5">1-2. 현현의 3요소 : 형(形)·율(律)·관(觀)</h2>
+<p>괴담이 성립하려면 세 가지가 모두 필요하다. 하나라도 빠지면 현현하지 않거나, 현현해도 즉시 붕괴한다.</p>
+<h3 id="s6">형 (形) — 형태</h3>
+<p>이야기가 <strong>떠올릴 수 있는 모습</strong>을 가져야 한다. "무언가 무서운 것"은 현현하지 못한다. "빨간 우비를 입은 여자"는 현현한다.</p>
+<blockquote>
+<p><strong>함의</strong>: 묘사가 구체적일수록 강하고, 동시에 대처법도 명확해진다. 4급 이상은 대개 "묘사가 어긋나는" 형태를 가진다 — 목격자마다 다르게 그리기 때문에 대응 매뉴얼이 만들어지지 않는다.</p>
+</blockquote>
+<h3 id="s7">율 (律) — 규칙</h3>
+<p><strong>모든 괴담은 반드시 규칙을 가진다.</strong> 이것은 저주가 아니라 <strong>골격</strong>이다.</p>
+<p>규칙이 없는 존재는 "무엇이든 할 수 있는 것"이고, 무엇이든 할 수 있는 것은 인간이 <strong>이야기로 기억할 수 없다</strong>. 기억되지 않으면 서사압이 발생하지 않고, 서사압이 없으면 현현이 유지되지 않는다.</p>
+<blockquote>
+<p><strong>핵심 역설</strong>: 괴담은 자유로워질수록 약해지고, 속박될수록 강해진다.
+이 한 줄에서 미술관·컴퍼니·관리국의 모든 기술이 파생된다.</p>
+</blockquote>
+<p><strong>규칙의 2분류 — 해석 여지</strong></p>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>성질</th>
+<th>위험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>경직 규칙</strong></td>
+<td>조건이 명확하고 예외가 없다</td>
+<td>낮음. 공략서가 성립한다</td>
+</tr>
+<tr>
+<td><strong>유연 규칙</strong></td>
+<td>조건이 모호하거나 해석의 여지가 있다</td>
+<td>높음. <strong>사망 사고의 대부분이 여기서 발생한다</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>규칙은 <strong>언제나 알아낼 수 있다.</strong> 알아낼 수 없는 규칙은 애초에 기억될 수 없고, 기억될 수 없으면 존재할 수 없기 때문이다.
+고등급 개체가 무서운 이유는 규칙을 모르기 때문이 아니다. <strong>알아도 소용이 없기 때문이다.</strong></p>
+</blockquote>
+<h3 id="s8">불락 (不落) — 규칙 밖의 손상은 성립하지 않는다</h3>
+<p>규칙은 속박이자 <strong>방패</strong>다.</p>
+<p>규칙을 가진 존재는, <strong>규칙이 허용하지 않는 손상을 입지 않는다.</strong> 이야기가 "그런 식으로는 그에게 닿을 수 없다"고 진술하고 있기 때문에, 그 방식의 공격은 물리적으로 도달해도 결과를 남기지 못한다.</p>
+<p>이 성질을 <strong>불락(不落)</strong> 이라 한다. ANE에게도, 이명자에게도, 동일한 원리로 적용된다.</p>
+<blockquote>
+<p><strong>불락은 방어가 아니다. 판정이다.</strong>
+막아내는 것이 아니라, <strong>손상이 애초에 성립하지 않는 것</strong>이다.</p>
+</blockquote>
+<h4 id="s9">심사 기준 — 착지 시점만 본다</h4>
+<p>불락은 <strong>공격이 대상에게 닿는 마지막 순간</strong>만을 심사한다. 그 이전의 과정 — 어떻게 찾았는지, 무엇으로 조준했는지, 누가 정보를 줬는지 — 은 일절 보지 않는다.</p>
+<p><strong>예시</strong>: 규칙 「이 개체는 거울에 비친 상을 통해서만 공격할 수 있다」</p>
+<table>
+<thead>
+<tr>
+<th>경우</th>
+<th>공격 방식</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>거울로 개체를 비추고, 거울상을 공격</td>
+<td><strong>손상 성립.</strong> 규칙이 허용한 방식</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>열감지·소리·발자국 등으로 위치를 특정하고 직접 공격</td>
+<td><strong>불락.</strong> 명중해도 아무 일도 일어나지 않는다</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>거울 아닌 수단으로 위치를 특정한 뒤, <strong>그 좌표에 거울을 비추어 거울상을 공격</strong></td>
+<td><strong>손상 성립.</strong> 착지 시점이 규칙에 부합하므로</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C가 핵심이다.</strong>
+탐색 수단은 규칙의 관심사가 아니다. 규칙이 요구하는 것은 <strong>"어떻게 맞히는가"</strong> 뿐이며, <strong>"어떻게 찾았는가"</strong> 는 묻지 않는다.</p>
+<blockquote>
+<p>그래서 실무는 언제나 두 갈래로 나뉜다.
+<strong>찾는 일은 자유롭고, 때리는 일만 규칙을 따른다.</strong></p>
+</blockquote>
+<p>관리국 5급 이하 표준 교리가 여기서 나온다 — 정찰은 가용한 모든 수단으로, 타격은 오직 한 가지 방식으로.
+아고라 은어 <strong>「비추기」</strong> 는 C 절차 전체를 뜻하며, 밤일꾼 작전의 8할이 이 형태다.</p>
+<h4 id="s10">불락의 한계</h4>
+<ul>
+<li><strong>고통은 막지 않는다.</strong> 손상이 성립하지 않을 뿐, 감각은 그대로다.</li>
+<li><strong>환경은 막지 않는다.</strong> 개체를 직접 해치지 못해도 건물을 무너뜨려 깔아버리는 것은 가능하다. 다만 그것으로 개체가 소멸하지는 않는다.</li>
+<li><strong>핵에는 적용되지 않는다.</strong> 핵은 개체 본체가 아니므로 본체의 불락 밖에 있다. <strong>핵 사냥이 유일한 정공법인 이유다.</strong></li>
+<li><strong>규칙이 없으면 불락도 없다.</strong> → 완결자 (제5부 5-3)</li>
+</ul>
+<h3 id="s11">개변 권역 (改變圈域) — 등급의 정체</h3>
+<p>규칙은 단순한 금기가 아니다. 규칙은 <strong>그 범위 안에서 현실을 다시 쓴다.</strong></p>
+<p>그리고 <strong>그 범위의 크기가 곧 등급이다.</strong> 등급이란 살상력의 척도가 아니라, <strong>규칙이 현실을 덮어쓰는 영토의 넓이</strong>다.</p>
+<table>
+<thead>
+<tr>
+<th>등급</th>
+<th>개변 권역</th>
+<th>규칙이 다시 쓰는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1급</strong></td>
+<td><strong>자신</strong></td>
+<td>개체 본인의 행동과 형태만. 인간 쪽 현실은 그대로</td>
+</tr>
+<tr>
+<td><strong>2급</strong></td>
+<td><strong>접촉자 1인</strong></td>
+<td>규칙을 건드린 개인의 감각·신체·기억</td>
+</tr>
+<tr>
+<td><strong>3급</strong></td>
+<td><strong>현장</strong></td>
+<td>그 공간 안의 물리 법칙. 문이 늘어나고, 거리가 달라지고, 시간이 어긋난다</td>
+</tr>
+<tr>
+<td><strong>4급</strong></td>
+<td><strong>구역·집단</strong></td>
+<td>수천 명 규모의 인과. "왜 그 일이 일어났는가"의 순서가 재배열된다</td>
+</tr>
+<tr>
+<td><strong>5급</strong></td>
+<td><strong>도시 전역</strong></td>
+<td>지리·기록·집단 기억. 도시가 <strong>원래 그랬던 것</strong>이 된다</td>
+</tr>
+<tr>
+<td><strong>6급</strong></td>
+<td><strong>국가~세계</strong></td>
+<td>세계의 전제. 규칙이 자연법칙과 구별되지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 함의</strong></p>
+<ul>
+<li><strong>1~2급</strong>: 규칙을 지키면 완벽하게 안전하다. "돌아보지 마라"를 지키면 아무 일도 없다.</li>
+<li><strong>3~4급</strong>: 규칙을 지켜도 <strong>현장 자체가 규칙 편</strong>이다. 복도가 늘어나고 출구가 사라진다. 개인의 준수만으로는 부족하고 환경 통제가 필요하다.</li>
+<li><strong>5급 이상</strong>: <strong>규칙을 완벽히 알고 있어도 대응이 불가능하다.</strong>
+  『해안선』의 규칙은 이미 완전히 해독되어 있다. 그래도 소용없다 — 그 규칙이 <strong>"거기는 원래 바다였다"는 기록과 기억까지 다시 쓰기 때문</strong>이다. 반박할 증거가 존재한 적이 없어진다.
+  6급을 상대로 인간이 할 수 있는 일이 격리뿐인 이유는 여기 있다. <strong>싸울 무대 자체가 상대의 것이다.</strong></li>
+</ul>
+<blockquote>
+<p>한 줄 요약: <strong>낮은 등급은 규칙을 지키면 이긴다. 높은 등급은 규칙을 지켜도 무대가 바뀐다.</strong></p>
+</blockquote>
+<h3 id="s12">정착도 (定着度) — 개변에 대한 내성</h3>
+<p>무대가 상대의 것이라고 해서 인간이 무력한 것은 아니다. <strong>개변 권역에는 내성을 만들 수 있다.</strong></p>
+<p>원리는 단순하다. 개변이란 <strong>한 이야기가 다른 이야기 위에 덮어씌워지는 것</strong>이므로, <strong>이미 자기 이야기가 확고한 대상은 덜 덮인다.</strong> 이 저항력을 관리국은 「정착도」라 부른다.</p>
+<p><strong>내성 확보 수단 3종</strong></p>
+<table>
+<thead>
+<tr>
+<th>수단</th>
+<th>원리</th>
+<th>비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정신력 (자기서사)</strong></td>
+<td>"나는 여기가 육지였음을 안다"는 확신 자체가 대항 서사가 된다. 훈련·경험·집착·신앙 무엇이든 근거가 된다</td>
+<td>무상. 대신 <strong>버티는 동안 정신이 갈린다.</strong> 관리국 요원의 조기 퇴직 사유 1위</td>
+</tr>
+<tr>
+<td><strong>권능 (이명자)</strong></td>
+<td>배역 권능은 그 자체가 확정된 이야기다. 특히 서사 우위(④)는 직접 반전까지 가능</td>
+<td>이명자가 되어야 한다</td>
+</tr>
+<tr>
+<td><strong>계약 (계약형)</strong></td>
+<td><strong>짊어진 규칙이 자리를 미리 채운다.</strong> 그 자리에 다른 규칙이 들어올 공간이 없다</td>
+<td>계약 유지 비용. 규칙 준수</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>계약형 이명자의 진짜 전술 가치가 여기 있다.</strong>
+짊어진 규칙은 저주가 아니라 <strong>백신</strong>이다. 계약자는 상위 등급의 개변 안에서도 자기가 누구였는지를 잊지 않는다.
+관리국이 전 대응 요원에게 계약을 붙이는 이유이며, 무허가 계약을 중범죄로 다루면서도 계약 제도 자체는 절대 폐지하지 않는 이유다.</p>
+</blockquote>
+<p><strong>정착도 4단계</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>상태</th>
+<th>실전 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 · 자각</strong></td>
+<td>개변이 일어났다는 사실을 인지한다</td>
+<td><strong>가장 중요한 단계.</strong> 남들은 인지조차 못 한다</td>
+</tr>
+<tr>
+<td><strong>2 · 지연</strong></td>
+<td>개변이 자신에게 미치는 속도가 느려진다</td>
+<td>후퇴할 시간을 번다</td>
+</tr>
+<tr>
+<td><strong>3 · 국지 무효</strong></td>
+<td>자기 몸과 손이 닿는 범위에서 개변이 걸리지 않는다</td>
+<td>5급 권역 안에서 행동 가능</td>
+</tr>
+<tr>
+<td><strong>4 · 반전</strong></td>
+<td>자기 규칙으로 상대 규칙을 덮어쓴다</td>
+<td>이명 4급 이상만. 지속 시간 극히 짧음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>한계</strong>: 내성은 <strong>면역이 아니라 지연</strong>이다. 등급 차가 클수록 유지 시간이 짧아지고, 6급 권역 안에서는 최고 수준의 정착도도 분 단위로 무너진다.</p>
+<blockquote>
+<p><strong>『해안선』 대응 부서의 정체</strong>
+관리국 '해양측량과'가 매년 지도를 다시 그리는 진짜 이유는 측량이 아니다.
+그 부서 전원은 고정착도 계약자이며, 하는 일은 <strong>"작년에는 여기가 육지였다"는 것을 기억하는 것</strong>이다.
+그들은 6급을 막지 못한다. 다만 인류가 그것이 일어나고 있다는 사실만은 잊지 않게 한다.
+이 부서의 평균 근속은 2년이며, 퇴직 사유는 대부분 정신 소모다.</p>
+</blockquote>
+<h3 id="s13">관 (觀) — 관측자</h3>
+<p>괴담은 <strong>자신을 아는 인간이 존재하는 동안만</strong> 존재한다.</p>
+<p>이 때문에 괴담은 본능적으로 <strong>관측자를 늘리려 한다</strong>. 목격자를 살려 보내는 괴담, 생존자에게 "말하지 말라"고 명하는 괴담(→ 반드시 말하게 된다), 사진에 찍히길 원하는 괴담은 전부 이 본능의 발현이다.</p>
+<blockquote>
+<p><strong>실무 격언</strong>: "괴담이 널 살려줬다면, 그건 자비가 아니라 홍보다."</p>
+</blockquote>
+<h3 id="s14">ANE는 무엇을 보는가</h3>
+<p>ANE의 지각은 눈이나 귀가 아니다. 그들은 <strong>서사층에서 무엇이 움직이는가</strong>를 읽는다.</p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>ANE에게 보이는 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반인</td>
+<td><strong>배경.</strong> 동시에 관측자 — 즉 급전원</td>
+</tr>
+<tr>
+<td>계약형 이명자</td>
+<td><strong>조연.</strong> 짊어진 규칙이 좌표처럼 드러난다</td>
+</tr>
+<tr>
+<td>생존형 이명자</td>
+<td><strong>주연.</strong> 규칙 수만큼 선명하다. 등급이 높을수록 멀리서도 보인다</td>
+</tr>
+<tr>
+<td>다른 ANE</td>
+<td>동종. 규칙과 개변 권역이 그대로 읽힌다</td>
+</tr>
+<tr>
+<td><strong>완결자</strong></td>
+<td><strong>아무것도 없는 자리</strong> — 배경조차 아니다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>규칙을 가진 것은 전부 읽힌다.</strong> 규칙이 곧 서사층에 남기는 흔적이기 때문이다.
+그래서 이 세계에서 은신이란 존재하지 않는다. 숨어도 규칙이 먼저 도착한다.</p>
+<p><strong>단 하나의 예외가 완결자다.</strong> (제5부 5-3 참조)</p>
+<h2 id="s15">1-2-B. 핵 (核) — 응축된 Ω, 그리고 단 하나의 급소</h2>
+<p>Ω가 유일한 약점이라는 사실은 개체 쪽도 안다. 정확히는, <strong>그것을 아는 개체만이 오래 살아남았다.</strong></p>
+<p>그래서 현존하는 거의 모든 ANE는 존재 에너지를 흩어놓지 않고 <strong>한 점에 응축시킨 뒤 숨긴다.</strong> 이 응축점을 <strong>핵(核)</strong> 이라 부른다.</p>
+<h3 id="s16">핵의 성질</h3>
+<ul>
+<li><strong>위치를 가진다.</strong> 물건일 수도, 장소일 수도, 특정 시각일 수도, 어떤 문장일 수도 있다. 형태는 자유롭지만 <strong>반드시 하나뿐이다.</strong></li>
+<li><strong>개체 본체와 별개다.</strong> 형체를 아무리 부숴도 핵이 무사하면 며칠 안에 돌아온다. 반대로 <strong>핵이 부서지면 형체가 멀쩡해도 그 자리에서 붕괴한다.</strong></li>
+<li><strong>개체 자신도 핵을 옮기기 어렵다.</strong> 옮기는 순간 규칙이 흔들리기 때문이다. 4급 이상은 제한적으로 이설(移設)이 가능하며, 이 작업 중에는 급격히 약해진다.</li>
+<li><strong>핵은 은폐되어 있다.</strong> 예외는 없다. 노출된 핵을 가진 개체는 이미 오래전에 전부 소멸했다.</li>
+</ul>
+<h3 id="s17">규칙에는 핵의 단서가 반드시 있다</h3>
+<p><strong>이것이 이 세계의 모든 조사·공략 활동의 근거다.</strong></p>
+<p>제1부 1-2로 돌아가자. 존재는 형(形)·율(律)·관(觀)으로 성립한다. 핵은 <strong>존재의 핵심</strong>이므로, 그것이 이야기 밖에 있으면 그 존재는 반쪽이 되어 서사압을 담지 못한다.</p>
+<blockquote>
+<p><strong>핵은 알려져야 한다.</strong> 알려지지 않은 것은 이야기의 일부가 아니고, 이야기의 일부가 아닌 것은 존재 에너지를 담을 수 없다.</p>
+</blockquote>
+<p>따라서 <strong>모든 개체의 규칙에는 핵에 대한 단서가 반드시 포함된다.</strong> 개체는 단서를 지울 수 없다. 지우면 자기가 죽는다.
+개체가 할 수 있는 유일한 방어는 <strong>교묘하게 숨기는 것</strong>이다.</p>
+<h3 id="s18">은폐 기법 — 등급이 오를수록 정교해진다</h3>
+<table>
+<thead>
+<tr>
+<th>등급</th>
+<th>기법</th>
+<th>설명</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1~2급</strong></td>
+<td><strong>직설형</strong></td>
+<td>규칙이 거의 그대로 말한다</td>
+<td>"거울을 통해서만 공격할 수 있다" → 핵은 거울 저편</td>
+</tr>
+<tr>
+<td><strong>3급</strong></td>
+<td><strong>반전형</strong></td>
+<td>금지가 곧 지시다</td>
+<td>『일방통행 지하도』 — "뒤를 돌아보지 마라"는 위험해서가 아니라 <strong>보이면 안 되기 때문</strong>이다. 핵은 언제나 등 뒤에 있다</td>
+</tr>
+<tr>
+<td><strong>4급</strong></td>
+<td><strong>분산형</strong></td>
+<td>규칙 조각 여럿을 합쳐야 좌표가 나온다</td>
+<td>조건·시각·인원수 제한이 각각 한 자리씩</td>
+</tr>
+<tr>
+<td><strong>5급</strong></td>
+<td><strong>자기지시형</strong></td>
+<td><strong>규칙 자체가 핵이다</strong></td>
+<td>부수려면 규칙을 부숴야 하는데, 규칙은 물체가 아니다</td>
+</tr>
+<tr>
+<td><strong>6급</strong></td>
+<td><strong>권역형</strong></td>
+<td><strong>개변 권역 전체가 핵이다</strong></td>
+<td>국가 하나가 핵이면, 부술 방법이 존재하지 않는다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>6급을 격리할 수밖에 없는 진짜 이유가 이것이다.</strong>
+6급의 핵은 숨겨져 있지 않다. 너무 커서 손댈 수 없을 뿐이다.
+『해안선』의 핵은 해안선이고, 『규격』의 핵은 <strong>"같은 둘은 하나로 셀 수 있다"는 전제</strong>이며, 『만종』의 핵은 <strong>"종이 있다"는 믿음</strong> 그 자체다.</p>
+</blockquote>
+<h3 id="s19">핵과 각 세력 기술의 재해석</h3>
+<p>기존 3대 기술은 전부 핵을 어떻게 다루느냐로 갈린다.</p>
+<table>
+<thead>
+<tr>
+<th>기술</th>
+<th>핵 처리</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>작품화</strong> (미술관)</td>
+<td>핵을 <strong>매개체로 이설</strong>한다. 『침묵의 캔버스』가 하는 일이 이것이다</td>
+<td>핵의 위치가 미술관 손안에 들어온다 → <strong>수백 년째 안정적인 이유</strong></td>
+</tr>
+<tr>
+<td><strong>모듈화</strong> (컴퍼니)</td>
+<td>핵에서 기능만 뽑고 <strong>핵 자체를 소멸</strong>시킨다</td>
+<td>서사압 공급이 끊긴다 → <strong>모듈에 수명이 있는 이유</strong></td>
+</tr>
+<tr>
+<td><strong>희석</strong> (관리국)</td>
+<td>핵을 건드리지 못한다. N·B·E·V만 깎는다</td>
+<td>근본 해결이 아니라 <strong>출력 낮추기</strong></td>
+</tr>
+<tr>
+<td><strong>규제선</strong> (관리국)</td>
+<td><strong>핵을 못 찾았을 때의 차선책.</strong> 핵째로 가둔다</td>
+<td>유지비가 영원히 드는 이유</td>
+</tr>
+<tr>
+<td><strong>역산</strong> (교단)</td>
+<td>핵 추적에 특화. 세력 중 최고</td>
+<td>교단 정보가 가장 비싸게 팔리는 이유</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s20">핵 정보의 값</h3>
+<p>아고라 [정보] 게시판에서 가장 비싼 글은 언제나 <strong>핵 위치</strong>다.
+검증된 핵 좌표 하나의 시세는 3급 기준으로 밤일꾼 평생 수입을 넘는다. 그리고 그 정보를 올린 핸들은 대개 다음 달에 [추모]로 간다.</p>
+<blockquote>
+<p><em>"핵 좌표 파는 놈은 둘 중 하나임. 이미 죽었거나, 작가거나."</em></p>
+</blockquote>
+<hr />
+<h2 id="s21">1-2-C. 현창 (顯唱) — 이야기가 새어 나오는 소리</h2>
+<p><strong>5급 이상의 개체, 그리고 완결자가 자신의 힘을 발현할 때, 그 이야기의 일부가 외부로 방출된다.</strong></p>
+<p>방출된 이야기는 사람의 감각에 <strong>말</strong>의 형태로 도달한다. 문장은 언제나 짧고, 언제나 단편적이며, 언제나 <strong>찬양의 어조</strong>를 띤다.</p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>"물러난 자리마다 본디 물이었으니, 놀라지 말라."</em>
+<em>"테두리는 내가 정하니, 밖이라 하여 안심하지 말라."</em>
+<em>"막아서신 분을 우러르라. 그가 겨눈 것 앞에 규칙이 서지 못하느니라."</em></p>
+</blockquote></div>
+<p>이것을 관리국은 <strong>현창(顯唱)</strong>, 교단은 <strong>성언(聖言)</strong>, 밤일꾼들은 그냥 <strong>울림</strong>이라 부른다.</p>
+<h3 id="s22">왜 일어나는가</h3>
+<p>개변 권역이 도시 규모를 넘어서면, 규칙이 다시 쓰는 대상 안에 <strong>"이 일이 어떻게 이해되는가"까지 포함된다.</strong> 현실만 고쳐서는 부족하고, 그 현실을 사람들이 납득하는 방식까지 함께 고쳐야 개변이 성립하기 때문이다.</p>
+<p>즉 현창은 소리가 아니라 <strong>개변의 부수 효과</strong>다.
+개체는 현실을 고치면서 동시에 <strong>그것을 설명하는 문장</strong>을 뿌리고 있고, 그 문장이 사람의 인지에 말로 착지한 것이 현창이다.</p>
+<ul>
+<li>4급 이하는 개변 권역이 좁아 설명이 필요 없다. 그래서 현창이 없다.</li>
+<li><strong>현창은 곧 5급 이상의 판정 기준이다.</strong> 관리국 현장 판정에서 현창 청취는 즉시 국가 비상권 검토로 이어진다.</li>
+</ul>
+<h3 id="s23">왜 찬양의 어조인가</h3>
+<p>이야기가 자기 자신을 설명할 때, <strong>주인공을 낮춰 설명하는 이야기는 존재하지 않는다.</strong>
+서사층에서 흘러나온 문장은 언제나 그 개체를 <strong>정당하고, 당연하고, 마땅한 것</strong>으로 진술한다. 개체가 오만해서가 아니다. 이야기란 원래 그렇게 생겼기 때문이다.</p>
+<blockquote>
+<p>현창은 개체의 대사가 아니다. <strong>개체에 대한 서술이다.</strong>
+그것을 말하는 자는 없다. 다만 이야기가 자기 몫을 읽고 있을 뿐이다.</p>
+</blockquote>
+<p>말투가 경전이나 송가를 닮은 것도 같은 이유다. 인류가 "마땅한 것"을 진술할 때 써온 문체가 그것이기 때문이다.</p>
+<h3 id="s24">성질</h3>
+<ul>
+<li><strong>단편적이다.</strong> 한 번에 한 문장, 길어야 두 문장. 전체 이야기는 절대 나오지 않는다.</li>
+<li><strong>언어를 가리지 않는다.</strong> 인지에 직접 착지하므로 듣는 이의 모국어로 도달한다. 청각 차단·귀마개·방음이 무의미하다.</li>
+<li><strong>녹음되지 않는다.</strong> 기계에는 잡히지 않는다. <strong>기록은 오직 들은 사람의 필사(筆寫)뿐이다.</strong></li>
+<li><strong>반복되지 않는다.</strong> 같은 개체라도 발현할 때마다 다른 조각이 나온다.</li>
+<li><strong>거짓이 없다.</strong> 이야기가 자기를 설명하는 것이므로 왜곡될 수 없다. 다만 <strong>비유가 심하고 주어가 빠진다.</strong></li>
+</ul>
+<h3 id="s25">실무적 가치 — 세계 최고의 정보</h3>
+<p>핵의 단서가 규칙 안에 반드시 있다면(1-2-B), <strong>현창은 그 단서가 소리로 새어 나오는 순간</strong>이다.</p>
+<p>5급 이상은 규칙 은폐가 자기지시형·권역형이라 규칙 판독 개체로도 읽히지 않는다. 그런 개체에 대해 인류가 얻을 수 있는 <strong>거의 유일한 1차 정보</strong>가 현창이다.</p>
+<ul>
+<li>관리국은 5급 대응 부대에 <strong>전담 필사관</strong>을 편성한다. 전투원이 아니라 받아적는 사람이다. 생존율이 가장 낮은 보직이다.</li>
+<li>아고라 [정보] 게시판에서 검증된 현창 필사본은 핵 좌표 다음으로 비싸다.</li>
+<li>교단은 수집한 현창을 <strong>경전으로 편찬</strong>한다. 교단 성전의 후반부는 전부 6급 개체의 현창 모음이며, 신도 대부분은 그것이 무엇인지 모르고 읽는다.</li>
+</ul>
+<h3 id="s26">위험 — 듣는 것 자체가 접촉이다</h3>
+<p>현창은 이야기가 인지에 직접 들어오는 현상이다. 즉 <strong>듣는 순간 당신은 그 이야기의 관측자가 된다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>노출</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1~2문장</td>
+<td>이명, 방향 감각 상실, 그 문장이 며칠간 머릿속에서 반복됨</td>
+</tr>
+<tr>
+<td>지속 청취</td>
+<td>개체의 진술에 <strong>납득하기 시작한다.</strong> "그럴 만하다"는 감각</td>
+</tr>
+<tr>
+<td>장시간</td>
+<td><strong>경배.</strong> 개변을 막지 않고 돕게 된다</td>
+</tr>
+</tbody>
+</table>
+<p>관리국 필사관 규정 제1조: <strong>"이해하려 하지 말고 옮겨적어라."</strong>
+받아적는 동안 뜻을 생각한 필사관은 대부분 돌아오지 못했다.</p>
+<blockquote>
+<p><strong>정착도가 여기서 갈린다.</strong> 고정착도 인원은 현창을 <strong>정보로</strong> 듣고, 저정착도 인원은 <strong>설교로</strong> 듣는다.</p>
+</blockquote>
+<h3 id="s27">6급 개체의 알려진 현창 (교단 성전 수록분)</h3>
+<p><strong>『해안선』</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>"물러난 자리마다 본디 물이었으니, 놀라지 말라."</em>
+<em>"세어 본 자가 없으니 잃은 것도 없느니라."</em></p>
+</blockquote></div>
+<p><strong>『액자』</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>"그 안의 것은 겪지 아니하니, 애처로이 여기지 말라."</em>
+<em>"테두리는 내가 정하니, 밖이라 하여 안심하지 말라."</em></p>
+</blockquote></div>
+<p><strong>『규격』</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>"같은 것은 같으니, 굳이 가리려 하지 말라."</em>
+<em>"빈 자리는 곧 채워지리니, 슬퍼함이 어리석도다."</em></p>
+</blockquote></div>
+<p><strong>『만종』</strong></p>
+<blockquote>
+<p><em>"소리 없는 종이 울릴 때, 아무도 아프지 않으리라."</em>
+<em>"가장 좋았던 날로 돌아가게 하시니, 이는 벌이 아니요 상급이라."</em></p>
+</blockquote>
+<hr />
+<h2 id="s28">1-3. 소멸이란 무엇인가 — 세계관의 키스톤</h2>
+<p><strong>괴담은 물리적으로 파괴되지 않는다.</strong> 형체를 부수면 서사압이 남아 며칠~수개월 내에 재현현한다. 이것이 이 세계의 모든 정치·경제·기술 구조를 결정한 단 하나의 사실이다.</p>
+<p><strong>진정한 소멸 조건 = 망각.</strong> 그 이야기를 아는 인간이 0이 되어야 한다.</p>
+<p><strong>격퇴의 3단계</strong></p>
+<table>
+<thead>
+<tr>
+<th>수단</th>
+<th>효과</th>
+<th>재현현까지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>형체 파괴</strong></td>
+<td>일시 무력화. 서사압도 핵도 무사하다</td>
+<td>수일~수개월</td>
+</tr>
+<tr>
+<td><strong>핵 파괴</strong></td>
+<td><strong>진짜 격퇴.</strong> 개체가 그 자리에서 붕괴한다</td>
+<td>수년~수십 년</td>
+</tr>
+<tr>
+<td><strong>망각</strong></td>
+<td>유일한 완전 소멸</td>
+<td>영구</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵을 부순 순간 방출되는 Ω를 회수할 수 있는 존재가 하나 있다</strong> — 완결자다 (제5부 5-3). 그 외의 경우 방출된 Ω는 서사층으로 흩어져 소실된다.</p>
+<p>핵을 부숴도 서사압(N·B·E·V)이 남아 있으면 개체는 <strong>새 핵을 응축</strong>한다. 그리고 새 핵의 위치는 <strong>이전과 다르다.</strong>
+→ 즉 핵을 부술 때마다 <strong>기존 공략서가 전부 무효화된다.</strong>
+→ 그래서 실무자들은 웃지 못할 결론에 도달했다. <strong>한 번 파악한 개체는 부수지 않고 붙잡아두는 편이 낫다.</strong></p>
+<p>이것이 인류가 소멸을 포기하고 차선책들로 세계를 지탱하는 이유다.</p>
+<table>
+<thead>
+<tr>
+<th>차선책</th>
+<th>원리</th>
+<th>담당 세력</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>작품화</strong></td>
+<td>규칙을 극단적으로 강화·미화해 자유도를 0으로</td>
+<td>미술관</td>
+</tr>
+<tr>
+<td><strong>모듈화</strong></td>
+<td>이야기를 절단하고 기능만 추출</td>
+<td>컴퍼니</td>
+</tr>
+<tr>
+<td><strong>희석</strong></td>
+<td>해석 분산 V를 인위적으로 폭증시켜 서사압 저하</td>
+<td>관리국</td>
+</tr>
+<tr>
+<td><strong>격리</strong></td>
+<td>물리·정보 양면 봉쇄로 N의 증가를 정지</td>
+<td>관리국·교단</td>
+</tr>
+<tr>
+<td><strong>역산</strong></td>
+<td>종말 서사의 점유율을 감시하고 선제 개입</td>
+<td>교단</td>
+</tr>
+</tbody>
+</table>
+<h2 id="s29">1-4. 은폐의 역설</h2>
+<p>초기 각국 정부는 괴담을 은폐하려 했다. 결과는 참담했다.</p>
+<p><strong>공식 부인 → "정부가 숨긴다" 서사 발생 → B(신뢰 계수) 폭등 → 서사압 급상승.</strong></p>
+<p>은폐는 이야기를 죽이는 대신 <strong>더 매력적인 이야기로 만든다</strong>. 이 교훈이 관리국의 창설 근거이자, 관리국이 '삭제'가 아닌 '희석'을 택한 이유다.</p>
+<h2 id="s30">1-5. 괴담의 생애주기</h2>
+<p><code>태동  →  확산  →  현현  →  고착 / 변이  →  쇠퇴  →  잔재
+ │       │       │         │              │       │
+ 구전    임계     실체화    지역 고정      망각    "빈터"
+ 창작    돌파              또는 진화       진행   (재현현 위험지)</code></p>
+<ul>
+<li><strong>고착형</strong>: 특정 장소·조건에 정착. 대응 가능. 다수.</li>
+<li><strong>변이형</strong>: 소문이 진화하며 형태·규칙이 갱신됨. 매뉴얼이 계속 낡는다. 위험.</li>
+<li><strong>잔재(빈터)</strong>: 소멸한 괴담이 남긴 서사층의 흉터. 새 괴담의 현현 임계점이 극단적으로 낮다. <strong>관리국의 주요 순찰 대상.</strong></li>
+</ul>
+<hr />
+</section>
+<section class="part"><h1 id="s31"><span class="eyebrow">제2부</span><span class="h1-title">연표</span></h1>
+<h3 id="s32">인류는 어떻게 여기까지 왔는가</h3>
+<blockquote>
+<p>현현은 늘 있었다. 달라진 것은 개체가 아니라 <strong>인류가 이야기를 퍼뜨리는 속도</strong>다.</p>
+</blockquote>
+<h2 id="s33">제0기 — 상시기 (~1940년대)</h2>
+<p>현현은 늘 있었다. 다만 인지 총량이 마을 단위를 넘지 못해 대부분 1~2급이었고, 인류는 이를 "신앙", "저주", "풍토병"으로 처리하며 공존했다. 각지의 민속 금기(밤에 휘파람 금지, 이름 부르지 않기 등)는 사실상 <strong>전근대의 대응 매뉴얼</strong>이었다.</p>
+<h2 id="s34">제1기 — 균열기 (1940년대~1970년대)</h2>
+<p>세계 대전과 대량 미디어가 인지 총량을 국가 단위로 끌어올렸다. 최초의 <strong>3급 다발</strong>과 최초의 <strong>4급 확인 사례</strong>가 이 시기에 나온다. 각국은 개별적으로 은폐 조직을 만들고 실패한다.</p>
+<ul>
+<li><strong>1953년, 「소각로 사건」</strong>: 한 참전 괴담을 소각하려던 시도가 대규모 은폐로 이어졌고, 은폐 자체가 서사가 되어 원본보다 강한 2차 괴담을 낳았다. <strong>은폐의 역설이 처음 문서화된 사건.</strong></li>
+</ul>
+<h2 id="s35">제2기 — 상업기 (1980년대~1990년대)</h2>
+<p>공포 영화·괴담 서적·심야 라디오가 괴담을 <strong>오락</strong>으로 만들었다. B(신뢰 계수)는 낮았지만 N(인지 총량)이 폭증했다.
+이 시기 <strong>미술관이 처음으로 외부 세계에 인지된다.</strong> 다만 미술관은 이때 생긴 조직이 아니다 — 그들은 이미 200년 이상 존재하고 있었고, 다른 세력이 그들을 발견했을 뿐이다. "ANE는 제거 대상이 아니라 미적 대상"이라는 그들의 강령이 이 시대에 비로소 이해 가능한 것이 되었을 뿐이다.
+동시에 <strong>컴퍼니</strong>가 최초의 상용 모듈 『무쇠 위장』 계열 시제품을 완성하며 산업이 시작된다.</p>
+<h2 id="s36">제3기 — 포화기 (2000년대 중반~2010년대)</h2>
+<p>인터넷과 스마트폰. <strong>N·B·E가 동시에 폭발.</strong> 서사압이 전 지구적으로 임계를 상회하며, 인류사 최초로 5급이 확인된다.</p>
+<ul>
+<li><strong>「제3호 공백」 사건 (제3기 중반)</strong>
+  『존재를 지우는 안개』가 인구 40만의 중견 도시 하나를 완전히 지웠다.
+  <strong>피해자 수는 공식적으로 0명이다.</strong> 그들이 존재했다는 기억까지 지워졌기 때문에, 사망자를 셀 방법이 없다. 남은 것은 지도의 공백, 끊긴 도로, 그리고 "왜 여기서 고속도로가 두 번 꺾이는가"라는 설명 불가능한 토목 기록뿐이다.
+  → 이 사건을 계기로 <strong>국제 괴이 관리국</strong>이 창설되었다.
+  → 그리고 사건 직후, <strong>미술관이 이 안개의 일부를 확보해 『침묵의 캔버스』를 제작했다.</strong> 관리국은 지금도 미술관이 사건 이전부터 이 안개를 알고 있었다고 의심한다. <strong>세계 정치의 최대 뇌관.</strong></li>
+</ul>
+<h2 id="s37">제4기 — 가속기 (현재)</h2>
+<p>밈과 알고리즘의 시대. 괴담이 <strong>수십 년</strong>이 아니라 <strong>수십 시간</strong> 만에 태동한다.</p>
+<ul>
+<li><strong>속성 괴담(速成怪談)</strong>: 바이럴 게시물에서 태어나 사흘 만에 현현하고 2주 만에 잊혀지는 괴담. 개별 등급은 낮으나(1~2급) 발생 건수가 관리국 대응 능력을 초과했다.</li>
+<li><strong>번역 유입</strong>: 국경을 넘은 괴담. 원산지의 규칙이 번역 과정에서 오역되면 <strong>규칙이 바뀐 채로</strong> 현현한다. 원본 대응 매뉴얼이 통하지 않는다.</li>
+<li><strong>합성 오염</strong>: 생성형 매체가 만든 무한한 유사 목격담이 서사층을 오염시키고 있다. 관리국 일부는 이것을 <strong>거대한 자연 희석</strong>으로 보고 반긴다. 다른 일부는 <strong>무엇이 현현할지 아무도 모르게 되었다</strong>고 경고한다.</li>
+<li>교단이 <strong>"단일 서사 점유율"</strong> 지표가 사상 최고치라며 비상 선포. 다른 세력은 대체로 무시하고 있다.</li>
+</ul>
+<hr />
+</section>
+<section class="part"><h1 id="s38"><span class="eyebrow">제3부</span><span class="h1-title">등급 체계</span></h1>
+<blockquote>
+<p>등급은 살상력의 척도가 아니라 <strong>규칙이 현실을 덮어쓰는 영토의 넓이</strong>다.</p>
+<p>원본의 0~6급 체계를 유지하되, 판정 기준을 정량화했습니다.</p>
+</blockquote>
+<h2 id="s39">3-1. 위협 등급 (1~6급)</h2>
+<p><strong>등급 = 개변 권역의 크기.</strong> 살상력이 아니라 규칙이 현실을 덮어쓰는 영토의 넓이로 판정한다.</p>
+<table>
+<thead>
+<tr>
+<th>등급</th>
+<th>명칭</th>
+<th>개변 권역</th>
+<th>정의</th>
+<th>표준 대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1급</strong></td>
+<td>흔적</td>
+<td>자신</td>
+<td>경상·심리 불안. 규칙 파악 시 대처 용이</td>
+<td>2인 1조</td>
+</tr>
+<tr>
+<td><strong>2급</strong></td>
+<td>절단</td>
+<td>접촉자 1인</td>
+<td>신체 일부 상실 또는 회복 가능한 정신 장애</td>
+<td>1개 반 (6인)</td>
+</tr>
+<tr>
+<td><strong>3급</strong></td>
+<td>빈사</td>
+<td>현장</td>
+<td>개인의 사망 유발. 생존 가능성 존재</td>
+<td>1개 소대 + 모듈 지원</td>
+</tr>
+<tr>
+<td><strong>4급</strong></td>
+<td>학살</td>
+<td>구역·집단</td>
+<td>다수 살상. 단독 조우 시 사망이 기본값</td>
+<td>대대급 + 지역 소개</td>
+</tr>
+<tr>
+<td><strong>5급</strong></td>
+<td>붕괴</td>
+<td>도시 전역</td>
+<td>도시 단위 소멸. 사후 재건은 가능</td>
+<td>국가 비상권 발동</td>
+</tr>
+<tr>
+<td><strong>6급</strong></td>
+<td>재앙</td>
+<td>국가~세계</td>
+<td>세계의 전제를 바꾼다. 알려진 대처법 없음</td>
+<td><strong>격리만이 유일한 답</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="s40">3-1-B. 무해 등급 (無害等級) — 별도 체계</h2>
+<blockquote>
+<p><strong>위협 등급과 완전히 분리된 독립 축이다.</strong> 서로 변환되지 않으며, 나란히 놓고 비교해서도 안 된다.</p>
+</blockquote>
+<p><strong>정의</strong>: 인류에게 <strong>어떤 피해도 주지 않는</strong> 개체. 그러나 개변 권역은 여전히 존재한다.</p>
+<p><strong>표기법</strong>: <code>무해(N급)</code> — 괄호 안의 숫자는 <strong>위협도가 아니라 영향 범위</strong>를 뜻한다.</p>
+<table>
+<thead>
+<tr>
+<th>표기</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>무해(1급)</code></td>
+<td>자기 자신에게만 영향. 대부분의 처리 완료 모듈</td>
+</tr>
+<tr>
+<td><code>무해(2급)</code></td>
+<td>접촉한 개인에게 영향. 대부분의 미술관 전시 작품</td>
+</tr>
+<tr>
+<td><code>무해(3급)</code></td>
+<td><strong>현장 전체의 물리 법칙을 바꾼다. 그런데 아무도 다치지 않는다</strong></td>
+</tr>
+<tr>
+<td><code>무해(4급)</code></td>
+<td>구역 단위 인과를 재배열한다. 그런데 아무도 다치지 않는다</td>
+</tr>
+<tr>
+<td><code>무해(5급)</code></td>
+<td>도시 하나의 기록과 기억을 다시 쓴다. 그런데 아무도 다치지 않는다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>왜 무해등급을 따로 관리하는가</strong></p>
+<p>무해는 안전과 동의어가 아니다.</p>
+<blockquote>
+<p><strong>무해(5급) 개체가 하나 있다는 것은, 도시 하나 규모의 개변 장치가 "지금은" 아무도 해치지 않고 있다는 뜻이다.</strong></p>
+</blockquote>
+<p>무해 판정은 <strong>의도가 아니라 현재 상태</strong>에 대한 판정이다. 규칙이 흔들리거나, 매개체가 손상되거나, 여론이 급변해 서사가 변질되면 — 이미 확보된 개변 권역은 <strong>그대로 유지된 채</strong> 유해로 전환될 수 있다.
+그래서 관리국은 무해등급 개체를 위협등급과 <strong>동일한 수준으로 감시</strong>하며, 예산상으로는 오히려 무해 쪽이 더 든다(장기 상시 감시이므로).</p>
+<p><strong>무해등급의 3대 공급원</strong></p>
+<table>
+<thead>
+<tr>
+<th>출처</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>작품화 완료 개체</strong></td>
+<td>미술관 산출물. 개변 권역이 넓게 남는 경향 — 규칙을 없애지 않고 미화하기 때문</td>
+</tr>
+<tr>
+<td><strong>모듈화 완료 개체</strong></td>
+<td>컴퍼니 산출물. 개변 권역이 좁게 남는 경향 — 이야기를 잘라내므로</td>
+</tr>
+<tr>
+<td><strong>자연 무해 개체</strong></td>
+<td>처음부터 해를 끼치지 않는 ANE. 드물지만 존재하며, <strong>계약형 이명자의 주 파트너다</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>산업적 의미</strong>: 미술관과 컴퍼니가 만드는 것은 결국 같은 범주다. 양측은 서로를 경멸하지만, 관리국 서류상 두 조직의 산출물은 <strong>같은 칸에 기재된다.</strong> 이 사실을 양측 모두 대단히 싫어한다.</p>
+</blockquote>
+<p><strong>등급 재판정 사례</strong>
+- 『속삭이는 초상화』: 3급 → <strong>무해(2급)</strong> (작품화)
+- 『무쇠 위장』: 3급 → <strong>무해(1급)</strong> (모듈화)
+- 『일방통행 지하도』: 2급 → <strong>무해(2급)</strong> (규제선 완전 봉인)</p>
+<h2 id="s41">3-2. 부가 분류축</h2>
+<p>등급 하나로는 현장 대응이 불가능하므로, 실무에서는 <strong>4축 코드</strong>를 병기한다.</p>
+<p><strong>예시 표기</strong>: <code>3급-정신/조건-유연-확산속도B</code> → 『속삭이는 초상화』(작품화 이전)</p>
+<ol>
+<li><strong>공격 형식</strong>: 물리 / 정신 / 개념 / 복합
+   - <strong>개념 공격</strong>은 후기에 추가된 범주다. 인과·정의·소유권처럼 물리도 정신도 아닌 것을 침식한다. (예: 『가치를 매기는 상인』, 『이야기를 잘라내는 가위』)</li>
+<li><strong>발현 조건</strong>: 장소고착 / 조건발현 / 감염 / 추격
+   - <strong>추격형</strong>이 가장 위험하다. 도망이 무의미하고, 한 번 표적이 되면 규칙 공략 외의 선택지가 없다.</li>
+<li><strong>규칙 강도</strong>: 경직 / 유연
+   - 개변 권역은 등급이 이미 표시하므로 별도 표기하지 않는다. 이 축은 <strong>공략 난이도</strong>만을 뜻한다.</li>
+<li><strong>확산 속도</strong>: A(정체) / B(완만) / C(급속) / D(폭발) — <strong>등급 상승 예측 지표</strong></li>
+</ol>
+<h2 id="s42">3-3. 등급은 고정값이 아니다</h2>
+<p><strong>괴담의 등급은 여론에 따라 실시간으로 변동한다.</strong> 관리국 공식 문서에는 항상 판정 일자가 병기된다.</p>
+<ul>
+<li><strong>가등급</strong>: 최초 조우 후 72시간 내 현장 판정. 오차가 크다.</li>
+<li><strong>확정등급</strong>: 관측 3주 후 재판정.</li>
+<li><strong>등급 인플레이션</strong>: 뉴스에 크게 보도된 2급이 한 달 만에 3급이 되는 현상. 언론 보도 지침이 존재하는 이유.</li>
+<li><strong>등급 세탁</strong>: 지부가 등급을 실제와 다르게 조작하는 행위. 관리국 내부 감찰의 최대 적발 항목이지만, 적발 사례의 압도적 다수는 <strong>사익이 아니라 사명감에서 비롯된다.</strong> 등급을 낮춰 신고해 관할 도시의 강제 소개(疏開)를 막으려는 지부장, 등급을 높여 신고해 예산을 끌어오려는 현장 지휘관. 관리국이 자기 조직의 이 병폐를 근절하지 못하는 이유는, 처벌해야 할 대상이 언제나 <strong>가장 열심히 일한 사람</strong>이기 때문이다.</li>
+</ul>
+<blockquote>
+<p><strong>관리국이 세계 최강인 진짜 이유</strong>: 관리국은 <strong>등급 판정을 독점</strong>한다. 등급은 예산, 보험료율, 부동산 가격, 군 투입 권한을 결정한다. 관리국은 괴담과 싸우는 조직이기 이전에 <strong>가격을 정하는 조직</strong>이다.</p>
+</blockquote>
+<hr />
+</section>
+<section class="part"><h1 id="s43"><span class="eyebrow">제4부</span><span class="h1-title">세력</span></h1>
+<blockquote>
+<p>여섯 세력 중 <strong>누구도 ANE를 없애려 하지 않는다.</strong> 그것이 이 부의 전부다.</p>
+</blockquote>
+<h2 id="s44">4-1. 관리국 (國際怪異管理局)</h2>
+<p><strong>정식 명칭</strong>: 국제 괴이 관리국 / <strong>통칭</strong>: 관리국, "국(局)"
+<strong>목적</strong>: 인류의 지속 가능성 확보. 소멸이 아닌 <strong>관리</strong>.
+<strong>규모</strong>: 세계 최대. 정규 인원 수십만 + 각국 협력군.
+<strong>재원</strong>: 회원국 분담금, 등급 판정 수수료, 괴이 보험 감독 수입, 몰수 모듈 재판매.</p>
+<h3 id="s45">핵심 기술 ①: 『희석 (Dilution)』</h3>
+<p>서사압 공식의 분모 <strong>V(해석 분산)</strong> 를 인위적으로 폭증시키는 기술.</p>
+<p>괴담을 지우려 하지 않는다. 대신 <strong>모순되는 버전을 대량 살포</strong>한다.
+"빨간 우비 여자는 사실 파란 우비다", "그건 3년 전 폐업한 놀이공원 이벤트였다", "지방 방송국의 조작이었다" — 서로 양립 불가능한 이야기가 열 갈래로 갈라지면, 어느 이야기도 임계에 도달하지 못하고 괴담은 형(形)을 잃어간다.</p>
+<p><strong>실행 부서</strong>: 관리국 제2국(정보). 통칭 <strong>"편집부"</strong>.
+운영 자산: 위장 언론사, 다국어 커뮤니티 계정군, 콘텐츠 제작사 지분, 알고리즘 협약.</p>
+<p><strong>대가 / 한계</strong>
+- <strong>사회적 신뢰 파괴</strong>: 수십 년의 희석 작업 결과, 세계는 어떤 정보도 믿지 않는 사회가 되었다. 이는 부작용이 아니라 <strong>관리국이 지불하기로 선택한 요금</strong>이다. 그리고 낮은 신뢰도는 다시 서사압을 낮추므로, 관리국은 이 상태를 유지할 유인이 있다.
+- <strong>변종 발생</strong>: 살포한 가짜 버전 중 하나가 독자적으로 임계를 넘어 <strong>새로운 괴담으로 현현</strong>하는 사고. 편집부 최대의 악몽이며 실제로 여러 건 발생했다.
+- <strong>개변 권역에 무력</strong>: 5급 이상에는 통하지 않는다. 희석은 '이야기'를 흔드는 기술인데, 5급 이상은 <strong>자신에 대한 기록과 기억까지 다시 쓴다.</strong> 편집부가 뿌린 대체 서사조차 개변 권역 안에서는 개체에게 유리하게 재해석된다.</p>
+<h3 id="s46">핵심 기술 ②: 『규제선 (Containment Line)』</h3>
+<p>괴담의 규칙을 <strong>인간 측이 대신 집행</strong>해 활동 범위를 감옥으로 바꾸는 물리 봉쇄 기술.</p>
+<p>"뒤를 돌아보면 공격한다"는 괴담이라면, 관리국은 <strong>돌아볼 수 없는 구조물</strong>을 짓는다. 일방통행 회랑, 전면 거울 벽, 규격화된 조명각. 괴담의 규칙을 파괴하는 대신 <strong>완벽하게 만족시켜</strong> 행동을 봉인한다.</p>
+<p>관리국이 관리하는 도시 곳곳의 기묘한 건축물 — 이유 없이 꺾인 도로, 창문 없는 육교, 24시간 켜진 특정 색 가로등 — 은 전부 규제선이다. 일반 시민은 그것을 도시 계획의 비효율로 알고 있다.</p>
+<p><strong>대가</strong>: 유지비가 천문학적이다. 관리국 예산의 절대 다수가 <strong>이미 잡아둔 것을 계속 잡아두는 데</strong> 쓰인다. 새 괴담에 쓸 돈이 늘 부족하다.</p>
+<h3 id="s47">핵심 기술 ③: 『서사압 감지탑』</h3>
+<p>인류의 주요 도시마다 세워진 관측 구조물. 통칭 <strong>탑(塔)</strong>.</p>
+<p>높이 60~200m의 무장식 콘크리트 첨탑으로, 도시 어디에서나 보인다. 시민들은 이것을 통신 중계탑이나 기상 관측소로 알고 있으며, 관리국은 굳이 정정하지 않는다.</p>
+<p><strong>3계 센서 — 서사압 공식을 그대로 측정한다</strong></p>
+<table>
+<thead>
+<tr>
+<th>센서</th>
+<th>측정 항목</th>
+<th>원리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>청음계</strong></td>
+<td>N (인지 총량)</td>
+<td>2급 ANE 『벽에 귀』의 모듈. 관할 구역 내 특정 서사의 언급 빈도를 집계</td>
+</tr>
+<tr>
+<td><strong>정량계</strong></td>
+<td>E (정서 강도)</td>
+<td>컴퍼니 『만물의 저울』 계열 파생 모듈. 공포·경외의 총량을 수치화</td>
+</tr>
+<tr>
+<td><strong>분산계</strong></td>
+<td>V (해석 분산)</td>
+<td>편집부 데이터베이스와 실시간 대조. 버전이 몇 갈래인지 산출</td>
+</tr>
+</tbody>
+</table>
+<p><strong>부가 기능</strong>
+- <strong>규제선 앵커</strong>: 도시 전역 규제선의 급전·동기화 기준점.
+- <strong>희석 살포 안테나</strong>: 편집부가 제작한 대체 서사를 관할 구역에 국지적으로 밀어 넣는다.
+- <strong>조기 경보</strong>: 서사압 급상승 시 지역 경보 발령. 시민이 듣는 "○○구 3급 주의보"는 전부 탑에서 나온다.</p>
+<p><strong>탑 불가침 (不可侵) — 세력 간 불문율</strong></p>
+<p>어느 세력도 탑을 공격하지 않는다. 협약이 아니라 <strong>이해관계 때문</strong>이다.</p>
+<ul>
+<li><strong>컴퍼니</strong>: 탑 데이터로 시장 수요를 예측한다. 모듈 신제품 기획서 첫 장은 늘 탑 통계다.</li>
+<li><strong>교단</strong>: 자체 역산 결과를 탑 수치로 교차 검증한다. 탑이 없으면 수렴도 추정 오차가 세 배로 뛴다.</li>
+<li><strong>미술관</strong>: 소재 탐색. 어느 구역에서 무엇이 자라고 있는지를 탑이 알려준다.</li>
+<li><strong>저자회</strong>: <strong>파종 성과 측정.</strong> 자기가 뿌린 이야기가 자라는지 확인할 방법이 탑밖에 없다. 저자회가 가장 열심히 탑 데이터를 훔친다.</li>
+<li><strong>야반</strong>: 탑 경보가 곧 일감 공고다.</li>
+</ul>
+<blockquote>
+<p>결과적으로 탑은 <strong>모두가 훔쳐보되 아무도 부수지 않는 구조물</strong>이 되었다. 관리국은 이 사실을 알면서 방치한다 — 데이터가 유출될수록 탑을 지키려는 세력이 늘어나기 때문이다.</p>
+</blockquote>
+<p><strong>약점</strong>
+- <strong>자기 관측 불가</strong>: 탑은 탑 주변의 서사압을 측정하지 못한다. 등잔 밑이 가장 어둡다.
+- <strong>사각지대</strong>: 탑은 도시에만 있다. 농촌·산간·비회원국은 무방비다. 4급 이상의 상당수가 이 공백에서 태어났다.
+- <strong>탑의 침묵</strong>: 탑이 꺼지는 것은 이 세계에서 가장 무서운 사건이다. 최근 20년간 4회 발생했고, 그중 3회는 원인이 공표되지 않았다.</p>
+<h3 id="s48">특징 — 조직의 강도</h3>
+<p><strong>관리국은 부패하지 않았다.</strong> 이것이 관리국을 이해하는 핵심이다.</p>
+<ul>
+<li><strong>채용 구조</strong>: 정규 인원의 절대 다수가 <strong>ANE 피해자 유족, 조우 생존자, 소개된 도시의 출신자</strong>다. 관리국은 지원자를 모으지 않는다. 그들은 이미 이유를 갖고 온다.</li>
+<li><strong>변절률 사실상 0</strong>: 6대 세력 중 유일하게 <strong>조직적 배신 사례가 기록되지 않은 조직.</strong> 컴퍼니의 매수 시도, 저자회의 침투 공작 모두 개인 단위에서 실패했다. 관리국 요원은 자신이 무엇을 막고 있는지 정확히 알고 있으며, 그 지식은 어떤 금액보다 무겁다.</li>
+<li><strong>전체 조망 특권</strong>: 관리국만이 6대 세력 전부와 6급 개체 전부의 존재를 안다. 이 조망을 한 번 가진 사람은 다른 곳으로 갈 수 없다. <strong>관리국의 충성도는 이념이 아니라 정보량에서 나온다.</strong></li>
+<li><strong>순직 문화</strong>: 관리국 청사 로비에는 벽 하나가 통째로 이름이다. 신입은 첫 출근 날 그 벽 앞에서 근무를 시작한다.</li>
+</ul>
+<h3 id="s49">병폐 — 사명감이 만드는 병</h3>
+<p>관리국의 문제는 부패가 아니라 <strong>과잉 헌신</strong>에서 나온다.</p>
+<ul>
+<li><strong>관료제</strong>: 3급 대응 승인에 평균 11일. 그 사이 사람이 죽는다. 절차가 긴 이유는 무능이 아니라, <strong>모든 조항이 사망 사고 뒤에 추가되었기 때문</strong>이다. 아무도 조항을 지울 수 없다. 지운 조항으로 죽은 사람이 있기 때문에.</li>
+<li><strong>컴퍼니 의존</strong>: 장비의 70% 이상을 컴퍼니에서 구매한다. 감독기관이 최대 고객인 구조적 유착. 요원들은 이것을 혐오하지만, 대안이 없다는 것도 안다.</li>
+<li><strong>정치</strong>: 등급 판정권은 회원국의 이해와 직결되어 늘 압력을 받는다. 판정관들의 이직률·자살률은 관리국 전 직군 중 비전투 부문 1위다.</li>
+<li><strong>내부 노선 갈등</strong> — 모두가 진심이기 때문에 더 격렬하다.</li>
+<li><strong>관리파(주류)</strong>: 공존과 통제. 현상 유지. "우리가 버티는 동안 사람이 산다."</li>
+<li><strong>소각파</strong>: 희석은 미봉책이며 인류는 잊는 법을 되찾아야 한다고 주장. 극단파는 <strong>정보 인프라 자체의 파괴</strong>를 논한다. 그들은 악당이 아니라 <strong>가장 순수한 사명감의 종착지</strong>이며, 그래서 위험하다.</li>
+<li><strong>활용파</strong>: ANE를 국가 전력으로 편입하자는 소수 강경파. 컴퍼니와 가깝다.</li>
+</ul>
+<h2 id="s50">4-2. 컴퍼니 (The Company)</h2>
+<p><strong>목적</strong>: 유용한 ANE의 상품화. 이윤.
+<strong>핵심 기술</strong>: 『모듈화』 (원본 설정 유지)
+<strong>규모</strong>: 세계 최대의 사기업 연합체. 실질적으로 다국적 재벌.</p>
+<h3 id="s51">확장 설정</h3>
+<ul>
+<li><strong>왜 컴퍼니를 못 막는가</strong>: 관리국이 쓰는 무기, 차량, 통신, 규제선 자재의 대부분이 컴퍼니 제품이다. 컴퍼니를 규제하면 인류의 대응 능력이 함께 마비된다. 이 구조를 컴퍼니는 <strong>"공생 조항"</strong> 이라 부르고, 관리국 내부에서는 <strong>"목줄이 어느 쪽에 걸렸는지 아무도 모른다"</strong> 고 말한다.</li>
+<li><strong>소비자 시장</strong>: B2G(관리국 납품)뿐 아니라 B2C 시장이 거대하다. 가정용 규칙 경보기, 개인용 정신 방호 이어플러그, 반려동물 추적 모듈, 부동산 괴이 지수 앱. <strong>일반인의 일상은 컴퍼니 제품 위에 서 있다.</strong></li>
+<li><strong>모듈의 수명 문제 — 이론적 해명</strong>:
+  『맥거핀 나이프』로 이야기를 잘라낸 코어는 <strong>서사압 공급이 끊긴 순수 기능 덩어리</strong>다. 서사층에서 에너지를 받지 못하므로, 사용할수록 잔량이 줄고 결국 소진된다.
+  → <strong>컴퍼니의 사업 모델이 곧 세계관 원리다.</strong> 모듈은 구조적으로 소모품이며, 컴퍼니는 영원히 리필을 판다.
+  → 컴퍼니의 최대 연구 목표는 <strong>"이야기를 다시 붙이지 않고 코어를 재충전하는 법"</strong> 이다. 성공하면 세계 경제가 뒤집힌다.</li>
+<li><strong>모듈화의 진짜 근거</strong>: 부품이 서로 갈음 가능하다는 전제가 없으면 모듈 사업은 성립하지 않는다. 그리고 그 전제는 컴퍼니가 만든 것이 아니라 <strong>6급 『규격』(내부 호칭 「표준」)이 세계에 대해 진술하고 있는 문장</strong>이다.
+  → <strong>컴퍼니는 『규격』을 격리한 조직이 아니라, 『규격』이 옳다는 전제 위에 세워진 조직이다.</strong> 이 사실을 아는 인원은 이사회 9명뿐이다.</li>
+<li><strong>내부 조직</strong>: 개발본부 / 포획사업부(무장 조직, 사실상 사병) / 손실처리부(사고 은폐·보상·유족 합의) / 품질보증본부(『규격』 격리 실무. 사내 최고 기밀) / 시장개발부(수요 창출)</li>
+<li><strong>어두운 소문</strong>: 시장개발부가 <strong>수요를 만들기 위해 ANE를 유도한다</strong>는 의혹. 즉 컴퍼니가 저자회와 접촉했다는 설. 미확인.</li>
+<li><strong>인사 이동이 이상하리만치 매끄럽다</strong>: 컴퍼니는 결원이 생겨도 공백이 발생하지 않는 회사로 유명하다. 경영 효율의 성과로 알려져 있으며, 경쟁사들이 오래 연구해왔다. <strong>아직 아무도 재현하지 못했다.</strong></li>
+</ul>
+<h2 id="s52">4-3. 교단 — 말일교단 (末日敎團)</h2>
+<p><strong>목적</strong>: 종말의 저지. 저지 불가 시 <strong>편안한 종말</strong>.
+<strong>규모</strong>: 관리국 다음. 충성도는 전 세력 중 최고.</p>
+<h3 id="s53">교리 — 『최후의 이야기』</h3>
+<p>교단은 종말을 이렇게 정의한다.</p>
+<blockquote>
+<p><strong>모든 인간이 단 하나의 이야기만을 믿게 되는 순간, 그 이야기가 세계를 대체한다.</strong></p>
+</blockquote>
+<p>서사압 공식으로 표현하면 <strong>V(해석 분산) → 0, N → 전 인류</strong>. 이때 서사압은 발산하고, 세계 자체가 그 이야기의 규칙에 종속된다. 그것이 6급을 넘어선 <strong>7급 — 종장(終章)</strong> 이다.</p>
+<p>이 교리는 세계관 원리와 완벽히 정합하며, 그래서 관리국조차 교단을 이단으로 취급하지 못한다. 실제로 <strong>관리국의 희석 기술은 교단 교리의 세속판</strong>이다. 관리국은 이 사실을 결코 인정하지 않는다.</p>
+<h3 id="s54">핵심 기술: 『역산 (逆算)』</h3>
+<p>추적계·신성계 괴담을 다수 보유하고, 이를 통해 <strong>서사층의 흐름 자체를 관측</strong>한다.
+- <strong>점유율 관측</strong>: 어떤 이야기가 전 세계에서 몇 %의 인지를 점유하고 있는지 추정. 이 지표를 <strong>"수렴도"</strong> 라 부른다.
+- <strong>발원 역추적</strong>: 현현한 괴담으로부터 그 이야기의 최초 발화자를 거슬러 찾는다. 저자회 색출의 핵심 수단.
+- <strong>현창 수집</strong>: 교단은 6대 세력 중 현창 필사본을 가장 많이 보유한다. 사제는 현창을 성언으로 받들어 듣기 때문에 <strong>정착도가 아니라 신앙으로 버틴다.</strong> 필사관 생환율이 관리국보다 높은 유일한 조직.
+- <strong>징조 판독</strong>: 아직 현현하지 않은 고위험 서사의 태동을 사전 탐지. 교단이 관리국에 정보를 팔 수 있는 이유이며, 교단이 재정을 유지하는 방법이다.</p>
+<h3 id="s55">특징</h3>
+<ul>
+<li>고등급 정보는 팔지 않고 관리국에 먼저 넘기거나 자체 처리한다. <strong>돈보다 종말 지연이 우선</strong>이라는 원칙이 실제로 지켜지고 있다.</li>
+<li><strong>완화 사역</strong>: 교단의 절반은 전투원이 아니라 <strong>호스피스</strong>다. 괴담 조우 생존자, 정신 붕괴자, 유족을 돌본다. 세력 중 유일하게 <strong>일반 시민에게 사랑받는</strong> 조직.</li>
+<li><strong>내부 분열</strong></li>
+<li><strong>지연파(주류)</strong>: 종말을 최대한 미룬다. 저자회 색출, 수렴도 관리.</li>
+<li><strong>안락파</strong>: 종말은 필연이며, 인류가 준비되지 않은 채 맞는 것이 최악이라 본다. <strong>"덜 끔찍한 최후의 이야기"를 미리 고르려 한다.</strong> 온건해 보이지만, 이는 논리적으로 <strong>스스로 종말을 설계하겠다는 뜻</strong>이다.</li>
+<li><strong>묵시파(이단·소수)</strong>: 종말을 앞당긴다. 사실상 저자회와 구별이 어렵다. 교단이 가장 필사적으로 숨기는 치부.</li>
+</ul>
+<h3 id="s56">보유 재앙급 : 『만종 (晩鐘)』 — 6급, 개념 / 감염 / 경직</h3>
+<p>교단은 6급 개체를 하나 격리하고 있다. 그리고 그것은 <strong>교단 교리의 후반부를 실행하기 위한 도구</strong>다.</p>
+<ul>
+<li><strong>형태</strong>: 종은 없다. 종을 치는 동작만이 존재한다. 교단 총본산 최심부, 아무것도 없는 종루에서 사제 한 명이 하루 세 번 빈 허공을 향해 타종한다. 소리는 나지 않는다.</li>
+<li><strong>규칙</strong>: 이 종의 소리를 들은 모든 인간은 <strong>자기 생애에서 가장 좋았던 순간의 꿈</strong>을 꾸며 잠들고, 깨어나지 않는다. 고통이 없고, 공포가 없고, 저항 의지가 발생하지 않는다. 소리는 <strong>인지를 매개로 전파</strong>되므로 거리·차폐·언어의 제약을 받지 않는다. 한 번 울리면 멈출 방법이 알려져 있지 않다.</li>
+<li><strong>왜 6급인가</strong>: 살상력 때문이 아니다. <strong>인류 전체가 대상이고, 예외가 없으며, 되돌릴 수 없기 때문</strong>이다.</li>
+<li><strong>현재 상태</strong>: 완전 격리. 타종 사제는 매일 <strong>소리가 나지 않는지를 확인하기 위해</strong> 종을 친다. 이 임무를 맡은 사제는 평생 교체되지 않으며, 임기 중 총본산 밖으로 나갈 수 없다.</li>
+</ul>
+<blockquote>
+<p>교단은 이것을 무기라고 부르지 않는다. 그들은 <strong>『자비』</strong> 라고 부른다.</p>
+</blockquote>
+<h3 id="s57">만종 프로토콜 (晩鐘 protocol)</h3>
+<p><strong>발동 조건 — 단 하나</strong></p>
+<blockquote>
+<p><strong>어느 세력의 것이든 관계없이, 재앙급(6급) 개체 2개 이상이 동시에 격리 실패 상태에 들어갈 것.</strong></p>
+</blockquote>
+<p><strong>「격리 실패」의 정의는 개체마다 다르다.</strong> 넷의 격리 방식이 전부 다르기 때문이며, 이 정의는 종장회의가 각 세력과 개별 합의한 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>개체</th>
+<th>격리 실패 판정 기준</th>
+<th>판정 주체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>『해안선』</td>
+<td>연 1회 재측량이 <strong>한 해 누락</strong>되거나, 경계 이동 속도가 기준치를 초과</td>
+<td>파견 사제 3인 + 감지탑</td>
+</tr>
+<tr>
+<td>『액자』</td>
+<td><strong>액자가 빈다.</strong> 안의 장면이 완성작으로 굳거나, 안의 것을 꺼낸 경우</td>
+<td>파견 사제 1인</td>
+</tr>
+<tr>
+<td>『규격』</td>
+<td>제1공장 지하 라인 <strong>정지</strong>, 또는 권역이 공장 부지 밖으로 확대</td>
+<td>파견 사제 2인</td>
+</tr>
+<tr>
+<td>『만종』</td>
+<td>종루에 타종 사제가 부재한 상태가 <strong>24시간 이상</strong> 지속</td>
+<td>교단 자체</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>넷 다 공통점이 하나 있다. <strong>담당 완결자가 정기 임무를 수행하지 못하면 그것이 곧 실패의 시작이다.</strong>
+즉 만종 프로토콜의 실질적 1차 경보는 <strong>완결자 두 명이 동시에 자기 일을 못 하게 되는 것</strong>이며, 이 사실을 아는 사람은 종장회의 7인뿐이다.</p>
+</blockquote>
+<p>교단의 계산은 이렇다. 6급 하나가 풀리면 인류는 참혹하게 줄어들되 일부는 남는다. <strong>둘이 동시에 풀리면 서사압이 상호 증폭하여 수렴도가 폭주하고, 종장(7급)이 확정된다.</strong> 종장의 결말이 무엇인지는 아무도 모르지만, 교단은 그것이 <strong>고통스럽고 길 것</strong>이라고 확신한다.</p>
+<p>따라서 교단은 그 시점에 인류를 <strong>먼저</strong> 재우려 한다.</p>
+<p><strong>감시 체계</strong>
+- 각 세력의 6급 격리 시설에는 <strong>교단 파견 사제가 상주</strong>한다. 명목은 "격리 요원의 정신 사역".
+- 다른 세력들은 이것이 감시라는 사실을 알면서 <strong>묵인</strong>한다. 자기 시설이 무너지는 순간을 자기 입으로 보고할 수 있는 조직은 없기 때문이다.
+- 파견 사제의 정기 연락이 끊기면 그 자체가 <strong>1차 신호</strong>로 계산된다.
+- 관리국 감지탑의 6급 감시 채널은 교단에 실시간 공유된다. 조약도 계약도 아닌, 20년째 계속되는 관행이다.</p>
+<p><strong>발동 절차</strong>
+1. 파견 사제 또는 탑 데이터로 <strong>동시 실패</strong> 확인
+2. <strong>종장회의</strong> 소집 — 7인. 각자 독립된 승인권을 가진다
+3. 7인 중 <strong>5인 이상 동의</strong> 시 타종
+4. 타종 이후, 종장회의 7인과 총본산 사제단은 <strong>깨어 있는 채로 남는다</strong> — 종을 계속 울릴 사람이 필요하기 때문이다. 그들은 자신에게 자비를 허락하지 않는다</p>
+<p><strong>내부 대립</strong>
+- <strong>지연파</strong>: 조건을 더 엄격하게. "동시 실패 + 72시간 내 재격리 실패"를 주장.
+- <strong>안락파</strong>: 조건을 완화해야 한다. "실패가 확정된 뒤에는 이미 종을 칠 사람도 남지 않는다."
+- 이 논쟁은 30년째 결론이 나지 않았고, <strong>그래서 현재 조건은 초대 교주가 정한 원문 그대로다.</strong></p>
+<p><strong>타 세력의 입장</strong>
+- <strong>관리국</strong>: 존재를 안다. 과거 두 차례 강제 회수를 시도했고 모두 실패했다. 현재 공식 입장은 <strong>전면 부인</strong>. 비공식적으로는 묵인한다 — 관리국 상층부 역시 "그때"의 대안을 갖고 있지 않다.
+- <strong>컴퍼니</strong>: 만종의 모듈화 가치를 산정한 내부 문서가 존재한다는 소문이 있다. 교단은 이 소문을 근거로 컴퍼니와의 거래 등급을 한 단계 낮췄다.
+- <strong>미술관</strong>: 관심을 표한 적이 있다. 교단은 회신하지 않았다.
+- <strong>저자회</strong>: <strong>만종의 존재 자체를 이야기로 퍼뜨리려는 시도</strong>가 반복적으로 적발된다. 만종이 널리 알려지면 서사압이 올라 격리가 약해지기 때문이다. 교단이 저자회를 죽여서라도 막는 이유가 여기 있다.</p>
+<h2 id="s58">4-4. 미술관 (The Gallery)</h2>
+<p>원본 설정 유지 + 확장.</p>
+<ul>
+<li><strong>왜 작품화가 통하는가</strong>: 제1부의 역설 — "속박될수록 강하지만, 속박될수록 자유롭지 않다". 작품화는 괴담을 죽이지 않고 <strong>규칙을 극한까지 정교하게 만들어</strong> 행동 가능 영역을 0으로 수렴시킨다. 괴담 입장에서는 완벽한 서사를 얻는 대가로 영원히 같은 동작만 반복하게 된다. <strong>가장 잔인한 처분이자, 유일하게 원본이 보존되는 처분.</strong></li>
+<li><strong>미술관이 유일하게 옳았던 점</strong>: 컴퍼니의 모듈은 코어가 소진되면 끝이고, 관리국의 희석은 변종을 낳는다. <strong>작품화된 괴담만이 수백 년째 안정적이다.</strong> 3급 『속삭이는 초상화』가 수백 년째 무해(2급)로 유지되고 있는 것이 그 증거다. 관리국 학계 일부는 작품화를 <strong>인류가 가진 유일한 진짜 해답</strong>으로 본다. 문제는 미술관이 그 기술을 절대 공유하지 않는다는 것.</li>
+<li><strong>조직</strong>: 아티스트(극소수, 『만화경의 눈』 이식자) / 조율사(『메아리치는 소리굽쇠』 운용, 기억 마모로 주기적 교체) / 수집단(무장 확보 조직) / 소장자(익명의 후원자. 각국 요인·재벌 다수 포함 — 미술관을 아무도 건드리지 못하는 이유)</li>
+<li><strong>작품화 기술의 출처</strong>: 『작품화』는 미적 이념에서 나온 기술이 아니다. <strong>6급 『액자』(내부 호칭 「1번 방」) 안의 장면이 굳지 않도록 손보기 위해 개발된 정비 기법</strong>이며, 그것을 미술관 밖에 적용한 것이 오늘날의 작품화다. 아티스트 중에서도 이 사실을 아는 인원은 극소수이며, 나머지는 정말로 아름다움을 위해 일하고 있다고 믿는다.</li>
+<li><strong>왜 수집을 멈추지 않는가</strong>: 『액자』 정비에는 재료가 든다. 굳어가는 장면을 다시 미완으로 되돌리려면 그 안에 <strong>아직 끝나지 않은 것</strong>을 계속 넣어줘야 하고, 미술관이 확보하는 아름다운 ANE 상당수가 그 소모품이다. 전시되는 것은 극히 일부다.</li>
+<li><strong>미술관과 제3호 공백</strong>: 최대 의혹. 미술관이 5급 『존재를 지우는 안개』를 사건 <strong>이전에</strong> 인지하고 있었고, 재료 확보를 위해 방치했거나 유도했다는 설. 물증은 없다 — 물증이 존재했더라도 안개가 지웠을 것이다.</li>
+<li><strong>무(無)의 창고</strong>: 작품화 실패작 격리 구역. 주변 시공간을 미세하게 지우는 공백 지대들이 보관되어 있다. <strong>미술관 최대의 리스크이자, 사실상 5급 개체를 다수 보유한 것과 같다.</strong></li>
+<li>실체는 조금 다르다. 이곳의 실패작 대부분은 <strong>『액자』 정비에 투입되었다가 안에서 굳어버린 것들</strong>이다. 굳은 것은 꺼내야 하고, 꺼낸 것은 이미 절반쯤 묘사가 되어 있어 어디에도 쓸 수 없다.</li>
+</ul>
+<h2 id="s59">4-5. 저자회 (著者會) — 신설</h2>
+<p><strong>통칭</strong>: 작가들 / <strong>자칭</strong>: 저자
+<strong>목적</strong>: 괴담의 <strong>창작</strong>. 서사층에 대한 인류의 저작권 주장.</p>
+<h3 id="s60">왜 존재하는가</h3>
+<p>서사압 이론이 밝혀진 순간, 이 결론은 필연이었다. <strong>인지를 조작할 수 있다면, 괴담은 발견하는 것이 아니라 쓰는 것이다.</strong></p>
+<p>관리국이 희석으로 P를 낮추는 기술을 완성했을 때, 같은 공식을 반대로 돌리면 P를 올릴 수 있다는 것도 함께 증명되었다. 저자회의 초기 구성원 상당수가 <strong>관리국 편집부 출신</strong>이다.</p>
+<h3 id="s61">핵심 기술: 『파종 (播種)』</h3>
+<ol>
+<li><strong>설계</strong>: 형(구체적 묘사) · 율(공략 가능해 보이지만 실은 함정인 규칙) · 관(확산 유도 장치)을 갖춘 이야기를 집필한다.</li>
+<li><strong>파종</strong>: 커뮤니티, 지역 소문, 목격담 조작, 가짜 아카이브를 통해 N을 키운다.</li>
+<li><strong>양육</strong>: E를 높이기 위해 실제 사건을 유도하기도 한다. 이 단계에서 저자회는 명백한 범죄 조직이 된다.</li>
+<li><strong>수확</strong>: 현현한 ANE를 판매하거나, 특정 표적에게 풀어놓는다.</li>
+</ol>
+<h3 id="s62">핵심 기술 ②: 『입전 (立傳)』 — 이명자 인위 생산</h3>
+<p>파종 이론의 최종 응용. <strong>ANE를 쓰는 대신, 사람을 쓴다.</strong></p>
+<p>이명자의 성립 조건(고등급 조우 생존 → 이야기 확산 → 주인공 지목)은 전부 서사층의 사건이다. 서사층을 조작할 수 있다면, 이 셋은 <strong>연출할 수 있다.</strong></p>
+<p><strong>공정 (평균 4~7년)</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 집필</strong></td>
+<td>완성될 이명자의 규칙과 권능을 <strong>먼저 쓴다.</strong> 이 원고를 「초고(草稿)」라 부르며, 저자회 최고 기밀이다</td>
+</tr>
+<tr>
+<td><strong>2. 배역</strong></td>
+<td>원고에 맞는 인물을 선정한다. 대개 이미 상실을 겪은 자 — E(정서 강도)를 자체 보유한 사람이 성공률이 높다</td>
+</tr>
+<tr>
+<td><strong>3. 무대</strong></td>
+<td>통제 가능한 고등급 ANE를 확보하고, 대상이 <strong>아슬아슬하게 생존하도록 규칙을 정밀 조율</strong>한다. 여기서 대부분의 시도가 실패한다</td>
+</tr>
+<tr>
+<td><strong>4. 파종</strong></td>
+<td>조우 이전부터 목격담·기록·"전조"를 미리 뿌려둔다. 사건이 터진 순간 이야기가 이미 완성되어 있도록</td>
+</tr>
+<tr>
+<td><strong>5. 초판(初版)</strong></td>
+<td>대상이 자기 이야기의 주인공으로 고정된다. 완성된 인위 이명자를 저자회는 <strong>「초판본」</strong> 이라 부른다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자연 이명자와의 결정적 차이</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>자연 발생</th>
+<th>초판본</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>규칙</td>
+<td>세간의 소문이 제멋대로 부여. 본인이 고를 수 없다</td>
+<td><strong>저자회가 설계.</strong> 제약은 최소, 권능은 최대로 조율</td>
+</tr>
+<tr>
+<td>안정성</td>
+<td>여론에 따라 흔들림</td>
+<td>파종 인프라가 서사를 계속 급전</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>잊히면 약해짐</td>
+<td><strong>파종망이 끊기면 급격히 붕괴</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>초판본은 자연 이명자보다 압도적으로 강하다. 대신 <strong>전원 코드가 밖에 꽂혀 있다.</strong>
+관리국 편집부가 그 사람 한 명을 겨냥해 희석을 집중하면, 초판본은 며칠 만에 평범한 인간으로 돌아간다 — 혹은 규칙만 남고 권능을 잃은 채 「낙명」한다.
+<strong>초판본을 상대할 때의 정답은 총이 아니라 기사(記事)다.</strong></p>
+</blockquote>
+<p><strong>왜 다수 보유가 불가능한가</strong>
+- 소요 기간 4~7년, 성공률 20% 미만. 실패한 배역은 사망하거나 통제 불능 ANE가 된다.
+- 무대 조성에 <strong>고등급 ANE 1개체를 소모</strong>한다. 저자회조차 아까운 자산이다.
+- 파종 인프라를 초판본 1인당 하나씩 상시 유지해야 한다. 유지비가 신규 파종 수십 건과 맞먹는다.
+- 완성 후 초판본이 저자회를 떠나는 사례가 존재한다. <strong>자기 이야기를 읽어본 주인공은 자기가 왜 그렇게 살았는지 알게 되기 때문이다.</strong></p>
+<blockquote>
+<p><strong>현재 확인된 초판본</strong>: 3명. 추정 최대 5명. 관리국은 이 중 2명의 소재를 파악하고 있다고 주장하지만, 1명은 이미 저자회 소속이 아니다.</p>
+</blockquote>
+<h3 id="s63">특징</h3>
+<ul>
+<li><strong>조직이 아니라 문화</strong>다. 지휘부가 없고 셀 단위로 흩어져 있으며, 서로를 필명으로만 안다. 그래서 궤멸시킬 수 없다.</li>
+<li><strong>동기가 제각각</strong>: 순수한 창작욕, 사상적 신념("괴담은 인류가 되찾아야 할 상상력이다"), 청부업, 복수, 단순한 재미.</li>
+<li><strong>아마추어 문제</strong>: 진짜 위협은 조직원이 아니라, <strong>원리를 배운 일반인</strong>이다. 방법론이 유출된 이후 개인 단위 파종 시도가 급증했고, 대부분 실패하지만 실패작이 통제 불가능한 변종으로 현현하기도 한다.</li>
+<li><strong>교단의 최대 적</strong>: 저자회의 활동은 수렴도를 직접 끌어올린다. 교단은 저자회를 종말의 실행범으로 규정하고 있으며, <strong>양측 사이에서만 유일하게 무자비한 살상전이 벌어진다.</strong></li>
+</ul>
+<h2 id="s64">4-6. 심연의 아고라 &amp; 야반 조합 — 재설정</h2>
+<blockquote>
+<p>야반 조합은 <strong>조직이 아니다.</strong> 건물도, 회장도, 회비도, 명부도 없다.
+조합의 실체는 <strong>심연의 아고라의 [의뢰] 게시판과, 그 위에 자생한 문화</strong>다.</p>
+</blockquote>
+<hr />
+<h3 id="s65">A. 심연의 아고라 (Abyssal Agora)</h3>
+<p><strong>종류</strong>: 익명 커뮤니티 / 개념형 ANE
+<strong>등급</strong>: <strong>판정 불가 (잠정 2급)</strong>
+<strong>공격 형식</strong>: 정신 / <strong>발현 조건</strong>: 감염 / <strong>규칙 강도</strong>: 경직</p>
+<h4 id="s66">기원 — 이중 실패의 잔해</h4>
+<p>표적은 5급 개념형 ANE <strong>『빅브라더』</strong>였다.</p>
+<blockquote>
+<p><strong>『빅브라더』 원 규칙</strong>: 모든 행위는 관측된다. 관측된 것은 반드시 기록된다. 기록된 것은 반드시 열람된다.</p>
+</blockquote>
+<p>궁극의 감시 자산이자 궁극의 미적 소재. 컴퍼니와 미술관이 <strong>동시에</strong> 손을 댔고, <strong>둘 다 실패했다.</strong></p>
+<p><strong>컴퍼니의 실패 — 모듈화</strong>
+『맥거핀 나이프』로 "감시" 기능만 남기고 서사를 절단하는 과정에서, 하필 <strong>「누가 보는가」라는 서사가 통째로 잘려나갔다.</strong>
+→ 관측은 계속되지만 <strong>관측 주체가 존재하지 않는 상태</strong>가 됨.
+→ 이 영역 안에서는 <strong>'신원'이라는 개념 자체가 성립하지 않는다.</strong></p>
+<p><strong>미술관의 실패 — 작품화</strong>
+"감시"를 "전시"로 재해석해 『침묵의 캔버스』에 고정하려 했으나, 절반만 걸린 채 굳었다.
+→ 「열람」 규칙이 <strong>게시물이라는 형식</strong>으로 반쯤 고정됨.
+→ 캔버스의 원재료가 『존재를 지우는 안개』였기 때문에, 출력물에서 <strong>출처·경로·위치가 지워진 채</strong> 나온다.</p>
+<p><strong>융합</strong>
+두 잔해는 서로의 빈자리를 정확히 메웠다. 주체 없는 관측 + 출처 지워진 열람. 두 실패작이 맞물려 안정화된 결과물이 아고라다.</p>
+<blockquote>
+<p>컴퍼니와 미술관은 이 사고를 각자의 사고 기록에서 삭제했다. <strong>양측 모두 상대가 원인이라고 믿고 있다.</strong></p>
+</blockquote>
+<h4 id="s67">고유 규칙 — 3조</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>규칙</th>
+<th>유래</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>여기 남은 것은 지워지지 않는다</td>
+<td>기록</td>
+<td>삭제 기능이 존재하지 않는다</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>여기 말한 자는 밝혀지지 않는다</td>
+<td>절단된 관측자</td>
+<td>신원·위치·소속 추적 완전 불가</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>여기 올라온 것은 반드시 읽힌다</td>
+<td>열람</td>
+<td><strong>정신감염의 원인</strong></td>
+</tr>
+</tbody>
+</table>
+<p>규칙 2가 아고라를 세계 최고의 안전지대로 만들고, 규칙 3이 세계 최악의 위험지대로 만든다.</p>
+<h4 id="s68">익명성의 실제 작동</h4>
+<ul>
+<li><strong>접속자의 신원·위치·소속은 어떤 수단으로도 역추적되지 않는다.</strong> 교단의 『길을 아는 개』도, 관리국 감지탑도, 컴퍼니의 통신 모듈도 실패한다.</li>
+<li>관리국은 아고라에 <strong>등급을 매기지 못한다.</strong> 등급 판정은 "관측 → 기록"을 전제하는데, 관측하려는 순간 관측자가 익명화되어 기록의 주체가 사라진다. 관리국 사상 최초의 판정 불능 개체.</li>
+<li>감지탑도 무력하다. 아고라는 <strong>소문으로 퍼지지 않고 접속으로 퍼지므로</strong>, N(인지 총량) 측정 자체가 성립하지 않는다.</li>
+</ul>
+<h4 id="s69">게시판 구조</h4>
+<table>
+<thead>
+<tr>
+<th>게시판</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[정보]</strong></td>
+<td>ANE 목격담, 공략, 규칙 검증. 아고라의 심장</td>
+</tr>
+<tr>
+<td><strong>[의뢰]</strong></td>
+<td><strong>야반 조합의 실체.</strong> 청소·호위·회수·조사</td>
+</tr>
+<tr>
+<td><strong>[거래]</strong></td>
+<td>중고 모듈, 불하품, 유품, 출처 불명 장비</td>
+</tr>
+<tr>
+<td><strong>[고발]</strong></td>
+<td>세력 내부고발. 각 세력이 가장 신경 쓰는 곳</td>
+</tr>
+<tr>
+<td><strong>[잡담]</strong></td>
+<td>신세한탄과 은어의 생산지</td>
+</tr>
+<tr>
+<td><strong>[추모]</strong></td>
+<td>죽은 핸들의 목록. <strong>아고라에서 유일하게 아무도 장난치지 않는 곳</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="s70">문화와 언어</h4>
+<p>소속과 직위를 감추기 위해, 모든 이용자가 <strong>일부러 거칠고 저급한 말투</strong>를 쓴다. 관리국 국장도, 미술관 아티스트도, 여기서는 똑같이 "ㅋㅋ 형님들"이라고 쓴다. <strong>문체가 곧 위장복이다.</strong></p>
+<p>```
+[정보] 형님들 ㅅㅂ 3구역 지하도 그거 규칙 바뀐듯
+ └ ㄹㅇ? 아직 뒤돌아보기만 안하면 되는거 아님?
+ └ ㄴㄴ 어제 야근 갔다온 애 말로는 걷는 속도도 봄
+ └ ㅋㅋ 이거 ㄹㅇ실화냐 매뉴얼 또 갈아엎네
+ └ 탑돌이들 또 11일 걸리겠네 ㅋㅋㅋ 그동안 사람 몇 죽냐</p>
+<p>[정보] 형님들, 이번에 들어온 ANE 정보 좀 풀어주십쇼
+ └ 얼마
+ └ ...형님 여기 [거래] 아닙니다
+ └ ㅋㅋㅋㅋㅋ 지갑 냄새 오지네
+```</p>
+<p><strong>주요 은어</strong></p>
+<table>
+<thead>
+<tr>
+<th>은어</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>야근 / 밤일</td>
+<td>ANE 대응 작업</td>
+</tr>
+<tr>
+<td>청소</td>
+<td>격퇴 의뢰</td>
+</tr>
+<tr>
+<td>물건</td>
+<td>ANE 또는 모듈</td>
+</tr>
+<tr>
+<td>탑돌이</td>
+<td>관리국 요원 (감지탑에서)</td>
+</tr>
+<tr>
+<td>지갑</td>
+<td>컴퍼니</td>
+</tr>
+<tr>
+<td>액자</td>
+<td>미술관</td>
+</tr>
+<tr>
+<td>종쟁이</td>
+<td>교단</td>
+</tr>
+<tr>
+<td><strong>작가</strong></td>
+<td>저자회. <strong>아고라 최악의 욕설.</strong> 이 단어를 들으면 농담이 끝난다</td>
+</tr>
+<tr>
+<td>덫</td>
+<td>정신감염 게시물</td>
+</tr>
+<tr>
+<td>무저(無著)</td>
+<td>작성자 없는 글</td>
+</tr>
+<tr>
+<td>낙명각</td>
+<td>이명자가 규칙을 어길 것 같은 상황</td>
+</tr>
+<tr>
+<td>울림</td>
+<td>현창(顯唱)</td>
+</tr>
+<tr>
+<td>비추기</td>
+<td>다른 수단으로 위치를 잡고 규칙대로 때리는 표준 절차</td>
+</tr>
+<tr>
+<td>헛방</td>
+<td>불락에 걸려 아무 일도 없었던 공격</td>
+</tr>
+<tr>
+<td>받아쓰기</td>
+<td>5급 이상 작전. <strong>거의 전원 사망을 뜻하는 완곡어</strong></td>
+</tr>
+<tr>
+<td>한 줄짜리</td>
+<td>완결자. 필사본이 한 줄이라는 데서</td>
+</tr>
+</tbody>
+</table>
+<h4 id="s71">정보 거래와 여론</h4>
+<ul>
+<li>공식 경로로는 절대 유통될 수 없는 것들이 여기 있다. 미공개 등급 판정서, 컴퍼니 손실처리부 내부 문건, 미술관 수집단 이동 경로, 관리국 미승인 작전 기록.</li>
+<li><strong>[고발] 게시판은 실질적인 권력이다.</strong> 삭제가 불가능(규칙 1)하고 작성자를 잡을 수 없기 때문(규칙 2), 세력들은 유출된 문건을 <strong>부인하는 대신 희석</strong>해야 한다. 관리국 편집부 업무량의 상당 부분이 아고라 대응이다.</li>
+<li>여기서 형성된 여론이 현실을 움직인다. 특정 ANE가 "위험하다"는 여론이 아고라에서 굳으면 → E(정서 강도)가 오르고 → 실제로 그 개체의 서사압이 오른다. <strong>아고라는 게시판인 동시에 서사압 발전소다.</strong></li>
+</ul>
+<h4 id="s72">위험성</h4>
+<p><strong>① 정보 오염 — 「무저 게시물」</strong>
+빅브라더의 관측 기능은 아직 살아 있다. 그것은 여전히 보고, 여전히 출력해야 한다. 그래서 <strong>아무도 쓰지 않은 글이 스스로 게시된다.</strong></p>
+<ul>
+<li>내용은 <strong>사실이다.</strong> 다만 서사가 절단되었으므로 맥락·시점·주체가 없다.</li>
+<li>"그는 문을 닫지 않았다" 같은 한 줄이 아무 게시판에나 올라온다. 누가, 언제, 어느 문인지는 영원히 알 수 없다.</li>
+<li>문제는 이것이 <strong>인간이 쓴 거짓말과 구별되지 않는다</strong>는 점이다. 밤일꾼들은 무저 게시물을 신탁처럼 해석하다가 죽고, 선동을 무저로 착각하다가 죽는다.</li>
+</ul>
+<p><strong>② 정신 감염 — 「덫」</strong>
+규칙 3(반드시 읽힌다)이 강하게 걸린 게시물이 존재한다. 사실상 <strong>약한 감염형 ANE</strong>다.</p>
+<ul>
+<li>읽기 시작하면 끝까지 읽게 된다. 스크롤을 멈출 수 없다.</li>
+<li>다 읽으면 <strong>누군가에게 전하고 싶어진다.</strong> 규칙 3이 다음 열람자를 요구하기 때문이다.</li>
+<li>대개 1급 수준의 피해(불면, 강박, 특정 문장의 반복)로 끝나지만, 드물게 2급 이상으로 자란다.</li>
+</ul>
+<p><strong>자생 안전 수칙 (아고라 이용자 사이의 불문율)</strong>
+1. <strong>3초 룰</strong> — 낯선 글은 3초 읽고 스크롤을 강제로 내린다.
+2. <strong>소리 내어 읽지 마라</strong> — 발화는 관측이고, 관측은 급전이다.
+3. <strong>혼자 읽지 마라</strong> — 덫은 관측자가 둘이면 힘이 갈린다.
+4. <strong>[추모]에서는 아무 말도 하지 마라</strong> — 이유는 아무도 설명하지 못한다. 그냥 다들 지킨다.</p>
+<h4 id="s73">왜 아무도 없애지 못하는가</h4>
+<ul>
+<li><strong>물리적으로 없앨 대상이 없다.</strong> 서버도 건물도 없다. 규제선을 칠 수 없다.</li>
+<li><strong>희석이 통하지 않는다.</strong> 아고라는 소문이 아니라 접속으로 존재한다.</li>
+<li><strong>그리고 모든 세력이 쓰고 있다.</strong> 없애려면 자기가 쓰고 있다는 사실부터 인정해야 한다.</li>
+<li>관리국 편집부는 아고라를 증오한다. 동시에 <strong>아고라에서 가장 글을 많이 쓰는 집단이 편집부</strong>라는 것은 이용자들 사이의 공공연한 농담이다. 세계 최고의 희석 무대이기도 하기 때문이다.</li>
+</ul>
+<blockquote>
+<p>"여기서 제일 글 많이 쓰는 게 탑돌이들이라던데 ㅋㅋ"
+"그리고 그거 지적하는 글 제일 많이 쓰는 것도 탑돌이임"</p>
+</blockquote>
+<hr />
+<h3 id="s74">B. 야반 조합 (夜半組合)</h3>
+<p><strong>정체</strong>: 아고라 [의뢰] 게시판을 중심으로 자생한 프리랜서 대응자들의 <strong>문화 공동체.</strong> 구성원은 <strong>밤일꾼</strong>이라 불린다.
+<strong>명칭 유래</strong>: 초기 [의뢰] 게시판 이용자 대부분이 심야 작업자였던 데서 자칭이 굳었다.</p>
+<h4 id="s75">존재 이유 (구조적 필연)</h4>
+<ul>
+<li>관리국은 승인에 11일이 걸린다.</li>
+<li>컴퍼니는 돈이 되지 않는 ANE를 잡지 않는다.</li>
+<li>미술관은 아름답지 않은 ANE에 관심이 없다.</li>
+<li>교단은 종말과 무관한 사건을 우선하지 않는다.</li>
+<li><strong>그 사이에 사람이 죽는다.</strong> 그 틈을 메우는 것이 밤일꾼이다.</li>
+</ul>
+<h4 id="s76">왜 아고라 위에서만 성립하는가</h4>
+<ul>
+<li>밤일꾼은 소속이 없으므로 <strong>신변 보장이 없다.</strong> 컴퍼니 하청을 받았다는 사실이 알려지면 미술관 수집단의 표적이 된다. 규칙 2(익명)가 없으면 이 직업은 존재할 수 없다.</li>
+<li>세력들 역시 <strong>자기 이름을 걸 수 없는 일</strong>을 여기서 발주한다. 관리국이 승인 못 받은 선제 대응, 컴퍼니가 손실처리부를 쓰기 싫은 사고, 미술관의 소재 회수. 익명은 발주자에게도 필수다.</li>
+</ul>
+<h4 id="s77">정체성 = 핸들</h4>
+<p>아고라는 신원을 숨기지만 <strong>기록은 지우지 않는다(규칙 1).</strong> 따라서 핸들이 남긴 글의 이력은 영구히 축적된다.</p>
+<blockquote>
+<p>밤일꾼에게 정체성은 육신이 아니라 <strong>전적(戰績)</strong> 이다.
+이름도 얼굴도 없지만, 그가 무엇을 했는지는 지워지지 않는다.
+핸들 도용이 불가능한 것도 이 때문이다 — 기록이 이어지지 않기 때문에 즉시 들통난다.</p>
+</blockquote>
+<h4 id="s78">자생 제도 3가지</h4>
+<p><strong>① 관측 계약</strong>
+[의뢰] 게시판에 게시된 계약은 아고라가 <strong>관측</strong>한다. 관측된 것은 기록되고(규칙 1), 기록된 것은 읽힌다(규칙 3).
+→ 계약을 파기하면 <strong>그 사실이 반드시 어딘가에 게시된다.</strong> 물리적 강제력은 없다. 그러나 핸들이 전 재산인 세계에서 이것은 사형선고다.
+→ 결과적으로 <strong>아고라의 계약 이행률은 어떤 공식 계약보다 높다.</strong> 컴퍼니 법무팀이 이 현상을 연구한 적이 있고, 결론은 "우리 계약서보다 낫다"였다.
+→ 대금 결제는 컴퍼니가 아고라 전용으로 만든 무기명 수단을 쓴다. 관리국은 알면서 방치한다.</p>
+<p><strong>② 추모</strong>
+사망한 핸들의 미수령 의뢰금이 유족에게 가도록 하는 관행. 유족을 알아낼 방법이 없으므로, 밤일꾼들은 미리 [추모]에 <strong>수취 문장</strong> 한 줄을 남겨둔다. 본인만이 알 수 있게 쓴 문장이다.
+그 문장을 알아본 사람이 나타나면 돈이 간다. 나타나지 않으면 돈은 조합 공동 기금으로 간다.
+[추모] 게시판에는 아직 아무도 알아보지 못한 문장이 수만 줄 쌓여 있다.</p>
+<p><strong>③ 공략</strong>
+[정보] 게시판의 축적. 세계 최대의 비공식 ANE 데이터베이스다.</p>
+<ul>
+<li><strong>검증 문화</strong>: 모든 공략에는 "이걸로 몇 명이 살아 돌아왔는가"가 병기된다. 생존 카운트가 곧 신뢰도이며, 이것이 무저 게시물·거짓 정보·덫을 걸러내는 유일한 방벽이다.</li>
+<li>카운트가 0인 공략은 <strong>누군가 처음으로 시험해야 한다.</strong> 그 자리를 자원하는 밤일꾼을 아고라에서는 <strong>「초판(初版)」</strong> 이라 부른다 — 저자회의 은어와 겹치는 것을 알면서도 굳이 그렇게 부른다.</li>
+</ul>
+<h4 id="s79">이중의 딜레마</h4>
+<p>정확한 공략은 V(해석 분산)를 낮춘다. <strong>낮아진 V는 서사압을 올린다.</strong></p>
+<blockquote>
+<p><strong>밤일꾼은 사람을 살리는 행위로 ANE를 강하게 만들고 있다.</strong></p>
+</blockquote>
+<p>그런데 아고라 특성상 공략에는 <strong>거짓과 무저 게시물이 섞여 있다.</strong></p>
+<blockquote>
+<p><strong>그래서 밤일꾼은 두 번 죽는다.</strong>
+정보가 정확해서 괴물이 강해지고,
+정보가 틀려서 자기가 죽는다.</p>
+</blockquote>
+<p>이 이중 구속은 세계관 전체의 축소판이다. 그리고 밤일꾼들은 이것을 안다. 알면서 계속 쓴다. 대안이 없기 때문이다.</p>
+<h4 id="s80">실태</h4>
+<ul>
+<li>사망률 전 직군 최고. 평균 근속 3.4년.</li>
+<li>장비는 컴퍼니 중고 모듈, 관리국 불하품, 출처 불명의 개조품.</li>
+<li><strong>의뢰인의 정체를 알 수 없다.</strong> 당신에게 청소를 맡긴 핸들이 관리국일 수도, 컴퍼니일 수도, 저자회일 수도 있다. 그리고 실제로 상당수가 그렇다.</li>
+<li>이명자 대부분이 결국 야반으로 흘러든다. 관리국은 이명자를 <strong>잠재적 ANE로 등록·감시</strong>하지만, 아고라 안에서는 그가 이명자라는 사실조차 밝혀지지 않기 때문이다. <strong>규칙 2는 이명자에게 유일한 은신처다.</strong></li>
+<li>밤일꾼 사이에서 가장 무서운 소문: <em>"[의뢰] 게시판의 오래된 의뢰 중 몇 개는, 아무도 올린 적이 없다."</em></li>
+</ul>
+<h2 id="s81">4-7. 세력 공통 자산 — 여섯 조직이 전부 갖고 있는 것</h2>
+<p>목적도 방법도 다르지만, 여섯 세력은 <strong>똑같은 두 가지</strong>를 반드시 보유한다. 없으면 조직이 굴러가지 않기 때문이다.</p>
+<h3 id="s82">① 규칙 판독 개체 — "신참 죽이지 않는 장비"</h3>
+<p>신규 개체를 발견했을 때, <strong>그 개체의 일반 규칙(1차 규칙)을 알아낼 수 있는 개체.</strong> 세력의 가장 기본적인 생존 인프라다.</p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>개체</th>
+<th>방식</th>
+<th>특유의 결함</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td>『최초 진술서』 · 무해(3급)</td>
+<td>현장에서 작성된 첫 진술서에, 목격자가 <strong>말하지 않은 것까지</strong> 적힌다</td>
+<td><strong>목격자가 살아 있어야 한다.</strong> 전멸한 현장에서는 백지가 나온다</td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td>『메아리치는 소리굽쇠』 · 무해(2급)</td>
+<td>개체의 이야기를 메아리로 발산시켜 청취 (기존 설정)</td>
+<td>기술자의 기억이 마모된다</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td>『설명서』 · 무해(2급)</td>
+<td>개체 곁에 두면 <strong>취급 설명서가 인쇄</strong>된다</td>
+<td>문체가 가전제품 매뉴얼이다. 뉘앙스·경고·정서가 전부 날아간다. <strong>오독 사고의 최대 원인</strong></td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td>『고해하는 그림자』 · 무해(3급)</td>
+<td>개체의 그림자에게 물으면 대답한다. 거짓말은 못 한다</td>
+<td><strong>침묵할 수는 있다.</strong> 중요한 것일수록 침묵한다</td>
+</tr>
+<tr>
+<td><strong>저자회</strong></td>
+<td>『선례(先例)』 · 무해(2급)</td>
+<td>규칙을 직접 읽지 못한다. 대신 <strong>가장 닮은 기존 이야기</strong>를 알려준다</td>
+<td>정답이 아니라 유사품이다. 저자회가 원작보다 파생을 잘 다루는 이유</td>
+</tr>
+<tr>
+<td><strong>야반</strong></td>
+<td>— 없음</td>
+<td>아고라 [정보] 게시판의 집단 검증</td>
+<td>무저 게시물과 거짓이 섞여 있다. <strong>밤일꾼이 가장 많이 죽는 근본 원인</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>공통 한계 — 이것들이 알려주는 것은 딱 여기까지다</strong></p>
+<ul>
+<li>✅ <strong>1차 규칙(일반 규칙)</strong>: "무엇을 하면 안 되는가"</li>
+<li>❌ <strong>핵의 단서 해독</strong>: 단서가 규칙 안에 있다는 것만 확인될 뿐, 푸는 것은 사람의 몫이다</li>
+<li>❌ <strong>숨은 2차 규칙</strong>: 조건부로만 발동하는 예외 조항</li>
+<li>❌ <strong>유연 규칙의 경계</strong>: "밤"이 몇 시부터인지, "혼자"가 몇 명부터인지</li>
+</ul>
+<blockquote>
+<p>그래서 판독 개체는 <strong>첫 조우에서 신참이 죽는 것</strong>을 막아줄 뿐이다.
+그 뒤부터는 여전히 사람이 죽어가며 알아낸다.</p>
+</blockquote>
+<h3 id="s83">② 협력 개체 (協力個體) — 자발적으로 협조하는 ANE</h3>
+<p><strong>왜 협력하는가</strong>: 제1부 관(觀)의 원리 때문이다. ANE는 자신을 아는 인간이 있는 동안만 존재한다.
+세력은 기록·문서·정기 브리핑·교육 자료를 통해 <strong>지속적이고 안정적인 관측</strong>을 보장할 수 있다.</p>
+<blockquote>
+<p><strong>협력 = 존재 보장 계약.</strong>
+개체 입장에서 세력에 붙는 것은 배신이 아니라 <strong>연금 가입</strong>이다.</p>
+</blockquote>
+<p><strong>공통 사항</strong>
+- 대부분 무해등급. 유해등급 협력 사례도 존재하지만 극히 드물고, 전부 감시 하에 있다.
+- <strong>담보로 핵을 맡기는 것이 관례다.</strong> 신뢰의 증표이자, 동시에 인질이다.
+- 협력 개체는 계약형 이명자의 주 파트너이기도 하다.</p>
+<p><strong>세력별 운용</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>대우</th>
+<th>핵 담보</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td><strong>필수 보유.</strong> 「동거과(同居課)」 전담</td>
+<td>요구함</td>
+<td>아래 참조</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td><strong>사원으로 등록하고 급여를 지급</strong>한다. 급여는 현금이 아니라 관측 — 사보에 매달 실린다</td>
+<td>요구함</td>
+<td>가장 사무적이고, 가장 안정적이다</td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td>자아를 유지한 작품들. '전시물'이 아니라 <strong>'동료 예술가'</strong> 로 부른다</td>
+<td>이미 매개체가 핵이다</td>
+<td>미술관에서 유일하게 대등한 관계</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td>사역 대상이자 신도</td>
+<td><strong>요구하지 않는 유일한 세력</strong></td>
+<td>그래서 <strong>충성도가 압도적으로 높다.</strong> 교단의 협력 개체는 묻지 않은 것까지 알려준다</td>
+</tr>
+<tr>
+<td><strong>저자회</strong></td>
+<td>자기가 쓴 등장인물이므로 협력이 기본값</td>
+<td>불필요</td>
+<td>다만 <strong>이탈 사례가 존재한다.</strong> 자기 초고를 읽은 개체는 저자를 떠난다</td>
+</tr>
+<tr>
+<td><strong>야반</strong></td>
+<td>조직 자산이 아니라 개인 파트너</td>
+<td>개인 간 합의</td>
+<td>밤일꾼의 실질 전력 대부분이 여기서 나온다</td>
+</tr>
+</tbody>
+</table>
+<h4 id="s84">관리국 「동거과」 — 필수 부서</h4>
+<p><strong>관리국은 협력 개체 없이는 하루도 굴러가지 않는다.</strong></p>
+<ul>
+<li><strong>감지탑 3계 센서</strong> 전부가 협력 개체 또는 그 모듈이다. 『벽에 귀』는 자발적 협력 개체다.</li>
+<li><strong>등급 판정 보조</strong>: 개변 권역 실측에 협력 개체를 투입한다.</li>
+<li><strong>규제선 설계</strong>: 규칙을 규칙으로 가두려면, 규칙을 아는 쪽의 조언이 필요하다.</li>
+<li><strong>계약 유도 주선</strong>: 관리국 대응 요원 6,000명의 계약 상대를 이 부서가 연결한다.</li>
+</ul>
+<p><strong>이념적 모순</strong>
+인류의 지속 가능성을 위해 존재하는 조직이, 인류를 위협하는 존재들과 <strong>동거</strong>한다. 이 모순은 관리국 창설 이래 가장 오래된 내부 논쟁이며, 동거과 폐지안은 지금까지 서른 번 넘게 제출되었고 단 한 번도 통과되지 않았다. 폐지하면 조직이 멈추기 때문이다.</p>
+<p><strong>핵 담보 논쟁</strong>
+동거과는 협력 개체의 핵을 지하 보관고에 보관한다. 명목은 상호 신뢰의 증표다.
+소각파는 이것을 <strong>"우리는 협력자를 인질로 잡고 있다"</strong> 고 부른다. 관리파는 <strong>"저들이 우리에게 목숨을 맡긴 것"</strong> 이라고 부른다.
+둘 다 같은 사실을 말하고 있고, 어느 쪽도 상대를 설득하지 못했다.</p>
+<blockquote>
+<p>동거과 복도에 걸린 문구:
+<em>"우리는 그들을 이해하지 않는다. 다만 같은 층에서 일한다."</em></p>
+</blockquote>
+<hr />
+<h2 id="s85">4-8. 세력 관계도</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>관리국</th>
+<th>컴퍼니</th>
+<th>교단</th>
+<th>미술관</th>
+<th>저자회</th>
+<th>야반</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td>—</td>
+<td>유착</td>
+<td>묵인·거래</td>
+<td>냉전</td>
+<td>절멸 대상</td>
+<td>하청·단속 병행</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td>최대 고객</td>
+<td>—</td>
+<td>정보 구매</td>
+<td>표적 경쟁</td>
+<td>의혹 관계</td>
+<td>장비 판매</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td>정보 제공</td>
+<td>거래</td>
+<td>—</td>
+<td>무관심</td>
+<td><strong>전면전</strong></td>
+<td>구호·협력</td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td>무시</td>
+<td>경쟁</td>
+<td>무관심</td>
+<td>—</td>
+<td>소재 매입 의혹</td>
+<td>고액 하청</td>
+</tr>
+<tr>
+<td><strong>저자회</strong></td>
+<td>침투</td>
+<td>접촉설</td>
+<td><strong>전면전</strong></td>
+<td>판매</td>
+<td>위장 잠입</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>야반</strong></td>
+<td>생계</td>
+<td>고객</td>
+<td>존중</td>
+<td>고액 의뢰</td>
+<td>최대 피해자</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 구도</strong>: 여섯 세력 중 <strong>누구도 ANE를 없애려 하지 않는다.</strong> 관리국은 관리하고, 컴퍼니는 판매하고, 교단은 지연시키고, 미술관은 보존하고, 저자회는 창작하고, 야반은 그것으로 먹고산다. <strong>ANE가 사라지면 이 세계의 모든 권력 구조가 무너진다.</strong> 그래서 인류는 문제를 해결하지 않는다.</p>
+<p><strong>두 개의 중립지대</strong>: 이 여섯 세력이 서로를 죽이면서도 공유하는 것이 딱 둘 있다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>중립지대</th>
+<th>성격</th>
+<th>유지 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>낮</strong></td>
+<td><strong>관리국 감지탑</strong></td>
+<td>공개·공식·기록됨</td>
+<td>모두가 데이터를 원한다</td>
+</tr>
+<tr>
+<td><strong>밤</strong></td>
+<td><strong>심연의 아고라</strong></td>
+<td>익명·비공식·삭제 불가</td>
+<td>모두가 이름 없이 말할 곳이 필요하다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>탑에서는 아무도 거짓말할 수 없고, 아고라에서는 아무도 진실을 증명할 수 없다.
+이 세계의 모든 협상은 둘 중 하나에서 이루어진다.</p>
+</blockquote>
+<hr />
+</section>
+<section class="part"><h1 id="s86"><span class="eyebrow">제5부</span><span class="h1-title">인간은 어떻게 싸우는가</span></h1>
+<blockquote>
+<p>이 세계에 「승리」는 없다. 「격퇴」와 「지연」과 「관리」만 있다.</p>
+</blockquote>
+<h2 id="s87">5-1. 5계층 대응 체계</h2>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>수단</th>
+<th>접근성</th>
+<th>상한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1층</strong></td>
+<td>규칙 준수</td>
+<td>전 인류</td>
+<td>무한(규칙을 알 때만)</td>
+</tr>
+<tr>
+<td><strong>2층</strong></td>
+<td>재래 화력</td>
+<td>군·경</td>
+<td>4급까지 지연 가능. 소멸 불가</td>
+</tr>
+<tr>
+<td><strong>3층</strong></td>
+<td>모듈 장비</td>
+<td>컴퍼니·관리국·자금력</td>
+<td>4급 대응 가능</td>
+</tr>
+<tr>
+<td><strong>4층</strong></td>
+<td>무해등급 개체(작품·모듈)</td>
+<td>세력 소속</td>
+<td>개변 권역 내 국지 대응</td>
+</tr>
+<tr>
+<td><strong>5층</strong></td>
+<td>이명자</td>
+<td>계약형 다수 / 생존형 극소수</td>
+<td>5급 대치 가능. 격퇴는 불가</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s88">5급 이상 전투의 실상 — 「필사(筆寫)」</h3>
+<p>3~4급까지의 전투는 규칙을 알아내 지키는 싸움이다. <strong>5급 이상에서는 그 전제가 무너진다.</strong></p>
+<ul>
+<li>규칙 판독 개체가 핵의 단서를 풀지 못한다 (은폐가 자기지시형·권역형)</li>
+<li>개변 권역 안이라 무대 자체가 상대의 것이다</li>
+<li>핵은 너무 크거나 규칙 자체다</li>
+</ul>
+<p>그래서 5급 이상 작전의 <strong>실제 목표는 격퇴가 아니라 현창 수집</strong>이다.</p>
+<p><strong>표준 편성 (관리국 5급 대응 대대)</strong>
+| 요소 | 역할 |
+|---|---|
+| <strong>필사관</strong> | 현창을 받아적는다. <strong>작전의 목적 그 자체</strong> |
+| <strong>호위조</strong> | 필사관을 살린다. 개체를 상대하지 않는다 |
+| <strong>정착 지원</strong> | 고정착도 계약자. 필사관이 "설교로 듣기" 시작하면 끌어낸다 |
+| <strong>회수조</strong> | 필사관이 죽었을 때 <strong>수첩만 회수</strong>한다 |</p>
+<blockquote>
+<p>5급 작전의 성공 기준은 생환자 수가 아니다. <strong>가져온 문장 수다.</strong>
+관리국 자료실에는 필사관 한 명의 목숨과 맞바꾼 한 줄짜리 수첩이 수백 권 쌓여 있다.</p>
+</blockquote>
+<h2 id="s89">5-2. 1층 — 규칙, 가장 강력한 무기</h2>
+<p><strong>ANE는 절대 자기 규칙을 어기지 않는다.</strong> 어기는 순간 존재의 골격이 무너지기 때문이다.
+이것은 <strong>방어에도 그대로 적용된다.</strong> 개체는 상대가 누구든 자기 규칙 밖으로 나갈 수 없으므로, 규칙이 요구하는 조건을 만들지 않는 한 개체는 당신에게 손을 댈 수 없다. 규칙을 아는 것은 공략법을 아는 것이자 <strong>방탄복을 입는 것</strong>이다.
+따라서 규칙을 정확히 아는 비무장 민간인이, 규칙을 모르는 완전무장 소대보다 생존율이 높다. 이것이 관리국이 <strong>『시민 규칙 수칙』</strong>을 전 국민에게 교육하는 이유다.</p>
+<p><strong>표준 5수칙 (초등 교과 수록)</strong>
+1. 이름을 부르지 마라 — 호명은 관측이고, 관측은 급전이다.
+   <em>(그리고 5급 이상을 상대할 때, 이 조항은 당신을 향한 것이 아니다. </em><em>그쪽이 먼저 자기 이름을 부른다.</em><em> 제1부 1-2-C 참조)</em>
+2. 대답하지 마라 — 대화는 관계이고, 관계는 규칙의 진입로다.
+3. 세지 마라 — 개수를 확인하는 순간 개수가 고정되고, 고정된 것은 늘어난다.
+4. 돌아보지 마라 — 대부분의 규칙은 시선을 조건으로 삼는다.
+5. 반드시 신고하라 — 혼자 아는 이야기는 당신만의 것이 된다.</p>
+<h2 id="s90">5-3. 5층 — 이명자 (異名者)</h2>
+<p><strong>정의</strong>: <strong>서사압의 일부를 자기 것으로 끌어 쓰는 인간.</strong></p>
+<p>ANE와 완전히 같은 원리로 힘을 얻은 존재다. 별도의 마법 체계가 아니라 <strong>동일한 원리의 인간 적용판</strong>이며, 그래서 이명자에게도 반드시 <strong>규칙</strong>과 <strong>개변 권역</strong>이 생긴다.</p>
+<h3 id="s91">두 가지 발생 경로</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>생존형 (生存型)</strong></th>
+<th><strong>계약형 (契約型)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원리</td>
+<td>자기 이야기를 만들어 서사압을 <strong>소유</strong>한다</td>
+<td>남의 이야기에 조연으로 편입되어 서사압을 <strong>빌린다</strong></td>
+</tr>
+<tr>
+<td>성립</td>
+<td>우연. 유도 불가</td>
+<td>절차. 유도 가능</td>
+</tr>
+<tr>
+<td>수</td>
+<td>관리국 등록 41명</td>
+<td>관리국 등록 <strong>약 6,000명</strong></td>
+</tr>
+<tr>
+<td>상한</td>
+<td>높다. 이론상 완결자까지</td>
+<td>낮다. 대개 이명 2급이 천장</td>
+</tr>
+<tr>
+<td>실패 시</td>
+<td><strong>낙명</strong> — ANE로 전락</td>
+<td><strong>파약</strong> — 권능 상실 + 대가 회수</td>
+</tr>
+</tbody>
+</table>
+<h4 id="s92">① 생존형 — 자기 이야기의 주인공이 된 자</h4>
+<p><strong>성립 조건</strong>
+1. 고등급 ANE와의 조우에서 생존
+2. 그 사건이 <strong>이야기로 널리 퍼짐</strong>
+3. 생존자 본인이 그 이야기의 <strong>주인공으로 지목됨</strong></p>
+<p>우연의 산물이며 재현이 불가능하다. 강력하지만 규칙을 본인이 고를 수 없고, 여론에 종속된다. 야반 조합이 최고 대우로 모시는 것도, 관리국이 개체번호를 붙이는 것도 이쪽이다.</p>
+<h4 id="s93">② 계약형 — ANE에게 권능을 빌린 자</h4>
+<p>ANE와 <strong>계약</strong>하여 그 권능의 일부를 빌리거나 받은 사람. 계약자는 대가로 <strong>그 ANE의 규칙 일부를 대신 짊어진다.</strong></p>
+<blockquote>
+<p>계약은 거래가 아니라 <strong>배역 수락</strong>이다.
+계약형 이명자는 그 ANE 이야기의 등장인물 자리에 들어가고, 그 대가로 이야기의 급전을 나눠 받는다.</p>
+</blockquote>
+<p><strong>계약 대상은 거의 전부 무해등급 개체다.</strong>
+- 위험하지 않고, 규칙이 이미 순화되어 있으며, 각 세력이 관리 중이라 <strong>접촉을 주선할 수 있다.</strong>
+- 유해등급과의 계약은 이론상 가능하지만 성공률이 극히 낮고, 성공해도 짊어질 규칙이 사람을 죽인다. 관리국은 이를 <strong>무허가 계약</strong>으로 규정해 중범죄로 다룬다.</p>
+<p><strong>계약 유도 (誘導)</strong>
+계약은 개체 쪽이 원해야 성립한다. 따라서 각 세력은 무해등급 개체가 "계약하고 싶어지도록" 만드는 노하우를 축적해왔다.</p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>유도 방식</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>미술관</strong></td>
+<td>작품화 과정에서 개체의 취향과 서사를 완전히 파악하고 있다</td>
+<td>성공률 최고. 대신 <strong>미술관에 평생 빚을 진다</strong></td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td>계약 유도를 표준 공정으로 산업화. 「인증 계약자」 상품</td>
+<td>대량 공급. 권능은 약하지만 안정적</td>
+</tr>
+<tr>
+<td><strong>관리국</strong></td>
+<td>대응 요원 전용 제도. 계약 등록·감시·해지 관리</td>
+<td>규칙이 엄격하나 신변 보장</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td>신성계 개체와의 계약. 사제 서품 절차에 포함</td>
+<td>유일하게 무상</td>
+</tr>
+<tr>
+<td><strong>저자회</strong></td>
+<td>자기가 파종한 개체와 계약시킨다</td>
+<td><strong>계약 상대의 취향을 자기가 썼으므로 100% 성립</strong></td>
+</tr>
+<tr>
+<td><strong>야반</strong></td>
+<td>아고라 [거래] 게시판의 무허가 중개</td>
+<td>싸고, 빠르고, 자주 죽는다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>계약 예시</strong></p>
+<blockquote>
+<p><strong>『잊지 않는 우체통』</strong> — 무해(2급). 넣은 편지를 반드시 수취인에게 배달한다. 수취인이 죽었어도, 이사했어도, 존재하지 않아도.
+<strong>짊어지는 규칙</strong>: 받은 말에는 반드시 대답해야 한다.
+<strong>빌리는 권능</strong>: 그의 말은 반드시 상대에게 닿는다. 거리·차폐·언어·의식 불명 상태를 무시한다.
+— 관리국 통신 요원 상당수가 이 계약자다. 그리고 그들은 취조받을 때 침묵할 수 없다.</p>
+</blockquote>
+<p><strong>파약 (破約)</strong>
+계약형이 규칙을 어기면 낙명하지 않는다. 대신 <strong>개체가 계약을 파기하고 대가를 회수해 간다.</strong>
+회수 대상은 개체마다 다르다 — 권능만 가져가는 경우도 있고, 계약 기간의 기억·목소리·이름을 가져가는 경우도 있다. 죽지는 않는다. 다만 계약 전으로 돌아가지도 못한다.</p>
+<hr />
+<h3 id="s94">규칙은 저주가 아니라 계약이다</h3>
+<p>이명자의 규칙은 ANE의 규칙과 <strong>완전히 같은 물건</strong>이다. 제1부의 원리를 그대로 적용하면 결론은 하나다.</p>
+<blockquote>
+<p><strong>속박될수록 강해진다.</strong></p>
+</blockquote>
+<p>이명자는 규칙을 지키는 동안 자기 이야기의 서사압을 <strong>연료로 끌어 쓴다.</strong> 규칙은 그 연료관을 여는 밸브다. 지키면 흐르고, 어기면 역류한다.</p>
+<h3 id="s95">리턴 — 「배역 권능(配役權能)」</h3>
+<p>규칙을 지키는 동안 이명자에게 발현되는 4가지. 등급이 높은 이명자일수록 각 항목이 강력해진다.</p>
+<p><strong>① 불락 (不落)</strong>
+제1부 1-2의 불락 원리가 인간에게 적용된 것. 자기 이야기가 요구하는 결말에 도달하기 전에는 <strong>죽지 않는다.</strong>
+치명상을 입어도, 출혈이 멈추고, 뼈가 붙고, 장기가 자리를 찾는다. 이야기가 "그는 아직 죽을 때가 아니다"라고 말하고 있기 때문이다.</p>
+<p><strong>이명자의 불락에도 조건이 붙는다.</strong> 규칙이 늘어날수록 그 조건은 구체적이 되고, 조건이 구체적이면 <strong>뚫는 방법도 구체적이 된다.</strong></p>
+<blockquote>
+<p>소문: <em>"그는 등을 보인 적이 없다"</em>
+→ 불락 조건: <strong>정면에서 오는 것에는 죽지 않는다.</strong>
+→ 공략: 등 뒤에서 치면 된다. 그리고 그는 규칙상 등을 보일 수 없으므로, <strong>적이 뒤로 돌아가는 것을 막을 수단이 없다.</strong></p>
+</blockquote>
+<p>이명자 암살이 성립하는 이유가 이것이다. 유명해질수록 강해지지만, 유명해질수록 <strong>어떻게 죽는지도 함께 알려진다.</strong>
+그리고 그 정보는 아고라 [정보] 게시판에서 핵 좌표와 같은 값에 거래된다.</p>
+<ul>
+<li><strong>한계</strong>: 고통은 그대로다. 불락은 죽음을 막을 뿐 아픔을 막지 않는다. 장기 이명자들의 통증 내성이 비정상적으로 높은 이유.</li>
+<li><strong>한계</strong>: 이야기가 요구하는 결말이 다가올수록 불락은 약해진다. <strong>가장 강한 이명자는 가장 죽음에 가까운 이명자다.</strong></li>
+</ul>
+<p><strong>② 권능 (權能)</strong>
+<strong>제약과 권능은 같은 문장의 앞뒤다.</strong> 규칙 하나가 반드시 대응하는 힘 하나를 낳는다.</p>
+<table>
+<thead>
+<tr>
+<th>소문(규칙)</th>
+<th>제약</th>
+<th>권능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"그는 절대 도망치지 않았다"</td>
+<td>후퇴·회피 불가</td>
+<td>공포·정신 공격 <strong>완전 면역</strong></td>
+</tr>
+<tr>
+<td>"그녀는 약속을 어긴 적이 없다"</td>
+<td>입에 담은 약속은 반드시 이행</td>
+<td>그녀의 약속은 <strong>ANE의 규칙보다 우선한다</strong></td>
+</tr>
+<tr>
+<td>"그는 혼자였다"</td>
+<td>동료를 만들 수 없다</td>
+<td>감염·추격형 ANE가 <strong>표적을 그 하나로 고정</strong>한다 (= 최강의 방패 역할)</td>
+</tr>
+<tr>
+<td>"그 아이는 이름을 부르지 않았다"</td>
+<td>누구의 이름도 부를 수 없음</td>
+<td>호명 계열 규칙 전부 무효화</td>
+</tr>
+</tbody>
+</table>
+<p><strong>③ 인지 특권 (認知特權)</strong>
+ANE와 같은 층위의 존재가 되었으므로, <strong>ANE의 규칙을 직관으로 읽어낸다.</strong>
+공략서 없이, 첫 조우에서, 무엇을 하면 안 되는지를 안다.
+→ <strong>이명자가 최전선에 서는 실질적 이유이자, 야반 조합이 이명자를 최고 대우로 모시는 이유.</strong>
+→ 다만 <strong>자기보다 등급이 높은 개체의 규칙은 읽히지 않는다.</strong> 읽으려 하면 그쪽이 이쪽을 읽는다.</p>
+<p><strong>④ 서사 우위 (敍事優位)</strong>
+자기보다 낮은 등급 ANE의 규칙을 <strong>일시적으로 덮어쓴다.</strong>
+이야기의 주인공이 배경보다 우선하기 때문이다. 3급 이명자가 2급 개체 앞에서 "그건 여기 없다"고 선언하면, 잠시 동안 정말로 없다.
+- 지속 시간은 짧고, 사용 후 반동이 크며, 등급이 같으면 통하지 않는다.
+- 5급 개체를 상대로 이명자가 <strong>대치</strong>만이라도 가능한 것은 이 권능 덕분이다. 격퇴는 여전히 불가능하다.</p>
+<h3 id="s96">리스크</h3>
+<ul>
+<li><strong>자기 규칙의 발생</strong>: 규칙은 본인이 고를 수 없다. 세간의 소문이 정한다. 유명해질수록 규칙이 <strong>늘어나고</strong>, 규칙이 늘어난 만큼 권능도 늘어난다. 강해지려면 스스로를 더 좁은 상자에 넣어야 한다.</li>
+<li><strong>여론 종속</strong>: 힘의 크기가 평판에 좌우된다. 잊히면 약해지고, 악명이 퍼지면 힘은 커지되 규칙이 흉악해진다. 이명자를 죽이는 가장 확실한 방법은 그를 <strong>잊게 만드는 것</strong>이다.</li>
+<li><strong>인격 침식</strong>: 이야기 속의 자신과 실제 자신이 벌어질수록 정신이 마모된다. 장기 생존한 이명자는 예외 없이 <strong>이야기 쪽으로 끌려간다.</strong></li>
+<li><strong>낙명 (落名) — 규칙 위반의 대가</strong>
+  규칙을 어기는 순간, 그동안 축적된 서사압이 <strong>역류하여 본인을 침식한다.</strong>
+  대부분의 낙명자는 그 자리에서 인간이기를 그만두고 <strong>ANE로 전락한다.</strong> 자기 이야기가 자기를 잡아먹는 것이다.
+  야반 조합에서 가장 무거운 은어 「낙명각」은 여기서 나왔다.</li>
+</ul>
+<blockquote>
+<p><strong>거래 요약</strong>: 규칙을 지키면 인간을 넘어선다. 어기면 인간 이하가 된다. 그리고 규칙을 정하는 것은 당신이 아니다.</p>
+</blockquote>
+<h3 id="s97">이명 등급 (異名等級)</h3>
+<p>이명자에게도 <strong>개변 권역</strong>이 있다. 등급 판정 기준은 ANE와 완전히 동일하다 — 그 사람의 규칙이 현실을 어디까지 다시 쓰는가.</p>
+<table>
+<thead>
+<tr>
+<th>이명 등급</th>
+<th>통칭</th>
+<th>개변 권역</th>
+<th>규칙 수</th>
+<th>실태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1급</strong></td>
+<td><strong>각주 (脚註)</strong></td>
+<td>자신</td>
+<td>1</td>
+<td>계약형 대부분. 권능 하나, 제약 하나</td>
+</tr>
+<tr>
+<td><strong>2급</strong></td>
+<td><strong>조연 (助演)</strong></td>
+<td>접촉자 1인</td>
+<td>1~2</td>
+<td>계약형의 사실상 천장. 생존형 신참</td>
+</tr>
+<tr>
+<td><strong>3급</strong></td>
+<td><strong>주연 (主演)</strong></td>
+<td>현장</td>
+<td>3~5</td>
+<td>등록 생존형의 다수. 소속 없이 살기 어려워진다</td>
+</tr>
+<tr>
+<td><strong>4급</strong></td>
+<td><strong>표제 (標題)</strong></td>
+<td>구역·집단</td>
+<td>6~9</td>
+<td><strong>현재</strong> 확인 3명. 이름이 곧 지명(地名)처럼 쓰인다</td>
+</tr>
+<tr>
+<td><strong>5급</strong></td>
+<td>—</td>
+<td>도시 전역</td>
+<td>—</td>
+<td><strong>도달 사례 없음.</strong> 아래 참조</td>
+</tr>
+<tr>
+<td>**— **</td>
+<td><strong>완결자 (完結者)</strong></td>
+<td>등급 외</td>
+<td>자가완결</td>
+<td>공식 확인 0명. <strong>실제로는 존재한다</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>4급 「현재 확인 3명」은 <strong>지금 4급인 사람</strong>의 수다. 확인된 완결자 넷은 전원 완결 시점에 4급이었으나, 완결과 동시에 등급 체계에서 이탈했으므로 이 칸에 포함되지 않는다.</p>
+</blockquote>
+<h4 id="s98">5급의 벽 — 왜 아무도 넘지 못하는가</h4>
+<p>이명 등급이 오르려면 유명해져야 하고, 유명해지면 <strong>소문이 붙어 규칙이 늘어난다.</strong> 규칙이 늘면 권능도 늘지만, 동시에 이야기 속의 자신과 실제 자신의 간격이 벌어진다.</p>
+<p>4급 후반에서 규칙 수는 9개를 넘어가고, 서로 충돌하기 시작한다.
+<strong>어느 규칙을 지키면 다른 규칙을 어기게 되는 상태.</strong> 이 지점에서 이명자는 예외 없이 <strong>낙명</strong>한다.</p>
+<blockquote>
+<p>5급 이명자가 존재하지 않는 이유는 벽이 높아서가 아니다. <strong>벽 앞에서 전부 괴물이 되기 때문이다.</strong>
+관리국 기록상 4급에서 5급을 향해 나아간 이명자는 7명이며, 7명 전부 5급 ANE로 기록되어 있다.</p>
+</blockquote>
+<p><strong>완결은 5급으로 가는 길이 아니다.</strong>
+확인된 완결자 넷은 전원 <strong>이명 4급에서, 규칙 6~9개를 안은 채로</strong> 완결했다. 위로 올라간 것이 아니라 <strong>옆으로 빠져나간 것</strong>이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>5급을 향한 7명</th>
+<th>완결한 4명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>방향</td>
+<td>규칙을 더 늘렸다</td>
+<td>규칙을 <strong>한 점으로 접었다</strong></td>
+</tr>
+<tr>
+<td>계기</td>
+<td>명성 확대</td>
+<td><strong>결말 도달</strong></td>
+</tr>
+<tr>
+<td>결과</td>
+<td>낙명 → 5급 ANE</td>
+<td>완결자</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>벽은 <strong>위로 넘는 것이 아니라 통과하는 것</strong>이었고, 그 사실을 아는 사람은 넷과 그들을 살려낸 조직뿐이다.
+관리국 이명자 관리 지침에 「5급 접근 징후」 항목은 있어도 「완결 징후」 항목은 없다.
+<strong>완결 직전과 낙명 직전이 겉으로 구별되지 않기 때문이다.</strong></p>
+</blockquote>
+<h3 id="s99">완결자 (完結者) — 등급 외</h3>
+<blockquote>
+<p><strong>정의</strong>: 자기 규칙이 <strong>자가완결</strong>하여, 더 이상 외부의 소문에 흔들리지 않는 이명자.</p>
+</blockquote>
+<p><strong>공식 기록상 확인 0명이다. 그리고 그 기록은 거짓이 아니다.</strong>
+탐지가 원리적으로 불가능하므로, 어느 세력도 <strong>타 세력의 완결자를 확인할 수 없다.</strong> 각자는 자기 것만 알고, 남의 것은 의심만 한다.</p>
+<blockquote>
+<p><strong>실제 현황</strong>: 관리국·컴퍼니·교단·미술관 — <strong>네 세력의 최고위층에 각각 1~2명씩 존재한다.</strong>
+<strong>저자회와 야반 조합에는 없다.</strong> (뒤의 「왜 네 세력뿐인가」 참조)
+그 외에 확인된 완결자는 없으며, 야생 완결자의 존재 여부는 누구도 알지 못한다.</p>
+</blockquote>
+<p><strong>완결 시 성립하는 것</strong>
+- <strong>여론 종속 해방</strong>: 잊혀도 약해지지 않는다. 소문이 왜곡되어도 규칙이 바뀌지 않는다. 새 소문이 붙어도 규칙이 늘지 않는다.
+- <strong>낙명 불능</strong>: 자기 규칙을 스스로 정의하므로, 어길 규칙이라는 개념이 성립하지 않는다. 5급의 벽 자체가 사라진다.
+- <strong>희석 무효</strong>: 관리국 편집부의 최종 병기가 통하지 않는 최초의 존재가 된다.
+- <strong>개변 완전 무효</strong>: 상대의 규칙이 그에게 걸리지 않는다. <strong>6급 개변 권역 안을 그대로 걸어다닐 수 있는 유일한 존재.</strong>
+- <strong>회수 가능</strong>: 개체의 핵을 부수면 그 Ω를 삼킬 수 있다. 규칙이 없어 충돌할 것이 없기 때문이며, <strong>완결자만이 가진 유일한 외부 보급로</strong>다 (아래 참조).
+- <strong>자립 서사</strong>: 인간 형태를 한 자립 ANE. <strong>인간과 ANE의 구분이 소멸한다.</strong></p>
+<h4 id="s100">완결 권능 (完結權能) — 규칙이 뒤집힌 자리</h4>
+<p>규칙이 없는 존재는 형(形)을 갖지 못해 존재할 수 없다. 그렇다면 완결자는 어떻게 존재하는가?</p>
+<p><strong>규칙이 사라진 것이 아니라, 권능으로 뒤집힌 것이다.</strong></p>
+<p>수많은 규칙이 서로 충돌하다가, 마지막에 단 하나의 문장으로 접힌다. 그리고 그 문장은 더 이상 금지형이 아니다.</p>
+<blockquote>
+<p><strong>"~해서는 안 된다"</strong> 가 <strong>"~인 것이 나다"</strong> 로 뒤집힌 단 하나의 문장.
+이것이 <strong>완결 권능</strong>이며, 완결자가 가진 유일한 권능이자 <strong>자기 존재의 증명</strong>이다.</p>
+</blockquote>
+<p>예시 (이론상 상정):</p>
+<blockquote>
+<p>규칙: <em>"그는 절대 도망치지 않았다"</em> (제약 — 후퇴 불가)
+↓ 완결
+완결 권능: <em>"그가 선 자리가 전선이다"</em> (출력 — 그가 멈춰 선 지점이 그대로 경계선이 된다)</p>
+</blockquote>
+<p><strong>성질</strong>
+- 완결자에게 권능은 이것 <strong>하나뿐</strong>이다. 다양성이 없는 대신, 이 하나에 그의 전부가 들어 있다.
+- <strong>유일한 급전 장치다.</strong> 완결자는 여론에서 급전을 받지 않으므로 Ω를 자기가 자기에게 공급해야 한다. 그 방법이 완결 권능이다. 오래 쓰지 않으면 존재가 흐려진다.
+- <strong>발현은 곧 선언이다.</strong> 완결 권능을 쓰는 순간, 그 자리에서 그것을 본 모든 것에게 그가 완결자임이 드러난다. 되돌릴 수 없다.</p>
+<h4 id="s101">완결자에게는 핵이 없다</h4>
+<p>핵이란 <strong>존재 에너지를 한 점에 응축한 뒤 규칙 뒤에 숨긴 것</strong>이다. 목적은 은폐다.</p>
+<p>완결자에게는 규칙이 없다. <strong>숨길 도구가 없으므로, 응축할 이유도 없다.</strong>
+따라서 완결자의 Ω는 응축되지 않고 <strong>육체 전체에 고르게 퍼져 있다.</strong></p>
+<blockquote>
+<p><strong>완결자의 핵은 완결자의 몸이다.</strong>
+정확히는 — <strong>핵이 따로 존재하지 않고, 평범한 인간의 육체가 그 자리를 대신한다.</strong></p>
+</blockquote>
+<p><strong>이것이 뜻하는 것 두 가지</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>유리</th>
+<th>불리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>급소 부재</strong></td>
+<td>부수면 즉사하는 단일 급소가 없다. <strong>핵 사냥이 통하지 않는 유일한 상대</strong></td>
+<td>대신 <strong>전신이 급소다.</strong> 인간의 몸이 견디는 만큼만 견딘다</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>다른 개체는 핵만 부수면 끝난다. 완결자는 그런 지름길이 없다.</li>
+<li>그러나 완결자는 <strong>불락도 없고 규칙 보호도 없는 인간의 몸</strong>이다. 칼에 베이고, 총에 뚫리고, 떨어지면 부러진다.</li>
+<li>결론: <strong>완결자를 죽이는 방법은 특별하지 않다. 그냥 사람 죽이듯 죽이면 된다.</strong> 문제는 그가 회복한다는 것뿐이다.</li>
+</ul>
+<h4 id="s102">존재 에너지 회복 — 유일한 방어 수단</h4>
+<p>Ω가 몸 전체에 흐르고 있으므로, 완결자는 <strong>손상을 존재 에너지로 메울 수 있다.</strong></p>
+<p>이것은 불락과 전혀 다르다. 불락은 "아직 죽을 때가 아니다"라는 서사적 보호였고, 회복은 <strong>연료를 태워 물리적으로 메꾸는 작업</strong>이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>불락 (이명자)</th>
+<th>회복 (완결자)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원리</td>
+<td>이야기가 죽음을 허용하지 않음</td>
+<td>Ω를 소모해 손상을 상쇄</td>
+</tr>
+<tr>
+<td>비용</td>
+<td>없음</td>
+<td><strong>소모된 Ω는 돌아오지 않는다</strong></td>
+</tr>
+<tr>
+<td>한계</td>
+<td>결말이 다가올수록 약해짐</td>
+<td><strong>잔량이 줄수록 회복이 느려진다</strong></td>
+</tr>
+<tr>
+<td>즉사</td>
+<td>막아준다</td>
+<td><strong>막지 못한다</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>한계 3가지</strong>
+1. <strong>즉사는 못 막는다.</strong> 회복에는 시간이 필요하고, 회복을 실행할 주체가 먼저 사라지면 아무 일도 일어나지 않는다.
+2. <strong>소모전이다.</strong> 회복할 때마다 Ω가 줄고, Ω가 줄면 회복 속도가 떨어지고, 느려진 회복은 더 큰 손상을 부른다. <strong>한 번 기울면 되돌리기 어렵다.</strong>
+3. <strong>보급은 하나뿐이다.</strong> Ω를 다시 채우는 방법은 <strong>완결 권능을 발현하는 것</strong> 뿐이다.</p>
+<h4 id="s103">불로 (不老) — Ω가 육체를 대신 지탱한다</h4>
+<p>완결자의 Ω는 응축되지 않고 육체 전체에 퍼져 있다(핵 없음). 그 Ω가 손상을 메우는 것과 같은 원리로, <strong>마모 또한 계속 메운다.</strong></p>
+<blockquote>
+<p><strong>존재 에너지가 남아 있는 한, 완결자는 늙지 않는다.</strong>
+정확히는 — <strong>완결한 시점의 몸이 계속 새로 유지된다.</strong></p>
+</blockquote>
+<ul>
+<li>완결자의 외견은 <strong>완결 순간에 고정</strong>된다. 그 뒤로 하루도 늙지 않는다.</li>
+<li>병에 걸리지 않고, 상처가 흉으로 남지 않으며, 머리카락과 손톱은 자라되 늘 같은 길이로 돌아온다.</li>
+<li>회복과 같은 계정에서 빠져나가므로, <strong>불로는 상시 소액 결제</strong>다. 살아 있는 것만으로 Ω가 아주 조금씩 준다.</li>
+</ul>
+<p><strong>이것이 완결자의 정체를 가장 잘 드러내는 특징이자, 최대의 은폐 과제다.</strong>
+40년째 얼굴이 그대로인 임원, 30년 전 사진과 똑같은 감찰관 — 조직이 신원 세탁과 문서 등급 분류에 그토록 매달리는 이유의 절반이 이것이다.</p>
+<p><strong>역으로, 가장 정확한 조기 경보이기도 하다</strong></p>
+<blockquote>
+<p><strong>Ω가 줄기 시작하면 가장 먼저 무너지는 것이 불로다.</strong>
+회복과 발현은 그대로 되는데, 어느 날부터 <strong>얼굴이 늙기 시작한다.</strong></p>
+</blockquote>
+<p>퇴색이 진행 중인 완결자는 몇 달 만에 몇 년씩 늙는다. 조직은 이것을 보고 잔량을 추정하며, 본인보다 주변이 먼저 알아차리는 유일한 징후다.</p>
+<h4 id="s104">회수 (回收) — 개체의 Ω를 삼킨다</h4>
+<p>Ω를 채우는 방법은 완결 권능 발현만이 아니다. <strong>두 번째 경로가 있다.</strong></p>
+<blockquote>
+<p><strong>완결자는 개체를 격퇴·소멸시키고, 그 개체가 쥐고 있던 존재 에너지를 흡수할 수 있다.</strong></p>
+</blockquote>
+<p><strong>원리</strong>
+핵이 부서지면 응축되어 있던 Ω가 방출된다. 평소에는 서사층으로 흩어져 소실되지만, 그 자리에 <strong>받아낼 그릇</strong>이 있으면 이야기가 다르다.</p>
+<p>다른 존재는 그릇이 되지 못한다. 이미 자기 핵과 규칙이 있어서, 남의 Ω를 받으면 두 이야기가 충돌해 그 자리에서 붕괴한다.
+<strong>완결자만이 규칙이 없어 충돌할 것이 없고, 핵이 없어 응축 구조에 얽매이지 않는다.</strong> Ω가 육체 전체에 고르게 퍼져 있으므로, 방출된 것을 그대로 받아 자기 잔량에 더한다.</p>
+<p><strong>조건 — 핵을 부숴야 한다</strong>
+형체 파괴만으로는 아무것도 얻지 못한다. 핵이 살아 있으면 Ω도 그대로 그 안에 있다.
+그리고 핵을 부수려면 <strong>여전히 규칙을 풀어야 한다.</strong> 완결자도 불락 심사는 대상 쪽 규칙으로 받기 때문이다.
+→ <strong>회수는 공짜가 아니라 전투의 대가</strong>이며, 대부분의 완결자는 애초에 전투를 할 수 없다.</p>
+<blockquote>
+<p><strong>단 하나의 예외가 존재한다.</strong> 완결 권능 자체가 불락 심사를 면제받는 경우, 규칙 해독 없이 핵을 부술 수 있다.
+확인된 다섯 중 그런 권능을 가진 사람은 하나뿐이며, 그래서 <strong>실제로 회수를 수행하는 완결자도 하나뿐이다.</strong> (제8부 8-5)</p>
+</blockquote>
+<p><strong>회수량</strong></p>
+<table>
+<thead>
+<tr>
+<th>개체 등급</th>
+<th>대략적인 환산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1~2급</td>
+<td>며칠~몇 주치</td>
+</tr>
+<tr>
+<td>3급</td>
+<td>몇 달치</td>
+</tr>
+<tr>
+<td>4급</td>
+<td>몇 년치</td>
+</tr>
+<tr>
+<td>5급</td>
+<td>수년~십수 년치</td>
+</tr>
+<tr>
+<td>6급</td>
+<td><strong>불가.</strong> 핵이 권역형이라 부술 수 없다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>부작용 ① 잔향 (殘響)</strong>
+회수 직후 며칠간, 삼킨 개체의 <strong>현창 조각이 완결자의 입에서 새어 나온다.</strong> 본인 의지와 무관하며, 스스로는 말한 줄도 모른다.
+회수를 자주 하는 완결자 곁에는 반드시 필사관이 붙는데, 그 필사본은 <strong>이미 소멸한 개체의 것</strong>이라 대응 가치가 없다. 그래도 관리국은 전량 보관한다.</p>
+<p><strong>부작용 ② 역류 (逆流) — 최악의 시나리오</strong>
+회수한 Ω는 <strong>남의 이야기의 에너지</strong>다. 완결자는 규칙이 없어 그것을 자기 이야기로 소화하지 못하고, 순수 연료로 태울 뿐이다.
+즉 <strong>다 태우기 전까지는 그 개체의 이야기가 아직 끝나지 않은 상태로 그의 몸 안에 있다.</strong></p>
+<blockquote>
+<p><strong>회수를 많이 한 완결자가 죽거나 퇴색하면, 그동안 삼킨 것들이 한꺼번에 방출된다.</strong>
+관리국은 이것을 <strong>역류(逆流)</strong> 라 부르고, 완결자 관련 시나리오 중 최우선 대비 항목으로 분류한다.</p>
+</blockquote>
+<ul>
+<li>방출된 Ω는 서사층으로 흩어지며 <strong>그 자리의 현현 임계점을 극단적으로 낮춘다.</strong> 사실상 즉석에서 빈터를 만드는 것과 같다.</li>
+<li>규모는 누적 회수량에 비례하며, 장기 활동한 완결자 하나가 5급에 상당할 수 있다.</li>
+<li><strong>완결자를 함부로 죽이면 안 되는 실무적 이유가 이것이다.</strong> 그리고 본인들도 이 사실을 안다.</li>
+</ul>
+<p><strong>세력별 입장</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>회수에 대해</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td>제한적 허가. 문서상 명칭이 「회수」이며, 건별 승인제</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td><strong>금기.</strong> 남의 이야기를 먹는 행위로 규정. 명주하는 한 번도 하지 않았다</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td>산정만 해두었다. 코어 하나의 Ω 가치를 환산한 내부 문서가 존재한다</td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td><strong>절대 불가.</strong> 회수는 작품을 먹는 일이다</td>
+</tr>
+<tr>
+<td><strong>저자회</strong></td>
+<td>자기가 파종한 개체를 회수당하는 입장. 대응 수단이 없다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>확인된 다섯 중 <strong>회수를 실제로 수행하는 사람은 한 명뿐</strong>이며, 그것은 나머지 넷이 전투를 할 수 없기 때문이다.</p>
+</blockquote>
+<p><strong>퇴색 (退色) — 완결자의 두 번째 죽음</strong>
+Ω가 완전히 고갈되면 완결자는 죽지 않는다. <strong>흐려진다.</strong>
+발자국이 남지 않고, 사진에 잘 잡히지 않고, 방금 대화한 사람이 이름을 떠올리지 못한다. 그러다 어느 시점부터 아무도 그를 언급하지 않게 된다.</p>
+<blockquote>
+<p>완결자의 최후는 둘 중 하나다. <strong>즉사하거나, 퇴색하거나.</strong>
+그리고 퇴색한 완결자가 실제로 소멸했는지, 아니면 여전히 어딘가를 걷고 있는지는 <strong>확인할 방법이 없다.</strong></p>
+</blockquote>
+<h4 id="s105">완결 권능의 진짜 딜레마</h4>
+<p>Ω를 채우는 유일한 수단이 완결 권능이다. 그리고 완결 권능을 쓰는 것은 <strong>자신이 완결자임을 세상에 선언하는 것</strong>이다(아래 참조).</p>
+<blockquote>
+<p><strong>쓰지 않으면 퇴색한다. 쓰면 발각된다.</strong>
+완결자에게 완결 권능은 유일한 연료이자 유일한 사망 원인이다.</p>
+</blockquote>
+<h4 id="s106">감지 불가 — 완결자는 발견되지 않는다</h4>
+<p><strong>ANE는 완결자를 감지할 수 없다.</strong></p>
+<p>ANE의 지각은 서사층의 움직임을 읽는 것이다(제1부 1-2). 그런데 완결자는 서사층에서 <strong>정지해 있다.</strong> 이야기가 이미 끝났으므로 흐르지 않고, 규칙이 없으므로 흔적을 남기지 않으며, 여론 급전을 받지 않으므로 파동도 없다.</p>
+<blockquote>
+<p><strong>끝난 이야기는 흐르지 않는다.</strong>
+ANE에게 완결자는 배경조차 아니고, <strong>아무것도 없는 자리</strong>다.</p>
+</blockquote>
+<p><strong>인간 측 탐지도 전부 실패한다</strong></p>
+<table>
+<thead>
+<tr>
+<th>수단</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관리국 감지탑</td>
+<td>서사압을 발산하지 않으므로 <strong>측정값 0</strong></td>
+</tr>
+<tr>
+<td>교단 역산</td>
+<td>수렴도에 기여하지 않으므로 <strong>좌표가 잡히지 않음</strong></td>
+</tr>
+<tr>
+<td>규칙 판독 개체</td>
+<td>읽을 규칙이 없으므로 <strong>백지</strong></td>
+</tr>
+<tr>
+<td>저자회 『선례』</td>
+<td>선례가 존재한 적이 없으므로 <strong>무응답</strong></td>
+</tr>
+<tr>
+<td>아고라 [정보]</td>
+<td>목격담 자체가 성립하지 않음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>완결자를 확인할 수 있는 유일한 방법은, 본인이 완결 권능을 쓰는 것을 눈으로 보는 것뿐이다.</strong>
+스스로 드러내기 전까지, 완결자는 이 세계 어느 것에게도 존재하지 않는다.</p>
+</blockquote>
+<h4 id="s107">완결자의 현창 — 침묵과 선언 사이</h4>
+<p>완결자는 5급 이상 개체와 동일하게, <strong>완결 권능을 발현하는 순간 현창을 방출한다</strong> (제1부 1-2-C).</p>
+<p>이것이 감지 불가와 짝을 이루는 완결자 설정의 마지막 조각이다.</p>
+<table>
+<thead>
+<tr>
+<th>상태</th>
+<th>서사층</th>
+<th>탐지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>권능 미발현</strong></td>
+<td>완전 정지. 흐름 없음</td>
+<td><strong>불가능.</strong> 감지탑 0, 역산 무응답, ANE에게 빈자리</td>
+</tr>
+<tr>
+<td><strong>권능 발현</strong></td>
+<td><strong>현창 방출</strong></td>
+<td><strong>그 자리의 모든 것에게 즉시 발각</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>완결자는 <strong>침묵할 때 세상에 없고, 말할 때 세상 전부에게 있다.</strong>
+중간이 없다.</p>
+</blockquote>
+<p><strong>어법이 다르다 — 서술이 아니라 찬양이다</strong></p>
+<p>5급 이상 개체의 현창은 <strong>개변된 현실에 대한 3인칭 서술</strong>이다. 무슨 일이 일어났고 그것이 왜 마땅한지를 설명한다.
+완결자의 이야기는 이미 끝나 있어 <strong>서술할 사건이 남아 있지 않다.</strong> 남은 것은 그 존재 자체뿐이고, 그래서 흘러나오는 문장은 설명이 아니라 <strong>그를 우러르는 말</strong>이 된다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>5급 이상 개체</th>
+<th>완결자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>개변된 현실</td>
+<td><strong>그 사람 자신</strong></td>
+</tr>
+<tr>
+<td>어법</td>
+<td>서술·해설</td>
+<td><strong>경배·상찬 (경하라 / 우러르라 / 찬미하라)</strong></td>
+</tr>
+<tr>
+<td>화자</td>
+<td>없음. 이야기가 자기 몫을 읽는다</td>
+<td>없음. <strong>그런데 신도가 있는 것처럼 들린다</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>필사관들이 완결자의 현창을 가장 견디기 어려워하는 이유가 이것이다.
+개체의 현창은 세계에 대한 설명이라 거리를 둘 수 있다. <strong>완결자의 현창은 눈앞의 사람을 향한 예배이며, 듣는 순간 자기도 그 문장에 동의하고 있다는 것을 깨닫게 된다.</strong></p>
+</blockquote>
+<p><strong>완결자 현창의 특징 — 다른 점 셋</strong></p>
+<ol>
+<li><strong>자기 자신에 대한 진술이 아니다.</strong> 5급 이상 개체의 현창은 개변된 현실을 설명한다. 완결자의 현창은 <strong>완결 권능 그 자체를 진술한다.</strong> 즉 문장 하나가 그의 전부다.</li>
+<li><strong>언제나 같은 문장이다.</strong> 개체의 현창은 발현할 때마다 다른 조각이 나오지만, 완결자는 완결 권능이 하나뿐이므로 <strong>현창도 하나뿐이다.</strong>
+   → <strong>필사본이 한 줄이면 완결자, 여러 줄이면 5급 이상 개체.</strong> 관리국 필사관 판별법이 이것이다.</li>
+<li><strong>되돌릴 수 없다.</strong> 한 번 들린 문장은 목격자의 인지에 남고, 그것이 이야기가 되어 퍼진다. 완결자는 여론에 흔들리지 않으므로 힘이 세지지는 않는다. 다만 <strong>숨을 수 없게 될 뿐이다.</strong></li>
+</ol>
+<blockquote>
+<p>이론상 상정된 완결자의 현창 (제5부 예시 기준)
+규칙: <em>"그는 절대 도망치지 않았다"</em> → 완결 권능: <em>"그가 선 자리가 전선이다"</em>
+<strong>현창: 「그가 있는 곳이 그의 전선이니 경배하라.」</strong>
+— 완결자의 현창이 언제나 이런 형태인 것은 위의 어법 규칙 때문이다.</p>
+</blockquote>
+<p><strong>그래서 완결자의 딜레마는 세 겹이다</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>쓰지 않으면</th>
+<th>쓰면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ω</strong></td>
+<td>퇴색한다</td>
+<td>회복한다</td>
+</tr>
+<tr>
+<td><strong>탐지</strong></td>
+<td>누구도 찾지 못한다</td>
+<td>그 자리 전부에게 발각된다</td>
+</tr>
+<tr>
+<td><strong>현창</strong></td>
+<td>침묵</td>
+<td><strong>한 문장이 세상에 남는다</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>유일한 우회로가 회수(回收)다.</strong> 개체의 핵을 부숴 Ω를 삼키면 발현 없이 채울 수 있다.
+다만 그러려면 싸울 수 있어야 하고, 삼킨 것은 몸 안에 쌓여 <strong>역류 위험</strong>이 된다. 결국 딜레마를 없애는 것이 아니라 <strong>다른 청구서로 바꾸는 것</strong>이다.</p>
+<blockquote>
+<p>완결자에게 힘을 쓴다는 것은 <strong>살기 위해 이름을 부르는 일</strong>이다.
+그리고 이 세계에서 이름을 부르는 것은, 5수칙 제1조가 가장 먼저 금지한 행위다.</p>
+</blockquote>
+<p><strong>이것이 낳는 세 가지 결론</strong></p>
+<ol>
+<li><strong>잠입 특권</strong>: 완결자는 6급 개변 권역 안을 그냥 걸어들어간다. 규칙이 걸리지 않을 뿐 아니라, <strong>애초에 그곳의 무엇도 그를 인식하지 못한다.</strong> 격리 시설 최심부까지 도달할 수 있는 유일한 존재.</li>
+<li><strong>"0명"의 진짜 의미</strong>: 관리국 공식 기록의 완결자 0명은 <strong>"존재하지 않는다"가 아니라 "확인된 바 없다"</strong> 는 뜻이다. 그리고 이 문장을 쓴 부서 위에 이미 한 명이 앉아 있다.</li>
+<li><strong>저자회의 골칫거리</strong>: 『입전』으로 완결을 시도했을 때, <strong>성공했는지 확인할 방법이 없다.</strong> 대상이 완결했는지, 낙명했는지, 그냥 죽었는지 구분되지 않는다. 저자회 초고 실험 기록의 결론란은 대부분 비어 있고, <strong>비어 있는 칸이 성공을 뜻하는지 실패를 뜻하는지조차 정해져 있지 않다.</strong></li>
+</ol>
+<h4 id="s108">규칙의 보호를 받지 못한다 — 불락 완전 상실</h4>
+<p>규칙은 속박이자 방패다(제1부 1-2). 완결자는 속박을 벗은 대가로 <strong>방패도 함께 잃었다.</strong></p>
+<p><strong>완결자에게는 불락이 없다.</strong>
+조건부 무적이 아니라 <strong>무적 조건 자체가 존재하지 않는 상태</strong>다. 이야기가 끝났으므로 "아직 죽을 때가 아니다"라고 진술해줄 서사가 남아 있지 않다.</p>
+<blockquote>
+<p>다른 모든 존재는 "이런 방식으로만 나를 해칠 수 있다"는 문장을 갖고 있다.
+완결자에게는 그 문장이 없다. <strong>어떤 방식으로든 해칠 수 있다는 뜻이다.</strong></p>
+</blockquote>
+<ul>
+<li>칼에 베이고, 총에 뚫리고, 떨어지면 부러진다. 완결자의 육체는 평범한 인간의 것이다.</li>
+<li>유일한 방어 수단은 앞서 서술한 <strong>Ω 회복</strong>뿐이며, 그것은 방패가 아니라 <strong>사후 수리</strong>다.</li>
+<li><strong>인류 측 보호도 무효</strong>: 규제선은 규칙 기반이므로 완결자를 가두지도, 지키지도 못한다. 계약도 걸리지 않는다. 어느 세력도 그를 규칙으로 지켜줄 수단이 없다.</li>
+</ul>
+<h4 id="s109">그러나 개체는 여전히 자기 규칙에 묶여 있다</h4>
+<p>여기서 흔한 오해가 발생한다. 완결자에게 불락이 없다고 해서 <strong>ANE가 그를 마음대로 공격할 수 있는 것은 아니다.</strong></p>
+<p><strong>규칙은 상대를 보고 적용되는 것이 아니라, 개체 자신이 지켜야 하는 것이다.</strong>
+규칙은 개체의 골격이며, 어기면 존재가 무너진다. 상대가 누구든 개체는 자기 규칙 밖으로 나갈 수 없다.</p>
+<blockquote>
+<p>「거울에 비친 상을 통해서만 공격할 수 있다」는 개체는, <strong>완결자를 상대할 때도 거울이 필요하다.</strong>
+거울이 없으면 그 개체는 완결자에게 아무것도 하지 못한다.</p>
+</blockquote>
+<p><strong>따라서 조우는 이렇게 정리된다</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>개체 → 완결자</th>
+<th>완결자 → 개체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>조건</strong></td>
+<td>개체의 규칙을 따라야 한다</td>
+<td><strong>개체의 규칙을 따라야 한다</strong> (불락 심사는 대상 쪽 규칙으로 한다)</td>
+</tr>
+<tr>
+<td><strong>성공 시</strong></td>
+<td><strong>완충 없음. 온전히 들어간다</strong></td>
+<td>개체 본체에 손상. 핵을 부수지 않으면 재생</td>
+</tr>
+<tr>
+<td><strong>실패 시</strong></td>
+<td>아무 일도 일어나지 않음</td>
+<td>아무 일도 일어나지 않음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심</strong>: 완결자는 <strong>공격받기 어렵지만, 한 번 조건이 맞으면 완충이 전혀 없다.</strong>
+반대로 완결자가 개체를 죽이려면 여전히 <strong>그 개체의 규칙을 풀어야 한다.</strong> 규칙이 없다는 것은 남의 규칙을 무시해도 된다는 뜻이 아니다.</p>
+<blockquote>
+<p><strong>예외는 권능 차원에서만 발생한다.</strong> 완결 권능 자체가 "규칙을 묻지 않는다"는 내용일 경우, 그 사람의 타격만은 불락 심사를 건너뛴다.
+이것은 완결자 일반의 성질이 아니라 <strong>개인의 완결 권능이 우연히 그 형태였을 뿐</strong>이며, 확인된 사례는 하나다.</p>
+<p><strong>완결자의 강점은 화력이 아니라 접근권이다.</strong>
+그는 어디든 들어갈 수 있고 무엇에도 인식되지 않는다. 다만 도착한 다음에는, 다른 모두와 똑같이 규칙을 풀어야 한다.
+관리국 금고 속 매뉴얼이 6급 기준으로 작성된 이유는 그가 강해서가 아니라, <strong>그가 어디에 있는지 알 수 없기 때문</strong>이다.</p>
+</blockquote>
+<p><strong>실전 함의 3가지</strong>
+1. <strong>저등급 개체가 완결자를 죽일 수 있다.</strong> 규칙 조건만 맞추면 1급도 치명상을 낸다. 반대로 6급이라도 조건이 어긋나면 손끝 하나 못 댄다. <strong>완결자 앞에서는 등급이 무의미해진다.</strong>
+2. <strong>인간이 가장 위험하다.</strong> 인간에게는 규칙이 없으므로 조건도 없다. 완결자를 확실히 죽일 수 있는 것은 개체가 아니라 <strong>총을 든 사람</strong>이다.
+3. <strong>개체 쪽이 완결자를 더 두려워한다.</strong> 완결자는 예고 없이 나타나고 감지되지 않으며, 개체는 자기 규칙을 어겨가면서까지 방어할 수 없다. <strong>선제권이 언제나 완결자에게 있다.</strong></p>
+<h4 id="s110">완결의 역설 — 어떻게 넘었는가</h4>
+<p>자가완결하려면 자기 이야기가 <strong>완전히 끝나야</strong> 한다. 결말이 확정되어야 규칙이 스스로 닫히기 때문이다.
+그런데 배역 권능 ①에 따라, 이명자는 <strong>자기 이야기가 요구하는 결말에 도달하기 전까지만 죽지 않는다.</strong></p>
+<blockquote>
+<p><strong>결말에 도달하는 순간 불락이 풀린다.</strong>
+<strong>완결과 죽음이 정확히 같은 지점에 있다.</strong></p>
+</blockquote>
+<p>알려진 완결자 전원이 이 지점을 <strong>한 번 통과했다.</strong> 즉 <strong>결말에 도달했고, 불락이 풀린 상태로 그 순간을 견뎌냈다.</strong></p>
+<p>어떻게 견뎠는지는 개인마다 다르고, 어느 세력도 그것을 재현하지 못했다. 공통점은 단 하나 — <strong>전원이 혼자가 아니었다.</strong> 결말의 순간에 그를 물리적으로 살려낸 조직이 곁에 있었다.</p>
+<blockquote>
+<p>이것이 완결자가 전부 조직 소속인 이유의 절반이다.
+나머지 절반은 그 다음이다.</p>
+</blockquote>
+<h4 id="s111">왜 완결자는 조직을 떠나지 못하는가</h4>
+<p>완결자는 조직에 소속된 것이 아니다. <strong>조직 없이는 존재를 유지할 수 없어서 남아 있는 것이다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>필요</th>
+<th>이유</th>
+<th>조직만이 제공 가능한 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정기 발현</strong></td>
+<td>Ω를 채우려면 완결 권능을 써야 한다</td>
+<td>발현할 명분과 장소</td>
+</tr>
+<tr>
+<td><strong>목격자 통제</strong></td>
+<td>발현은 곧 현창이고, 현창은 곧 노출이다</td>
+<td><strong>목격자 전원을 통제할 수 있는 권한</strong></td>
+</tr>
+<tr>
+<td><strong>기록 봉쇄</strong></td>
+<td>필사본 한 줄이 유출되면 끝이다</td>
+<td>문서 등급 분류, 희석, 손실처리</td>
+</tr>
+<tr>
+<td><strong>육체 보호</strong></td>
+<td>불락이 없다. 총 한 발에 죽는다</td>
+<td>경호, 은신, 신원 세탁</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>완결자에게 조직은 후원자가 아니라 산소통이다.</strong>
+홀로 있는 완결자는 두 갈래로만 끝난다 — 권능을 안 쓰다가 <strong>퇴색</strong>하거나, 쓰다가 <strong>발각</strong>되거나.</p>
+</blockquote>
+<h4 id="s112">왜 네 세력뿐인가</h4>
+<p>완결자 유지에 필요한 것은 위 네 가지이며, 그 중 결정적인 것은 <strong>목격자 통제</strong>다.</p>
+<p><strong>보유하는 네 세력</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>완결 권능 발현 명분</th>
+<th>목격자 통제 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td><strong>6급 『해안선』 격리 유지.</strong> 개변 권역 안을 걸어들어갈 수 있는 유일한 인원<br>+ <strong>속성 괴담 태동 소거</strong> (제2 완결자)</td>
+<td>최고 기밀 등급 + 편집부 희석</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td><strong>6급 『규격』 목록 갱신.</strong> 규격 판정을 받지 않는 유일한 인원</td>
+<td>손실처리부. 목격자를 사원으로 만들거나 지운다</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td><strong>6급 『만종』 격리 점검.</strong> 종루에 들어갈 수 있는 유일한 인원</td>
+<td>현창을 성언으로 기록. <strong>숨길 필요가 없다</strong></td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td><strong>6급 『액자』 정비.</strong> 테두리 안에서 묘사로 전환되지 않는 유일한 인원</td>
+<td>극도의 폐쇄성. 애초에 외부인이 없다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>완결자를 가진 세력과 6급을 격리 중인 세력이 정확히 일치한다.</strong>
+이것은 우연이 아니다. <strong>6급 격리는 완결자 없이 유지되지 않는다.</strong>
+세상은 6급 봉인을 공학과 예산의 산물로 알고 있지만, 실제로는 <strong>한 사람이 정기적으로 걸어들어갔다 나오는 일</strong>이다.</p>
+</blockquote>
+<p><strong>없는 두 세력</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>없는 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>저자회</strong></td>
+<td>『입전』의 궁극 목표였고, <strong>실제로 성공했을 가능성이 있다.</strong> 문제는 그 다음이다. 저자회는 셀 단위 문화이지 조직이 아니라 <strong>목격자를 통제할 권한도, 완결자를 지킬 힘도 없다.</strong> 그리고 완결자는 여론에 흔들리지 않으므로 <strong>파종망이 그에게 걸리지 않는다</strong> — 초판본을 붙잡아두던 유일한 목줄이 사라진다. 저자회가 완결자를 만들었다 해도, <strong>만드는 즉시 잃는다.</strong></td>
+</tr>
+<tr>
+<td><strong>야반 조합</strong></td>
+<td>조직이 아니라 게시판이다. 고위직이라는 개념 자체가 없고, 아고라 규칙 1에 의해 <strong>여기서 남은 것은 지워지지 않는다.</strong> 발현이 한 번이라도 목격되면 그 기록은 영구히 [정보] 게시판에 남는다. <strong>완결자에게 아고라는 세계에서 가장 안전한 은신처이자 가장 위험한 무대다.</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="s113">네 명의 완결자 — 상호 억지</h4>
+<p>각 세력은 자기 완결자를 안다. <strong>타 세력의 완결자는 확인할 수 없다.</strong></p>
+<ul>
+<li>확인 방법이 완결 권능 발현 목격뿐인데, 어느 세력도 자기 완결자를 남 앞에서 쓰게 하지 않는다.</li>
+<li>따라서 네 세력은 <strong>서로가 갖고 있으리라 의심하지만 증명하지 못하는 상태</strong>로 20년 이상 유지되고 있다.</li>
+<li>이 구도는 안정적이다. 상대가 있다고 가정하면 선제공격이 불가능하고, 없다고 가정했다가 틀리면 조직이 끝나기 때문이다.</li>
+</ul>
+<blockquote>
+<p>실무자들은 이것을 <strong>「빈 의자 회의」</strong> 라 부른다.
+여섯 세력의 최고위 회담장에는 언제나 발언하지 않는 참석자가 몇 명 섞여 있고,
+아무도 그가 누구인지 묻지 않는다.</p>
+</blockquote>
+<p><strong>각 세력이 완결자를 무엇으로 다루는가</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>위치</th>
+<th>취급</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국</strong></td>
+<td>특무국장</td>
+<td><strong>인간으로 대하되, 서류에는 6급 개체번호를 붙인다.</strong> 금고 속 대응 매뉴얼은 자기 완결자용이기도 하다</td>
+</tr>
+<tr>
+<td><strong>컴퍼니</strong></td>
+<td>이사회 상임이사</td>
+<td><strong>유일한 비규격 자산.</strong> 사번이 없는 유일한 사원이며, 사내에서는 그것을 특권으로 안다</td>
+</tr>
+<tr>
+<td><strong>교단</strong></td>
+<td>종장회의 7인 중 1인</td>
+<td><strong>성인(聖人).</strong> 유일하게 존재를 조직 내부에 공개한 세력. 그리고 <strong>만종 타종 승인권을 가진 사람 중 하나다</strong></td>
+</tr>
+<tr>
+<td><strong>미술관</strong></td>
+<td>수석 아티스트</td>
+<td><strong>완성된 작품.</strong> 미술관은 그를 소유물로 여기고, 그는 그것을 부정하지 않는다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>개별 인물 설정은 제8부 참조.</strong></p>
+</blockquote>
+<p><strong>남은 두 세력의 입장</strong></p>
+<table>
+<thead>
+<tr>
+<th>세력</th>
+<th>태도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>저자회</strong></td>
+<td>자기가 만들었을지도 모르는 것을 남이 갖고 있을지 모른다는 의심. 저자회가 네 세력에 침투를 반복하는 최대 동기</td>
+</tr>
+<tr>
+<td><strong>야반</strong></td>
+<td>술자리 농담으로 남아 있다. <em>"윗대가리들 중에 한 줄짜리 있다던데 ㅋㅋ"</em> / <em>"있으면 뭐. 우리한테 뭐 해줄 것도 아닌데"</em></td>
+</tr>
+</tbody>
+</table>
+<p>이명자는 인간이 아니라 <strong>잠재적 ANE</strong>로 분류·등록되며, 별도 등급 판정을 받고 상시 감시 대상이 된다. 감시 목적은 처벌이 아니라 <strong>낙명 시점의 즉시 대응</strong>이다 — 관리국은 이명자를 사람으로 대하지만, 서류에는 개체번호를 붙인다.
+이 이중성 때문에 대부분의 이명자가 결국 야반 조합으로, 정확히는 <strong>아고라의 익명 속으로</strong> 흘러든다.</p>
+<blockquote>
+<p><strong>등록 현황</strong>
+- <strong>생존형</strong>: 공식 등록 41명. 실제 추정치는 세 자릿수. 이 중 <strong>저자회가 인위 생산한 「초판본」이 최소 3명</strong> 포함되어 있다 (제4부 5절 『입전』 참조).
+- <strong>계약형</strong>: 공식 등록 약 6,000명. 무허가 계약자를 포함한 실제 추정치는 <strong>수만 명 단위</strong>이며, 관리국조차 규모를 특정하지 못한다.
+- <strong>완결자</strong>: <strong>공식 확인 0명.</strong> 관리국 창설 이래 한 번도 바뀐 적 없는 유일한 항목이며, <strong>관리국 자신이 한 명 이상 보유하고 있음에도 그렇다.</strong>
+  탐지가 원리적으로 불가능하므로 이 항목은 <strong>집계 불가</strong>로 분류되어 있고, 서류상 0이 적혀 있다.
+  실제로는 관리국·컴퍼니·교단·미술관 최고위층에 <strong>각 1~2명</strong>이 존재한다. 현재 확인된 인원은 <strong>5명</strong>이며, 관리국만 둘이다(한도경 · 한백설). 그 밖의 야생 완결자에 대해서는 아무도 알지 못한다.</p>
+</blockquote>
+<h3 id="s114">완결자 명부</h3>
+<p><strong>확인된 다섯 명 — 빠른 참조</strong></p>
+<table>
+<thead>
+<tr>
+<th>이름</th>
+<th>통칭</th>
+<th>소속</th>
+<th>완결 권능 (한 줄)</th>
+<th>담당 6급</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한도경</td>
+<td>측량사</td>
+<td>관리국</td>
+<td>그녀가 부르는 이름은 없던 적이 없다</td>
+<td>『해안선』</td>
+</tr>
+<tr>
+<td>주가영</td>
+<td>단품</td>
+<td>컴퍼니</td>
+<td>그녀가 지목한 것은 갈음할 수 없다</td>
+<td>『규격』</td>
+</tr>
+<tr>
+<td>명주하</td>
+<td>곁</td>
+<td>교단</td>
+<td>그녀가 곁에 있으면 아무도 혼자 저물지 않는다</td>
+<td>『만종』</td>
+</tr>
+<tr>
+<td>백서린</td>
+<td>미완</td>
+<td>미술관</td>
+<td>그녀가 손댄 것은 아직 끝나지 않았다</td>
+<td>『액자』</td>
+</tr>
+<tr>
+<td>한백설</td>
+<td>무인</td>
+<td>관리국</td>
+<td>그녀의 일격은 규칙을 묻지 않는다</td>
+<td>— (전투 담당)</td>
+</tr>
+</tbody>
+</table>
+<p>상세 — 원 규칙, 완결 경위, 현창, 실태, 상호 관계 — 는 <strong>제8부</strong>에 별도로 정리했다.</p>
+<h2 id="s115">5-4. 재래 무기의 위상</h2>
+<p><strong>대전제</strong>: 재래 화력은 불락을 뚫지 못한다. 규칙이 허용하지 않는 손상은 아무리 퍼부어도 성립하지 않는다.
+(이 대전제를 벗어나는 사례는 이 세계에 딱 하나 있으며, 그것은 무기가 아니라 사람이다.)
+그래서 실전에서 총의 역할은 <strong>타격이 아니라 「비추기」의 일부</strong>다 — 위치를 잡고, 몰아넣고, 규칙이 요구하는 조건이 성립하는 지점까지 밀어붙인다. 마지막 한 방만이 규칙을 따른다.</p>
+<p>총은 무의미하지 않다. ANE의 물리 형체를 파괴하면 <strong>재현현까지 수일~수개월의 유예</strong>가 생긴다. 그 유예 동안 규제선을 짓거나 희석을 돌리는 것이 관리국의 표준 전술이다.
+<strong>즉, 전투는 승리가 아니라 시간을 사는 행위다.</strong> 이 세계에 "격퇴"는 있어도 "승리"는 없다.</p>
+<hr />
+</section>
+<section class="part"><h1 id="s116"><span class="eyebrow">제6부</span><span class="h1-title">사회와 일상</span></h1>
+<blockquote>
+<p>개체를 없애지 못하는 세계에서, 평범한 사람들은 어떻게 살고 있는가.</p>
+</blockquote>
+<h2 id="s117">6-1. 시민의 삶</h2>
+<ul>
+<li><strong>괴이 안전 교육</strong>: 초·중등 정규 과목. 5수칙, 지역 ANE 목록, 조우 시 보고 절차.</li>
+<li><strong>괴이 지수</strong>: 지역별 서사압 등급. <strong>부동산 가격의 최대 변수.</strong> 지수가 낮은 신도시가 프리미엄을 받고, 지수가 높은 구도심은 슬럼화된다. 그리고 슬럼화는 다시 E(정서 강도)를 높여 지수를 올린다. <strong>빈곤과 괴담의 악순환은 이 세계 최대의 사회 문제다.</strong></li>
+<li><strong>야간 인프라</strong>: 규제선 규격에 맞춘 조명, 심야 운행 금지 구간, 일방통행 회랑, 창문 배치 규제.</li>
+<li><strong>괴이 보험</strong>: 의무 가입. 등급별 보상 한도가 다르며, "규칙 위반으로 인한 피해"는 <strong>면책</strong>이다. 보험사가 시민에게 규칙 준수를 강제하는 실질적 주체다.</li>
+<li><strong>장례 문화</strong>: 사망자가 지역 괴담이 되는 것을 막기 위해, 억울한 죽음일수록 장례를 <strong>크고 공개적으로</strong> 치른다. 슬픔을 숨기지 않고 공유하면 E가 분산된다는 경험칙. 교단이 주도한다.</li>
+</ul>
+<h2 id="s118">6-2. 언론과 표현</h2>
+<ul>
+<li><strong>보도 지침(관리국 협약)</strong>: 괴담 사건 보도 시 위치·명칭·목격 상세의 3요소 중 최소 하나를 반드시 누락해야 한다.</li>
+<li><strong>창작 규제</strong>: 공포 창작물은 심의 대상이다. 다만 규제는 실효성이 낮고, 오히려 <strong>"규제당한 이야기"</strong> 라는 서사가 붙어 역효과를 낸다는 연구가 다수다. 이 분야는 관리국 내부에서도 결론이 나지 않았다.</li>
+<li><strong>유행 괴담 경보</strong>: 기상 특보처럼 발령된다. "○○ 지역 3급 서사압 주의보."</li>
+</ul>
+<h2 id="s119">6-3. 국제 정치</h2>
+<ul>
+<li><strong>문화권별 우세 괴담</strong>: 각 문화의 민속·역사·집단 트라우마에 따라 발현 경향이 다르다. 대응 노하우도 다르다.</li>
+<li><strong>서사 유입 분쟁</strong>: 타국 괴담이 번역·밈을 타고 유입되어 자국에서 현현하는 사건. 원산지 책임 소재를 두고 국제 소송이 벌어진다.</li>
+<li><strong>괴담 개도국 문제</strong>: 정보 인프라가 약한 지역은 서사압이 낮아 괴담이 적다. 대신 발생 시 대응 수단도 없다. 그리고 인프라가 깔리는 순간 급격한 현현 폭증을 겪는다. — <strong>"연결의 대가"</strong></li>
+<li><strong>관리국 비회원국</strong>: 등급 판정을 거부하고 자국 괴담을 전략 자산화하려는 국가들이 존재한다. 관리국 최대의 골칫거리.</li>
+</ul>
+<hr />
+</section>
+<section class="part"><h1 id="s120"><span class="eyebrow">제7부</span><span class="h1-title">ANE 목록</span></h1>
+<blockquote>
+<p>원본 설정의 개체는 전부 유효하다. 아래는 세력 균형과 서사를 위해 추가·확장된 것들이다.</p>
+<p>원본 목록은 그대로 유효합니다. 아래는 세력 균형과 서사를 위해 추가된 개체들입니다.</p>
+</blockquote>
+<h2 id="s121">7-1. 관리국 관리 개체</h2>
+<h3 id="s122">『일방통행 지하도』 — 2급, 물리 / 장소고착 / 경직</h3>
+<ul>
+<li><strong>형태</strong>: 어느 도시에나 하나씩 있는 평범한 지하 보도. 진입한 뒤 뒤를 돌아본 사람은 반대편 출구에서 나오지 못한다.</li>
+<li><strong>규칙</strong>: 뒤를 돌아보면 지하도의 길이가 무한해진다. 앞만 보고 걸으면 반드시 나올 수 있다.</li>
+<li><strong>관리국의 시선</strong>: <strong>규제선의 교과서적 성공 사례.</strong> 뒤를 볼 수 없는 곡면 구조와 후방 전면 거울 시공으로 완전 봉인. 현재 판정 <strong>무해(2급)</strong>. 개변 권역은 그대로 남아 있으므로(지하도는 여전히 길이를 바꿀 수 있다) 상시 감시 대상이며, 매년 신입 교육에 사용된다.</li>
+</ul>
+<h3 id="s123">『세는 아이』 — 3급, 정신 / 감염 / 유연 / 확산D</h3>
+<ul>
+<li><strong>형태</strong>: 사람이 모인 곳에서 조용히 숫자를 세는 아이의 목소리.</li>
+<li><strong>규칙</strong>: 누군가 그 숫자를 마음속으로 따라 세면, 그 집단의 인원 중 한 명이 "원래 없었던 사람"이 된다. 사라진 사람은 기록과 기억에서 지워지지만, <strong>아이의 숫자만은 그를 세고 있다.</strong></li>
+<li><strong>관리국의 시선</strong>: 확산 속도 D. 희석이 거의 통하지 않는다(숫자는 버전이 갈릴 수 없다). 현재 최우선 감시 대상 중 하나이며, "세지 마라"라는 5수칙 3번은 이 개체 때문에 추가되었다.</li>
+</ul>
+<h3 id="s124">『민원실』 — 1급, 개념 / 조건발현 / 경직</h3>
+<ul>
+<li><strong>형태</strong>: 관공서 폐관 후 나타나는 여덟 번째 창구.</li>
+<li><strong>규칙</strong>: 어떤 부당함이든 접수해준다. 반드시 처리된다. 다만 처리 방식은 신청인이 선택할 수 없고, 결과는 언제나 신청인이 원한 것보다 크다.</li>
+<li><strong>관리국의 시선</strong>: 무해하다고 판정했으나 내부에서 논쟁이 크다. <strong>관리국 직원 중 이 창구를 이용한 자가 있다는 소문</strong>이 조직 내부를 좀먹고 있다.</li>
+</ul>
+<h2 id="s125">7-2. 교단 보유 개체</h2>
+<h3 id="s126">『길을 아는 개』 — 1급, 특수 / 추격 / 경직</h3>
+<ul>
+<li><strong>형태</strong>: 눈이 흐린 늙은 들개.</li>
+<li><strong>규칙</strong>: 이름을 부르지 않고 따라가면, 반드시 "당신이 찾던 것"이 있는 곳으로 데려간다. 그것이 시신이든 진실이든 상관하지 않는다.</li>
+<li><strong>교단의 시선</strong>: 역산의 핵심 자산. 다수 개체를 확보해 각 지부에 배치했다. 교단이 추적 정보를 판매할 수 있는 물리적 근거.</li>
+</ul>
+<h3 id="s127">『읽지 못한 마지막 장』 — 4급, 개념 / 조건발현 / 경직</h3>
+<ul>
+<li><strong>형태</strong>: 아무 책이나 펼쳤을 때, 마지막 장에 원래 없던 한 페이지가 나타난다.</li>
+<li><strong>규칙</strong>: 그 페이지에는 읽는 이가 속한 세계의 결말이 적혀 있다. <strong>끝까지 읽으면 그 결말이 확정된다.</strong> 아직 끝까지 읽고 살아 돌아온 자가 없어, 결말이 무엇인지는 알려지지 않았다.</li>
+<li><strong>교단의 시선</strong>: 격리 1순위. 교단 교리의 물리적 증거이자, 교리가 옳다면 <strong>7급 종장의 씨앗</strong>. 안락파는 이 개체를 "읽어야 한다"고 주장하며, 그 주장 때문에 교단이 분열되었다.</li>
+</ul>
+<h2 id="s128">7-3. 저자회 파종 개체</h2>
+<h3 id="s129">『구독자』 — 2급, 정신 / 감염 / 유연 / 확산D</h3>
+<ul>
+<li><strong>형태</strong>: 조회수가 어느 순간 실제 인구를 초과하는 게시물.</li>
+<li><strong>규칙</strong>: 그 게시물을 공유한 사람의 뒤에 한 명이 늘어난다. 본인에게는 보이지 않고, 타인의 사진에만 찍힌다. 숫자가 일정 이상 쌓이면 원래의 사람과 교체된다.</li>
+<li><strong>비고</strong>: <strong>저자회 최초의 완전 성공 파종작.</strong> 설계 의도와 완벽히 일치하게 현현했으며, 이 사건으로 파종 이론이 실증되었다. 관리국 편집부는 이 개체 이후 "우리는 전쟁을 하고 있었던 게 아니라, 교재를 쓰고 있었다"고 자평했다.</li>
+</ul>
+<h3 id="s130">『당신을 아는 사람』 — 3급, 정신 / 추격 / 유연</h3>
+<ul>
+<li><strong>형태</strong>: 표적의 개인사를 정확히 아는 낯선 사람. 표적에게만 접촉한다.</li>
+<li><strong>규칙</strong>: 표적이 그를 모른다고 부정할 때마다, 주변인의 기억 속에서 표적과 그의 관계가 깊어진다. 최종적으로 세상 모두가 그 둘을 오랜 친구로 알게 되고, 표적만이 그를 모른다.</li>
+<li><strong>비고</strong>: <strong>청부용 맞춤 파종.</strong> 표적 개인을 지정해 제작·판매된 것으로 추정. 저자회가 단순 광신도가 아니라 <strong>산업</strong>임을 보여준 사건.</li>
+</ul>
+<h2 id="s131">7-4. 6급 — 재앙 등급 (알려진 4개체)</h2>
+<blockquote>
+<p>각 세력의 주요 간부만이 존재를 인지하고 있으며, 명칭조차 코드로만 유통된다.
+<strong>각 격리 시설에는 교단 파견 사제가 상주한다.</strong> 이 중 둘이 동시에 무너지면 만종 프로토콜이 발동한다.
+그리고 네 시설 전부에서, 격리 유지 작업은 <strong>완결자 한 명이 개변 권역 안으로 걸어들어갔다 나오는 일</strong>이다 (제5부 5-3 참조). 이 사실을 아는 인원은 각 세력에서 손에 꼽는다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>개체</th>
+<th>격리 주체</th>
+<th>상주 사제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>『해안선』</td>
+<td>관리국</td>
+<td>3인 (교대)</td>
+</tr>
+<tr>
+<td>『액자』</td>
+<td>미술관</td>
+<td>1인 (입장 허가 연 2회)</td>
+</tr>
+<tr>
+<td>『규격』</td>
+<td>컴퍼니</td>
+<td>2인</td>
+</tr>
+<tr>
+<td><strong>『만종』</strong></td>
+<td><strong>교단</strong></td>
+<td><strong>타종 사제 1인 (종신)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="s132">『해안선』 — 6급, 개념 / 격리 : 관리국</h3>
+<p>지도상의 어떤 경계선이 아주 조금씩 안쪽으로 이동하고 있다. 이동한 만큼의 땅과 그곳에 있던 모든 것은 <strong>원래 바다였던 것</strong>이 된다. 아무도 이상하게 여기지 않는다. 관리국은 이것을 막을 수단이 없어, 대신 <strong>매년 지도를 다시 그리는 부서</strong>를 운영한다. 그 부서의 정식 명칭은 대외적으로 '해양측량과'다.</p>
+<h3 id="s133">『액자 (額子)』 — 6급, 개념 / 조건발현 / 경직 · 격리 : 미술관</h3>
+<blockquote>
+<p>미술관 내부 호칭 <strong>「1번 방」</strong>. 아티스트들은 개체명을 입에 담지 않는다.</p>
+</blockquote>
+<p><strong>형태</strong>
+빈 액자 하나. 벽에 걸려 있지 않고 언제나 세워져 있다.
+<strong>측정할 때마다 치수가 다르다.</strong> 미술관 기록에는 40년치 실측값이 있고, 같은 값이 두 번 나온 적이 없다.</p>
+<p><strong>규칙 — 단 한 줄</strong></p>
+<blockquote>
+<p><strong>「테두리 안의 것은 그리는 것이지, 하는 것이 아니다.」</strong></p>
+</blockquote>
+<p>액자에 둘러싸인 것은 파괴되지 않는다. <strong>행위가 묘사로 전환될 뿐이다.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>밖</th>
+<th>안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사람이 말을 한다</td>
+<td>말을 마친다</td>
+<td><strong>말하려는 참인 사람이 된다</strong></td>
+</tr>
+<tr>
+<td>건물이 무너진다</td>
+<td>무너진다</td>
+<td><strong>무너지는 중인 건물이 된다</strong></td>
+</tr>
+<tr>
+<td>상처가 아문다</td>
+<td>아문다</td>
+<td><strong>아물어가는 상처가 된다</strong></td>
+</tr>
+</tbody>
+</table>
+<p>안에서는 이상한 점이 없다. 시간이 흐르고, 하루가 가고, 사람들은 일하고 잠든다.
+<strong>다만 무엇도 끝나지 않는다. 그리고 아무도 그것을 알아차리지 못한다.</strong></p>
+<p><strong>왜 6급인가 — 개변 권역: 국가~세계</strong>
+<strong>액자는 자기 테두리를 스스로 정한다.</strong> 대상이 정하는 것이 아니다.
+지금까지 확인된 최대 테두리는 계곡 하나였고, 시간 축으로 테두리를 그은 사례도 한 건 기록되어 있다. 어느 지방의 11년이 통째로 「그려진 기간」이 되었고, 그 기간의 기록은 전부 <strong>사실이 아니라 묘사</strong>로 남아 있다.</p>
+<p><strong>핵 — 권역형</strong>
+핵은 <strong>「보는 것과 겪는 것은 다르다」는 전제</strong> 그 자체다.
+이 전제를 버리면 그림도, 기록도, 이야기도 성립하지 않는다. 그리고 이 세계는 이야기 위에 서 있다. <strong>인류는 이것을 버릴 수 없다.</strong></p>
+<p><strong>현재 상태 — 「1번 방」</strong>
+액자는 지금 <strong>비어 있지 않다.</strong></p>
+<p>200년 전, 미술관 창립 당시 액자는 한 구역을 둘러쌌다. 인구 3,000의 화가 마을이었다.
+그들은 지금도 그 안에 있다. 죽지 않았고, 늙었으며, 여전히 붓을 들고 있다. <strong>그림을 끝낸 사람은 한 명도 없다.</strong></p>
+<p>미술관은 그들을 꺼내지 않기로 결정했다. 꺼낼 방법이 없기 때문이 아니라 — <strong>꺼내면 액자가 빈다.</strong></p>
+<blockquote>
+<p><strong>액자는 비어 있는 동안에만 다음 테두리를 그린다.</strong>
+미술관이 200년간 한 일은 격리가 아니다. <strong>액자를 계속 차 있게 두는 것</strong>이다.</p>
+</blockquote>
+<p><strong>그런데 그림이 완성되어 간다</strong>
+묘사는 굳는다. 물감이 마르듯, 안의 장면은 조금씩 「한 장면」으로 확정되어 간다.
+완전히 굳으면 그것은 더 이상 진행 중인 그림이 아니라 <strong>완성작</strong>이 되고, 액자는 비게 된다.</p>
+<p><strong>그래서 정기적으로 안에 들어가 장면을 다시 미완으로 되돌려야 한다.</strong>
+이것이 미술관의 실제 업무이며, 『작품화』 기술 전체가 여기서 파생됐다 — 규칙을 재해석해 매개체에 고정하는 기법은, 원래 <strong>1번 방의 장면을 손보기 위해 개발된 것</strong>이다.</p>
+<p><strong>들어갈 수 있는 사람</strong>
+테두리 안에 들어간 자는 예외 없이 묘사로 전환된다. 유일한 예외는 <strong>행위가 애초에 완결되지 않는 사람</strong> — 완결자다.
+그림이 되려면 한 장면으로 확정되어야 하는데, 확정되지 않는 사람은 <strong>전환할 것이 없다.</strong></p>
+<p><strong>관리국의 분류</strong>
+6급 중 유일하게 「해법 없음」이 아니라 <strong>「현상 유지 권고」</strong> 로 기재되어 있다.
+관리국은 미술관의 폐쇄성을 비난하면서도 한 번도 강제 진입을 시도하지 않았다. <strong>진입은 곧 액자를 비우는 일</strong>이기 때문이다.</p>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>「그 안의 것은 겪지 아니하니, 애처로이 여기지 말라.」</em>
+<em>「멈춘 것이 아니요 그려진 것이니, 흠이 없도다.」</em>
+<em>「테두리는 내가 정하니, 밖이라 하여 안심하지 말라.」</em></p>
+</blockquote></div>
+<p><strong>창립자의 기록</strong>
+미술관 창립자가 남긴 문장은 한 줄뿐이다.</p>
+<blockquote>
+<p><em>"우리는 그들을 구하지 않기로 했다. 대신 아무도 그들처럼 되지 않게 하기로 했다."</em></p>
+</blockquote>
+<p><strong>격리 유지</strong>
+연 2회, 완결자 <strong>백서린</strong>이 테두리 안으로 들어가 굳어가는 장면들을 미완으로 되돌린다. (제8부 8-4 참조)</p>
+<h3 id="s134">『규격 (規格)』 — 6급, 개념 / 감염 / 경직 · 격리 : 컴퍼니</h3>
+<blockquote>
+<p>컴퍼니 내부 호칭 <strong>「표준(標準)」</strong>. 문서에는 언제나 이 이름으로만 등장한다.</p>
+</blockquote>
+<p><strong>형태</strong>
+형태가 없다. 컴퍼니 제1공장 지하, 최초의 리버스 엔지니어링 챔버가 있던 자리에 <strong>아무것도 없는 선반 하나</strong>가 있다.
+선반에는 규격 라벨이 붙어 있다. 품번, 재질, 허용 오차, 수명. <strong>놓인 물건은 없다.</strong></p>
+<p><strong>기원</strong>
+컴퍼니 최초의 모듈화 시도. 그들이 추출하려던 것은 어느 개체의 기능이었는데, <strong>『맥거핀 나이프』가 잘라낸 자리가 예상보다 깊었다.</strong>
+서사가 잘려나간 자리에 남은 것은 그 개체의 기능이 아니라 — <strong>「부품」이라는 개념 자체</strong>였다.
+연구원 40명이 들어갔고, 40명이 나왔다. <strong>명단은 완전히 일치한다.</strong> 그것이 문제였다.</p>
+<p><strong>규칙 — 단 한 줄</strong></p>
+<blockquote>
+<p><strong>「같은 규격의 것은 서로 갈음할 수 있다.」</strong></p>
+</blockquote>
+<p>개변 권역 안에서 <strong>동일 규격은 동일 개체가 된다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>사건</th>
+<th>밖에서</th>
+<th>안에서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사람이 죽는다</td>
+<td>그 사람이 없어진다</td>
+<td><strong>같은 사양의 다른 사람이 그 자리에 들어간다</strong></td>
+</tr>
+<tr>
+<td>자리가 빈다</td>
+<td>채용 절차가 돌아간다</td>
+<td><strong>이미 채워져 있다</strong></td>
+</tr>
+<tr>
+<td>유족이 슬퍼한다</td>
+<td>슬퍼한다</td>
+<td><strong>슬퍼할 일이 없다. 아무것도 잃지 않았으므로</strong></td>
+</tr>
+</tbody>
+</table>
+<p>기록·기억·호적·사진이 전부 재색인된다. 새로 들어온 사람은 <strong>원래 그 사람이었던 것</strong>이 되고, 본인도 그렇게 기억한다.
+<strong>개인이 파괴되는 것이 아니다. 개인이라는 범주가 더 이상 무엇도 지탱하지 않게 되는 것이다.</strong></p>
+<p><strong>왜 6급인가 — 개변 권역: 국가~세계</strong>
+권역이 국가 규모로 넓어지면 <strong>「대체 불가능성」이 자연법칙에서 탈락한다.</strong>
+아무도 죽지 않는다. 아무도 슬퍼하지 않는다. 생산량은 유지되고, 통계는 흔들리지 않으며, 사회는 오히려 안정된다.
+<strong>손실이 발생하지 않는 사회</strong>이며, 그래서 아무도 이것을 재앙이라고 부를 근거를 찾지 못한다.</p>
+<p><strong>핵 — 권역형</strong>
+핵은 <strong>「같은 둘은 하나로 셀 수 있다」는 전제</strong> 그 자체다.
+대량생산, 물류, 통계, 화폐, 법 앞의 평등이 전부 이 전제 위에 서 있다. <strong>인류는 이것을 버릴 수 없다.</strong></p>
+<p><strong>컴퍼니가 이것을 없애지 못하는 이유</strong>
+『모듈화』는 이것의 축소판이다. 규격화된 코어를 표준 케이스에 담아 어디에나 꽂을 수 있게 만드는 기술 — <strong>부품은 갈음할 수 있다는 전제가 없으면 컴퍼니의 전 제품군이 성립하지 않는다.</strong></p>
+<blockquote>
+<p>컴퍼니가 세계 최대 기업이 된 것은 이것을 격리했기 때문이 아니다.
+<strong>이것이 옳다는 전제 위에 사업을 세웠기 때문이다.</strong></p>
+</blockquote>
+<p><strong>격리 방식 — 라인 급여(給與)</strong>
+「표준」은 규격화할 것이 있는 한 밖으로 뻗지 않는다.
+제1공장 지하에는 40년째 <strong>똑같은 부품 하나만</strong> 생산하는 라인이 돌아간다. 생산량은 하루 12만 개이며, 전량 그 자리에서 폐기된다.
+그 부품은 어디에도 쓰이지 않는다. <strong>만들어지기 위해서만 만들어진다.</strong></p>
+<p><strong>중단할 수 없는 이유</strong>
+라인이 멈추면 「표준」은 다음 규격 대상을 찾는다. 가장 가까운 것은 <strong>라인을 세운 사람들</strong>이다.</p>
+<p><strong>들어갈 수 있는 사람</strong>
+선반 앞에 선 자는 규격 판정을 받는다. 유일한 예외는 <strong>갈음할 것이 없는 사람</strong> — 완결자다.</p>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><em>「같은 것은 같으니, 굳이 가리려 하지 말라.」</em>
+<em>「빈 자리는 곧 채워지리니, 슬퍼함이 어리석도다.」</em>
+<em>「쓰임이 같으면 이름이 다른들 무엇하리.」</em></p>
+</blockquote></div>
+<p><strong>이사회의 기록</strong>
+초대 이사회 의사록에 남은 한 줄.</p>
+<blockquote>
+<p><em>"우리는 40명을 잃지 않았다. 그것이 가장 무서운 부분이다."</em></p>
+</blockquote>
+<p><strong>격리 유지</strong>
+분기 1회, 완결자 <strong>주가영</strong>이 선반 앞에 서서 규격 목록을 갱신한다. (제8부 8-2 참조)</p>
+<h3 id="s135">『만종』 — 6급, 개념 / 격리 : 교단</h3>
+<p>→ 상세는 <strong>제4부 3절</strong> 참조. 유일하게 <strong>격리 주체가 사용 의사를 공개적으로 밝힌</strong> 6급 개체다.
+다른 셋은 언제 풀릴지 모르는 재앙이고, 이것만은 <strong>누군가 결심하면 풀리는 재앙</strong>이다. 관리국이 만종을 가장 두려워하는 이유는 그 위력이 아니라, <strong>그것을 지키는 자들이 인류 전체를 사랑한다는 사실</strong> 때문이다.</p>
+<h2 id="s136">7-5. 판정 불가 개체</h2>
+<h3 id="s137">『심연의 아고라』 — 등급 판정 불가 (잠정 2급), 개념 / 감염</h3>
+<p>→ 상세는 <strong>제4부 6절</strong> 참조.
+관리국 사상 최초의 <strong>등급 판정 불능 개체</strong>. 판정 절차 자체가 개체의 규칙에 의해 무효화된다.
+공식 문서에는 여전히 "잠정 2급, 재판정 보류"로 기재되어 있으며, 이 항목은 <strong>11년째 갱신되지 않고 있다.</strong></p>
+<hr />
+</section>
+<section class="part part-secret"><h1 id="s138"><span class="eyebrow">제8부</span><span class="h1-title">완결자 5인</span></h1>
+<blockquote>
+<p>공식 기록상 존재하지 않는 사람들. <strong>최고 기밀 취급.</strong>
+넷은 각자 자기 세력의 6급을 붙잡고 있고, 하나는 유일한 전투 요원이다.
+서로의 존재를 의심하지만, <strong>관리국의 두 사람을 빼면 아무도 서로를 확인한 적이 없다.</strong>
+다섯 다 여성인 것은 우연이다. 그리고 다섯 다 그것이 우연이 아닐까 봐 한 번씩 의심해본 적이 있다.</p>
+</blockquote>
+<hr />
+<h2 id="s139">8-1. 한도경 (韓道慶) — 관리국</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통칭</strong></td>
+<td>「측량사」</td>
+</tr>
+<tr>
+<td><strong>직위</strong></td>
+<td>관리국 특무국장 / 대외 직함 <strong>해양측량과 과장</strong></td>
+</tr>
+<tr>
+<td><strong>서류상</strong></td>
+<td>개체번호 <strong>CO-01</strong>. 인사 기록은 12년 전 순직 처리</td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td>『해안선』</td>
+</tr>
+<tr>
+<td><strong>외견</strong></td>
+<td><strong>59세에서 멈춤</strong> (완결 시점)</td>
+</tr>
+<tr>
+<td><strong>실제 나이</strong></td>
+<td>61세. 다섯 중 완결이 가장 늦어 격차가 작다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s140">이야기 — 「없는 도시를 말한 사람」</h3>
+<p>제3호 공백. 인구 40만의 도시가 통째로 지워지고, <strong>공식 사망자는 0명</strong>이었다. 존재했다는 기억까지 지워졌으므로 셀 사람이 없었다.</p>
+<p><strong>한 명이 기억했다.</strong></p>
+<p>당시 스물아홉의 측량 기사였던 그녀는, 자기 손으로 그린 그 도시의 도면을 들고 나왔다. 도면에는 아무것도 인쇄되어 있지 않았다. 그런데 그녀는 그 위의 도로 이름을 전부 읽을 수 있었다.</p>
+<p>이후 30년, 그녀는 어디서든 그 도시 이야기를 했다. 아무도 믿지 않았다. 정신과 기록이 열한 권 쌓였고, 그녀를 아는 모든 사람이 그녀를 미친 사람으로 여겼다. <strong>그리고 그것이 이야기가 되었다.</strong></p>
+<blockquote>
+<p>「없는 도시를 말하는 여자」
+「그녀는 잊지 않았다」
+「아무도 그녀를 믿지 않았다」</p>
+</blockquote>
+<h3 id="s141">규칙 (완결 전, 이명 4급 · 7개)</h3>
+<ul>
+<li>그녀는 잊지 않는다 → 어떤 개변에도 기억이 덮어씌워지지 않음</li>
+<li>그녀는 반드시 말한다 → 침묵할 수 없음. 취조에 무력</li>
+<li>아무도 그녀를 믿지 않는다 → <strong>그녀의 증언은 어떤 문서로도 채택되지 않음</strong></li>
+<li>그녀는 그 도시를 떠나지 못한다 → 존재하지 않는 장소에 묶임</li>
+</ul>
+<h3 id="s142">완결 — 「마지막 청자」</h3>
+<p>30년째 되던 해, 그녀의 이야기를 끝까지 들어준 사람이 처음으로 나타났다. 그 순간 <strong>「아무도 그녀를 믿지 않는다」가 깨졌고, 이야기가 결말에 도달했다.</strong></p>
+<p>불락이 풀린 그녀는 그 자리에서 죽어야 했다. 관리국이 건져냈다.
+<strong>그 마지막 청자가 관리국 조사관이었다.</strong> 임무로 만나러 갔다가, 임무를 잊고 끝까지 들었다.</p>
+<blockquote>
+<p>그 조사관은 현재 해양측량과 부과장이다. 두 사람은 30년째 매년 같은 이야기를 반복한다.
+부과장은 그 이야기를 외우고 있지만, 한 번도 먼저 말한 적이 없다.</p>
+</blockquote>
+<h3 id="s143">완결 권능 — 『측량』</h3>
+<blockquote>
+<p>제약: <strong>"그녀는 잊지 않는다"</strong>
+↓
+권능: <strong>"그녀가 부르는 이름은 없던 적이 없다"</strong></p>
+</blockquote>
+<p>지워진 것의 이름을 부르면, <strong>그것이 있었다는 사실이 잠시 현실로 되돌아온다.</strong>
+개변에 대한 역-개변. 『해안선』이 삼킨 땅에서 그녀가 지명을 부르면 그 구역은 짧게 다시 육지가 되고, 그 사이에 관리국은 경계를 다시 측량하고 말뚝을 박는다.</p>
+<p><strong>한계</strong>: 창조가 아니다. <strong>자기가 직접 본 것만</strong> 되부를 수 있다. 그녀가 죽으면 그 목록도 끝난다.</p>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><strong>「이름을 되부르시는 분을 우러르라. 그가 부르신 것은 없던 적이 없느니라.」</strong></p>
+</blockquote></div>
+<h3 id="s144">실태</h3>
+<ul>
+<li><strong>발현 주기</strong>: 연 1회. 매년 지도를 다시 그리는 그 작업이 곧 Ω 보급이다.</li>
+<li><strong>Ω 잔량</strong>: 안정. 정기 발현으로 안정적으로 채우는 유일한 사례다. 대신 <strong>1년에 딱 한 번만 사람일 수 있다.</strong></li>
+<li><strong>성격</strong>: 조용하고 지독하게 꼼꼼하다. 화를 낸 기록이 없다. 부하들은 그녀를 좋아하지만, 웃는 것을 본 사람은 없다.</li>
+<li><strong>약점</strong>: 불로는 걸려 있으나 <strong>완결 시점의 몸이 이미 59세였다.</strong> 무릎이 나쁘고 겨울마다 앓는 상태 그대로 고정되어 있다. 그리고 <strong>총 한 발에 죽는다.</strong></li>
+<li><strong>관리국 내 인지</strong>: 국장급 4명과 부과장 1명. 다섯 명뿐이다.</li>
+</ul>
+<blockquote>
+<p>책상 위에 아무것도 인쇄되지 않은 도면 한 장이 30년째 놓여 있다.
+그녀는 아직도 그 위의 도로 이름을 전부 읽는다. 40만 명의 이름도 전부 외우고 있다.
+아무도 그것을 물어본 적이 없다. 물으면 그녀는 반드시 대답할 것이고, 끝까지 갈 것이기 때문이다.</p>
+</blockquote>
+<hr />
+<h2 id="s145">8-2. 주가영 (朱佳英) — 컴퍼니</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통칭</strong></td>
+<td>「단품(單品)」</td>
+</tr>
+<tr>
+<td><strong>직위</strong></td>
+<td>컴퍼니 이사회 상임이사 (품질보증 총괄)</td>
+</tr>
+<tr>
+<td><strong>서류상</strong></td>
+<td><strong>사번 없음.</strong> 컴퍼니 유일의 무번호 사원</td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td>『규격』 (내부 호칭 「표준」)</td>
+</tr>
+<tr>
+<td><strong>외견</strong></td>
+<td><strong>41세에서 멈춤</strong> (완결 시점)</td>
+</tr>
+<tr>
+<td><strong>실제 나이</strong></td>
+<td>52세</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s146">이야기 — 「교체되지 않은 사람」</h3>
+<p>11개월. 『규격』 격리에 미세한 균열이 생긴 기간이다.</p>
+<p>권역이 반경 4km까지 새어 나갔고, 그 안에 제3공장이 있었다. <strong>11개월 동안 340명의 작업자가 동일 사양의 다른 사람으로 갈음되었다.</strong> 아무도 눈치채지 못했다. 눈치챌 이유가 없었다 — 생산량도, 근태도, 가족 관계도 전부 그대로였으니까.</p>
+<p>그녀는 그 공장의 품질검사원이었다. <strong>하는 일이 「대상이 규격과 일치하는지 확인하는 것」이었다.</strong></p>
+<p>그녀는 사람에게 그것을 했다.
+340건의 부적합 보고서를 올렸다. 340건 전부 반려되었다. 사유는 언제나 같았다.</p>
+<blockquote>
+<p><em>"해당 품목은 규격에 부합함."</em></p>
+</blockquote>
+<p><strong>반려 사유가 옳았다는 것이 이 이야기의 핵심이다.</strong></p>
+<blockquote>
+<p>「그녀는 같은 것을 같다고 하지 않는다」
+「그녀의 보고는 반려된다」
+「그녀는 대체될 수 없다」</p>
+</blockquote>
+<h3 id="s147">규칙 (완결 전, 이명 4급 · 8개)</h3>
+<ul>
+<li>그녀는 같은 것을 같다고 하지 않는다 → <strong>통계·표본·일괄 처리 사용 불가.</strong> 모든 것을 개별로 봐야 함</li>
+<li>그녀의 보고는 반려된다 → 어떤 문서도 승인되지 않음</li>
+<li>그녀는 대체될 수 없다 → 그녀의 업무를 아무도 대신하지 못함. <strong>휴가·병가·교대 불가</strong></li>
+<li>그녀는 세어진 적이 없다 → 인원 명부에 오르지 않음. 급여도 현금 지급</li>
+</ul>
+<h3 id="s148">완결 — 「341번째 보고서」</h3>
+<p>11개월째 되던 날, 그녀는 341번째 부적합 보고서를 썼다. 대상란에 자기 사번을 적었다.</p>
+<blockquote>
+<p><em>"본 검사자는 규격에 부합하지 않음. 갈음 불가."</em></p>
+</blockquote>
+<p>문제는 「그녀의 보고는 반려된다」였다. 승인될 수 없으니 결말에 도달할 수 없다.
+<strong>그녀가 승인란에 직접 서명했다.</strong> 검사자와 승인자가 동일인인 보고서는 규정상 무효다. 무효인 문서는 반려될 수도 없다.</p>
+<p>규칙이 걸릴 곳을 잃고, 그 자리에서 접혔다.</p>
+<p>불락이 풀렸다. 그녀는 검사대 앞에서 쓰러졌고 심박이 세 번 멎었다.
+<strong>공장 전체가 라인을 세우고 사흘 동안 그녀를 살려냈다.</strong> 갈음된 340명이 전부 거기 있었다.
+그들은 자기가 왜 그러는지 설명하지 못했다.</p>
+<blockquote>
+<p>그 보고서 원본은 컴퍼니 이사회실 벽에 걸려 있다.
+승인란에는 서명이 두 개다. 필적이 같다.</p>
+</blockquote>
+<h3 id="s149">완결 권능 — 『단품』</h3>
+<blockquote>
+<p>제약: <strong>"그녀는 대체될 수 없다"</strong>
+↓
+권능: <strong>"그녀가 지목한 것은 갈음할 수 없다"</strong></p>
+</blockquote>
+<p>지목된 대상은 <strong>규격 밖으로 나간다.</strong>
+동일 사양의 다른 것으로 대체되지 않고, 통계에 묶이지 않고, 부품이 되지 않는다.
+사람에게 쓰면 — <strong>다시 그 사람으로 되돌린다.</strong></p>
+<p><strong>파생 효과 — 정보·기억 변조 완전 면역</strong></p>
+<p>『규격』의 갈음은 물리적 교체로 끝나지 않는다. 기록·기억·호적·사진이 <strong>전부 재색인되어야</strong> 비로소 완성된다.
+따라서 「갈음 불가」는 그 재색인 자체를 거부한다는 뜻이며, 결과적으로 <strong>지목된 대상에 관한 정보는 다른 것으로 바뀌지 않는다.</strong></p>
+<table>
+<thead>
+<tr>
+<th>공격</th>
+<th>지목된 대상에게</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>관리국 희석</strong></td>
+<td>무효. 대체 서사가 붙지 않아 <strong>해석 분산(V)을 올릴 수 없다</strong></td>
+</tr>
+<tr>
+<td><strong>저자회 파종</strong></td>
+<td>무효. 그 사람에 관한 이야기를 새로 심을 수 없다</td>
+</tr>
+<tr>
+<td><strong>아고라 덫·무저 게시물</strong></td>
+<td>무효. 정보 오염이 걸리지 않는다</td>
+</tr>
+<tr>
+<td><strong>개변 권역의 기억 덮어쓰기</strong></td>
+<td>무효. 정착도와 달리 <strong>지연이 아니라 완전 차단</strong></td>
+</tr>
+<tr>
+<td><strong>『해안선』식 기록 소거</strong></td>
+<td>무효. 그 대상에 관한 기록만은 지워지지 않는다</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>이 세계에서 <strong>진실을 보존하는 가장 확실한 방법은 주가영에게 지목받는 것</strong>이다.
+그리고 그것을 아는 사람은 이사회 9명뿐이다.</p>
+</blockquote>
+<p><strong>이명자에게 쓰면</strong>
+소문이 더 붙지 않으므로 <strong>규칙이 늘지 않는다.</strong> 4급에서 멈추게 하는 것이며, 곧 <strong>낙명을 막는다는 뜻</strong>이다.
+관리국이 컴퍼니 이사회에 20년째 접촉을 시도하는 진짜 이유이며, 컴퍼니는 그 요청의 의도를 아직 모른다고 답해왔다.</p>
+<p><strong>한계</strong>
+- <strong>한 번에 하나.</strong> 지목은 취소할 수 없다.
+- <strong>지목된 것은 영구히 갈음 불가</strong>가 된다. 즉 그것이 죽으면 그 자리는 <strong>영원히 빈다.</strong>
+- 컴퍼니 인사·물류 부문이 그녀의 지목을 극도로 꺼리는 이유다. 지목된 인원 한 명은 <strong>회사에 영구 결손을 만들 수 있는 존재</strong>가 된다.
+- <strong>면역은 보호가 아니다.</strong> 지목된 사람은 자기가 본 것을 영원히 정확하게 기억하며, <strong>잊는 것도 흐려지는 것도 허락되지 않는다.</strong> 지목받은 목격자 중 셋이 스스로 목숨을 끊었고, 손실처리부는 그 건들을 지금도 재검토하고 있다.</p>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><strong>「가려내시는 분을 찬미하라. 그가 지목하신 것은 다시없는 하나이니.」</strong></p>
+</blockquote></div>
+<h3 id="s150">임무 — 「목록 갱신」</h3>
+<p>분기 1회, 제1공장 지하의 빈 선반 앞에 선다.
+「표준」이 새로 규격화 후보에 올린 것들을 확인하고, 그중 몇을 지목해 목록에서 뺀다.</p>
+<p>전부는 못 뺀다. 분기당 지목 가능 횟수는 그녀의 Ω 잔량이 결정하며, 최근 10년 평균은 <strong>분기당 두 건</strong>이다.
+후보 목록에는 매 분기 수백 줄이 올라온다.</p>
+<blockquote>
+<p><strong>그녀가 하는 일은 구조가 아니라 선별이다.</strong>
+그리고 그녀는 그 선별 기준을 한 번도 문서로 남긴 적이 없다. 남기면 그것이 규격이 되기 때문이다.</p>
+</blockquote>
+<h3 id="s151">실태</h3>
+<ul>
+<li><strong>발현 주기</strong>: 분기 1회 정기 + 비정기 호출. 컴퍼니 격리 사고 대응의 최종 수단.</li>
+<li><strong>Ω 잔량</strong>: <strong>소모 심각.</strong> 최근 3년간 지목 건수가 이전 10년 총합을 넘었다. 이유를 아는 사람은 그녀뿐이다.</li>
+<li><strong>성격</strong>: 사무적이고 극도로 느리다. 무엇도 한꺼번에 처리하지 않는다 — 규칙이 사라졌는데도 여전히 하나씩 본다. 회의 중 서류를 한 장씩 넘기는 것으로 유명하다.</li>
+<li><strong>약점 ①</strong>: <strong>최근 늙기 시작했다.</strong> 3년 사이 눈가와 흰머리가 눈에 띄게 변했고, 이사회는 그것이 무슨 뜻인지 정확히 알고 있다.</li>
+<li><strong>약점 ②</strong>: <strong>그녀 자신은 이제 갈음 가능하다.</strong> 341번째 보고서로 스스로에게 규격 판정을 내린 순간 체계 안에 들어왔기 때문이다. 그녀가 죽으면 컴퍼니는 후임을 앉힐 수 있고, <strong>「표준」은 그것을 눈치채지 못할 것이다.</strong></li>
+<li><strong>컴퍼니 내 인지</strong>: 이사회 전원(9명). 다섯 중 가장 많은 인원이 알고 있다.</li>
+</ul>
+<blockquote>
+<p>이사회는 후임 후보 명단을 이미 갖고 있다. 사양이 그녀와 일치하는 검사원들이다.
+그녀도 그 명단의 존재를 안다. 이의를 제기한 적은 없다.
+<strong>명단에 오른 사람들은 자기가 왜 특별 관리 대상인지 모른다.</strong></p>
+</blockquote>
+<hr />
+<h2 id="s152">8-3. 명주하 (明周夏) — 교단</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통칭</strong></td>
+<td>「곁」</td>
+</tr>
+<tr>
+<td><strong>직위</strong></td>
+<td>종장회의 7인 중 1인 / 만종 타종 승인권 보유</td>
+</tr>
+<tr>
+<td><strong>서류상</strong></td>
+<td>교단은 서류를 만들지 않는다. <strong>존재를 조직 내부에 공개한 유일한 완결자</strong></td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td>『만종』</td>
+</tr>
+<tr>
+<td><strong>외견</strong></td>
+<td><strong>74세에서 멈춤</strong> (완결 시점)</td>
+</tr>
+<tr>
+<td><strong>실제 나이</strong></td>
+<td>78세</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s153">이야기 — 「아무도 구하지 못한 사람」</h3>
+<p>4급 개체가 지역 병원을 덮쳤다. 사망 214명. 생존자 1명.</p>
+<p>그녀는 당시 그 병원의 원목(院牧)이었다. 개체의 규칙은 그녀를 죽이지 않았다 — 조건에 맞지 않았기 때문이다. 그래서 그녀는 <strong>여섯 시간 동안 214명이 죽는 것을 곁에서 지켜보았다.</strong> 한 명도 구하지 못했고, 한 명도 혼자 죽게 두지 않았다. 계속 자리를 옮겨 다녔다.</p>
+<p>생존자 명단이 공개되었을 때 사람들이 물었다. 왜 당신만 살았는가.
+그녀는 대답하지 않았다. <strong>그리고 그 침묵이 이야기가 되었다.</strong></p>
+<blockquote>
+<p>「그녀는 아무도 구하지 못했다」
+「그녀는 아무도 혼자 두지 않았다」
+「그녀는 대답하지 않았다」</p>
+</blockquote>
+<h3 id="s154">규칙 (완결 전, 이명 4급 · 6개)</h3>
+<ul>
+<li>그녀는 아무도 구하지 못한다 → <strong>치료·구조·방어 행위가 전부 실패함</strong></li>
+<li>그녀는 아무도 혼자 두지 않는다 → 죽어가는 자를 떠날 수 없음</li>
+<li>그녀는 대답하지 않는다 → 자신에 대해 말할 수 없음</li>
+<li>그녀는 앉지 않는다 → 214명을 옮겨 다니던 여섯 시간에서 굳은 규칙</li>
+</ul>
+<h3 id="s155">완결 — 「마지막 한 명」</h3>
+<p>40년 뒤, 그녀가 마지막으로 곁을 지킨 사람은 그 병원 사건의 유일한 유족이었다.
+그 사람이 죽으면서 물었다. <em>"그때, 우리 애 곁에 있었습니까."</em></p>
+<p><strong>그녀는 대답했다.</strong> 「그녀는 대답하지 않는다」가 깨졌고, 「아무도 혼자 두지 않는다」가 완료되었다.</p>
+<p>불락이 풀렸다. 그녀는 그 침대 옆에서 쓰러졌고, <strong>교단 사제 스무 명이 밤새 곁을 지켰다.</strong>
+아무도 치료하지 않았다. 교단에는 치료 사역이 없다. 그들이 한 일은 <strong>곁에 있는 것</strong>뿐이었고, 그것이 정확히 그녀를 살렸다.</p>
+<h3 id="s156">완결 권능 — 『동행』</h3>
+<blockquote>
+<p>제약: <strong>"그녀는 아무도 구하지 못한다"</strong>
+↓
+권능: <strong>"그녀가 곁에 있으면 아무도 혼자 저물지 않는다"</strong></p>
+</blockquote>
+<p>그녀가 곁에 있는 자의 죽음에서 <strong>고통과 공포가 사라진다.</strong>
+구하지는 못한다. 여전히, 40년 전과 똑같이, 한 명도 구하지 못한다. 다만 아프지 않게 한다.</p>
+<blockquote>
+<p><strong>이것은 『만종』의 축소판이다.</strong>
+종은 인류 전체를 재우고, 그녀는 한 사람의 곁을 지킨다. 원리가 같다.
+교단이 그녀에게 타종 승인권을 준 이유가 이것이다. <strong>자비가 무엇인지 아는 사람에게 자비의 방아쇠를 맡긴 것이다.</strong></p>
+</blockquote>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><strong>「곁을 지키시는 분께 복이 있으라. 그가 계신 자리에서는 아무도 홀로 저물지 아니하나니.」</strong></p>
+</blockquote></div>
+<h3 id="s157">실태</h3>
+<ul>
+<li><strong>발현 주기</strong>: 거의 매일. 교단 호스피스 사역에 그대로 쓰인다. <strong>다섯 중 유일하게 숨기지 않으므로 Ω가 마르지 않는다.</strong></li>
+<li><strong>Ω 잔량</strong>: 풍족. 신도들이 그녀의 현창을 매일 낭송하기 때문에, 노출이 곧 보급이 되는 구조다.</li>
+<li><strong>성격</strong>: 온화하고 말이 적다. 여전히 앉지 않는다 — 규칙이 사라졌는데도 40년 습관이 남았다.</li>
+<li><strong>약점</strong>: 78세다. 그리고 <strong>완결 권능은 자기 자신에게 걸리지 않는다.</strong> 그녀가 죽을 때 그녀의 곁에는 아무도 없을 것이라는 사실을, 교단 전체가 알고 두려워하고 있다.</li>
+<li><strong>노선</strong>: 지연파로 알려져 있으나, 종장회의 표결 기록은 공개되지 않는다.</li>
+</ul>
+<blockquote>
+<p>그녀가 만종 타종에 찬성할지 반대할지는 교단 최대의 미지수다.
+40년간 한 사람씩 재워온 사람에게, 70억을 한 번에 재우는 것은 확대인가 배신인가.
+그녀는 대답하지 않는다. 그 규칙은 이미 깨졌는데도.</p>
+</blockquote>
+<hr />
+<h2 id="s158">8-4. 백서린 (白書潾) — 미술관</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통칭</strong></td>
+<td>「미완(未完)」</td>
+</tr>
+<tr>
+<td><strong>직위</strong></td>
+<td>미술관 수석 아티스트</td>
+</tr>
+<tr>
+<td><strong>서류상</strong></td>
+<td>미술관은 명단을 남기지 않는다. <strong>단 그녀에 대한 폐기 처분 결재서는 남아 있다</strong></td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td>『액자』 (내부 호칭 「1번 방」)</td>
+</tr>
+<tr>
+<td><strong>외견</strong></td>
+<td><strong>38세에서 멈춤</strong> (완결 시점)</td>
+</tr>
+<tr>
+<td><strong>실제 나이</strong></td>
+<td>44세</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s159">이야기 — 「서명하지 않은 아티스트」</h3>
+<p>미술관 200년 사상 최고의 재능이었다. 작품화 성공률 100%. 실패 기록이 없다.</p>
+<p><strong>그런데 단 하나도 완성하지 않았다.</strong></p>
+<p>『작품화』의 마지막 단계는 「고정」이다. 재해석된 규칙을 매개체에 굳혀 영원히 붙잡아두는 것. 그녀는 언제나 그 직전에서 손을 놓았다.
+미완성 작품은 규칙이 완전히 닫히지 않아 언제든 폭주할 수 있다. <strong>그녀는 미술관 최대의 위험 요소였다.</strong></p>
+<p>이유를 묻는 사람들에게 그녀는 대답하지 않았고, 조직은 그것을 완벽주의로 처리했다.
+실제 이유는 다른 것이었다. 그녀는 신입 시절 「1번 방」의 문서를 읽었고, <strong>고정한다는 것이 무슨 뜻인지 알아버렸다.</strong></p>
+<blockquote>
+<p>「그녀는 완성하지 못한다」
+「그녀가 손댄 것은 굳지 않는다」
+「그녀는 서명하지 않는다」</p>
+</blockquote>
+<h3 id="s160">규칙 (완결 전, 이명 4급 · 9개 — 기록상 최다)</h3>
+<ul>
+<li>그녀는 완성하지 못한다 → <strong>어떤 작업·문장·행동도 끝맺을 수 없음</strong></li>
+<li>그녀가 손댄 것은 굳지 않는다 → 고정·경화·결정화 불가. <strong>작품화 최종 단계 수행 불가</strong></li>
+<li>그녀는 서명하지 않는다 → 계약·증언·문서 불가</li>
+<li>그녀는 뒤에 남기지 않는다 → 소유·기록·제자를 둘 수 없음</li>
+</ul>
+<h3 id="s161">완결 — 「폐기 처분일」</h3>
+<p>미술관은 그녀를 폐기하기로 결정했다. 미완성 작품 전량과 함께.
+관주 명의의 결재서가 나갔고, 처분반이 작업실로 들어갔다.</p>
+<p>그 방에서 그녀는 마지막으로 자기 이야기를 들여다봤다. 『만화경의 눈』으로 자기 규칙의 흐름을 보고, 결말이 어디인지 확인했다.</p>
+<p><strong>그녀 이야기의 결말은 「끝나지 않음」이었다.</strong></p>
+<p>결말을 이행하는 방법은 아무것도 하지 않는 것이었다. 그녀는 하지 않았고, 그 순간 아홉 개의 규칙이 한 점으로 접혔다.</p>
+<p>불락이 풀린 채로 처분이 집행되는 중이었다. 그녀는 실제로 죽기 직전까지 갔다.
+<strong>살려낸 것은 미술관이 아니라 그녀의 미완성 작품들이었다.</strong> 굳지 않은 규칙 수백 개가 제멋대로 발동해 처분반을 밀어냈다. 사망자 넷.</p>
+<p>이후 미술관은 그녀를 폐기 대상에서 수석으로 올렸다. <strong>사과는 없었다.</strong></p>
+<blockquote>
+<p>그 결재서는 파기되지 않았다. 그녀가 요청했기 때문이다.
+지금도 미술관 문서고에 있으며, 결재란에 관주 인장이 찍혀 있다.</p>
+</blockquote>
+<h3 id="s162">완결 권능 — 『미완』</h3>
+<blockquote>
+<p>제약: <strong>"그녀는 완성하지 못한다"</strong>
+↓
+권능: <strong>"그녀가 손댄 것은 아직 끝나지 않았다"</strong></p>
+</blockquote>
+<p>굳은 것을 무르게, 끝난 것을 진행 중으로 되돌린다.
+<strong>작품화의 정확한 역방향</strong>이며, 이 세계에서 유일하게 <strong>박제를 푸는 권능</strong>이다.</p>
+<ul>
+<li>고정된 작품의 규칙을 다시 열 수 있다 (= 미술관 전 소장품을 위험 상태로 되돌릴 수 있다)</li>
+<li>확정된 상황을 미확정으로 되돌릴 수 있다. 다만 <strong>좋은 쪽으로 되돌리는 것이 아니다.</strong> 아물던 상처도 다시 벌어진다.</li>
+</ul>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><strong>「끝내지 아니하시는 분을 경배하라. 그의 손이 닿은 것은 아직 거두어지지 아니하였느니라.」</strong></p>
+</blockquote></div>
+<h3 id="s163">임무 — 「1번 방 정비」</h3>
+<p>연 2회, 테두리 안으로 들어간다.</p>
+<p>안에는 인구 3,000의 마을이 200년째 있다. 죽지 않고, 늙었고, 붓을 들고 있고, <strong>아무도 그림을 끝내지 못한다.</strong>
+그리고 그 장면 자체가 조금씩 굳어간다. 완전히 굳으면 「완성작」이 되고, 액자는 비어 다음 테두리를 그린다.</p>
+<p>그녀는 굳어가는 지점들을 찾아 손댄다. 다시 미완으로 되돌린다.</p>
+<blockquote>
+<p><strong>그녀가 하는 일은 그들을 구하는 것이 아니다.</strong>
+<strong>끝나지 못하게 하는 것이다.</strong></p>
+<p>꺼낼 방법은 없다. 꺼내면 액자가 빈다.
+미술관은 200년째 이 일을 반복해왔고, 그녀는 그 마지막 담당자다. 매번 같은 사람들의 얼굴을 본다.
+그들은 그녀를 알아보지 못한다. 알아보는 것은 완결되는 행위이기 때문이다.</p>
+</blockquote>
+<h3 id="s164">그리고 — 왜 그녀만 들어갈 수 있는가</h3>
+<p>액자는 「하는 것」을 「그리는 것」으로 전환한다. 전환하려면 대상이 <strong>한 장면으로 확정</strong>되어야 한다.</p>
+<p><strong>그녀의 행위는 확정되지 않는다.</strong> 액자에는 전환할 것이 없다.</p>
+<blockquote>
+<p>미술관이 그녀를 폐기하려다 수석으로 올린 이유가 이것이다.
+<strong>그들이 200년간 필요로 하던 사람을, 위험 요소로 분류해 죽일 뻔했다.</strong>
+그리고 그 사실을 아는 인원은 미술관 안에서도 둘뿐이다.</p>
+</blockquote>
+<h3 id="s165">실태</h3>
+<ul>
+<li><strong>발현 주기</strong>: 연 2회 정기. 그 외의 발현은 미술관이 금지한다 — <strong>그녀가 아무거나 만지면 소장품 전체가 열린다.</strong></li>
+<li><strong>Ω 잔량</strong>: 불안정. 발현 통제가 곧 Ω 통제이며, 미술관은 이 목줄을 의도적으로 유지한다.</li>
+<li><strong>성격</strong>: 말끝을 흐린다. 문장을 끝맺지 못하는 규칙은 사라졌는데도 습관이 남았다. 사람들은 그것을 우유부단함으로 오해한다.</li>
+<li><strong>약점</strong>: 완결 권능은 자기 자신에게 걸리지 않는다. <strong>평생 무엇도 완성하지 않으려 했던 사람이, 자기 자신만은 완결된 채로 고정되었다.</strong> 불로 역시 같은 고정이다 — 그녀는 6년째 같은 얼굴이며, 그것을 거울로 보는 것을 피한다. 그녀가 견디지 못하는 것은 노화도 죽음도 아니라 이것이다.</li>
+<li><strong>미술관 내 인지</strong>: 관주 1명, 조율사 수석 1명. 다섯 중 가장 적은 인원이 알고 있다.</li>
+</ul>
+<blockquote>
+<p>그녀의 작업실에는 미완성 작품이 여전히 수백 점 있다.
+완결한 이후로 새로 시작한 것은 한 점도 없다.
+<strong>이제는 끝낼 수 있게 되었는데, 시작하지 않는다.</strong></p>
+</blockquote>
+<hr />
+<h2 id="s166">8-5. 한백설 (韓白雪) — 관리국 (제2 완결자)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>통칭</strong></td>
+<td>「무인(武人)」. 관리국 내부에서는 <strong>「망치」</strong></td>
+</tr>
+<tr>
+<td><strong>직위</strong></td>
+<td>관리국 특무국 직할. 계급 없음, 지휘 계통 없음</td>
+</tr>
+<tr>
+<td><strong>서류상</strong></td>
+<td>개체번호 <strong>CO-00</strong>. 다섯 중 가장 먼저 확인된 완결자</td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td><strong>없음 — 유일한 전투 요원</strong></td>
+</tr>
+<tr>
+<td><strong>외견</strong></td>
+<td><strong>27세에서 멈춤</strong> (완결 시점)</td>
+</tr>
+<tr>
+<td><strong>실제 나이</strong></td>
+<td>55세. 28년 격차로 다섯 중 가장 크다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s167">이야기 — 「규칙을 묻지 않은 사람」</h3>
+<p>관리국 초기, 대응 매뉴얼이 아직 없던 시절의 현장 요원이었다.
+그리고 매뉴얼이 생긴 뒤에도 그녀에게는 소용이 없었다. <strong>공략서를 읽어도 머리에 남지 않았다.</strong></p>
+<p>브리핑을 들으면 단어가 흩어지고, 규칙을 외우면 현장에서 사라졌다. 관리국은 인지 장애를 의심해 열두 차례 검사했고 전부 정상으로 나왔다.
+그래서 그녀는 언제나 <strong>규칙을 모르는 채로</strong> 들어갔다.</p>
+<p><strong>17년간 200건이 넘는 교전, 격퇴 기록 0건.</strong>
+규칙을 모르니 불락을 뚫을 수 없었다. 아무리 정확히 맞혀도 헛방이었다.</p>
+<p><strong>그런데 죽지도 않았다.</strong> 매번 반죽음으로 실려 나왔고 매번 돌아왔다.
+관리국 내부에서 그녀는 조롱과 경외를 동시에 받았다. 실적 0인 요원, 그리고 <strong>그녀가 남아 있는 한 작전은 끝나지 않는다</strong>는 소문.</p>
+<blockquote>
+<p>「그녀는 규칙을 묻지 않는다」
+「그녀는 이긴 적이 없다」
+「그녀는 마지막까지 남는다」</p>
+</blockquote>
+<h3 id="s168">규칙 (완결 전, 이명 4급 · 8개)</h3>
+<ul>
+<li>그녀는 규칙을 묻지 않는다 → <strong>사전 정보 수령 불가.</strong> 공략서가 머리에 남지 않음</li>
+<li>그녀는 이긴 적이 없다 → <strong>어떤 교전도 승리로 종결되지 않음.</strong> 격퇴·포획 불가</li>
+<li>그녀는 물러선 적이 없다 → 후퇴·회피·엄폐 불가. 정면만 가능</li>
+<li>그녀는 무기를 고르지 않는다 → 지급 장비·모듈 사용 불가. 손에 잡히는 것만</li>
+<li>그녀는 혼자 남는다 → 작전 종료 시 반드시 마지막 한 명</li>
+</ul>
+<h3 id="s169">완결 — 「200번째 헛방」</h3>
+<p>18년째, 어느 3급 개체 대응. 공략서가 있었고, 분대 전원이 그것을 정확히 외웠으며, <strong>정확히 지켰다.</strong></p>
+<p>공략서가 틀렸다.
+유연 규칙을 한 단어 오독한 문서였고, 그 한 단어 때문에 규칙대로 움직인 사람이 전부 죽었다. <strong>규칙을 지켰기 때문에 죽은 것이다.</strong></p>
+<p>규칙을 모르는 그녀만 그 함정을 밟지 않았다. 그리고 혼자 남았다 — 「그녀는 마지막까지 남는다」가 완료되었다.</p>
+<p>그녀는 200번째로, 규칙에 맞지 않는 방식으로 쳤다.
+<strong>이번엔 들어갔다.</strong></p>
+<p>틀린 공략서가 만든 상황에서, <strong>규칙과 아무 관계도 맺지 못하는 일격만이 유일하게 유효한 방식이었다.</strong>
+「그녀는 이긴 적이 없다」가 그 자리에서 결말에 도달했고, 남은 여섯이 한 점으로 접혔다.</p>
+<p><strong>불락이 풀렸다. 그리고 그녀가 방금 부순 핵에서 Ω가 방출되고 있었다.</strong>
+규칙이 사라진 몸에는 충돌할 것이 없었다. 그녀는 그것을 그대로 받았다.</p>
+<blockquote>
+<p><strong>인류가 관측한 최초의 회수(回收)이며, 그 대상이 회수를 발견한 본인이었다.</strong>
+그녀를 살려낸 것은 조직이 아니라 <strong>방금 죽인 개체</strong>였다.
+다섯 중 유일하게 조직의 도움 없이 완결의 역설을 통과한 사례이며, 관리국이 그녀를 다루기 어려워하는 근본 이유다.</p>
+</blockquote>
+<h3 id="s170">완결 권능 — 『무인(武人)』</h3>
+<blockquote>
+<p>등재명을 무(武)로 정한 것은 그녀 본인의 요청이었다.
+<strong>무(武)는 창을 멈춘다는 뜻이라고, 그때 한 줄 써서 냈다.</strong></p>
+<p>제약: <strong>"그녀는 규칙을 묻지 않는다"</strong>
+↓
+권능: <strong>"그녀의 일격은 규칙을 묻지 않는다"</strong></p>
+</blockquote>
+<p>그녀가 직접 가한 타격은 <strong>불락 심사를 거치지 않는다.</strong>
+대상의 규칙이 무엇이든, 조건이 맞든 아니든, 닿으면 손상이 성립한다. 본체든 핵이든 마찬가지다.</p>
+<blockquote>
+<p><strong>이 세계에서 규칙 공략 없이 개체를 격퇴할 수 있는 유일한 수단이다.</strong>
+다른 모든 전투는 「비추기」— 규칙이 요구하는 조건을 만들어내는 작업 — 로 이루어진다.
+그녀만이 그 절차 전체를 건너뛴다.</p>
+</blockquote>
+<p><strong>한계</strong>
+1. <strong>닿아야 한다.</strong> 원거리 불가. 손에 든 것으로 직접 쳐야 하며, <strong>불락이 없는 몸으로 접근해야 한다.</strong> 상대의 규칙이 허용하는 공격은 그대로 들어온다.
+2. <strong>일격마다 Ω를 태운다.</strong> 등급이 오를수록 급격히 비싸진다. 5급 상대로는 몇 대가 한계다.
+3. <strong>여전히 규칙을 모른다.</strong> 완결 후에도 공략서는 머리에 남지 않는다. <strong>어디를 쳐야 핵인지 스스로 알아내지 못한다.</strong>
+   → 그녀에게는 언제나 <strong>지시자</strong>가 붙는다. 핵 위치를 파악한 사람이 옆에서 손가락으로 가리키고, 그녀는 그쪽을 친다.
+   → <strong>세계 최강의 일격을 가진 사람이 어디를 쳐야 하는지 모른다.</strong> 이 구조는 의도적으로 유지되고 있으며, 관리국이 그녀를 통제하는 유일한 수단이다.</p>
+<p><strong>현창</strong></p>
+<div class="chant" role="figure" aria-label="현창 필사본"><span class="chant-tag">필사본</span><span class="chant-note">녹음되지 않음</span><blockquote>
+<p><strong>「막아서신 분을 우러르라. 그가 겨눈 것 앞에 규칙이 서지 못하느니라.」</strong></p>
+</blockquote></div>
+<h3 id="s171">임무 — 「핵 회수」</h3>
+<p>담당 6급이 없다. 대신 <strong>관리국의 유일한 격퇴 수단</strong>이다.</p>
+<ul>
+<li><strong>고등급 핵 파괴 작전</strong>: 규칙 해독에 실패했거나 시간이 없는 3~5급 개체. 정규 절차로는 손댈 수 없는 건들이 그녀에게 간다.</li>
+<li><strong>넷의 예비</strong>: 다른 네 사람 중 누구든 임무를 수행하지 못하면 격리가 무너지기 시작한다. 그녀는 복구하지 못하지만, <strong>새어 나온 것을 부수며 시간을 벌 수 있다.</strong></li>
+<li><strong>자급</strong>: 부순 핵에서 Ω를 회수한다. <strong>다섯 중 유일하게 발현 비용을 스스로 조달하는 사람</strong>이며, 그래서 유일하게 퇴색을 걱정하지 않는다.</li>
+</ul>
+<blockquote>
+<p>관리국 등급 판정 통계에서 3~4급 개체의 평균 존속 기간이 유독 짧은 구간이 있다.
+편집부는 이것을 규제선 성능 개선의 성과로 보고해왔고, 예산을 받아왔다.
+<strong>편집부는 진심으로 그렇게 믿고 있다.</strong></p>
+</blockquote>
+<h3 id="s172">역류 위험 — 그녀를 아끼는 진짜 이유</h3>
+<p>완결 이후 그녀가 회수한 핵은 <strong>200건이 넘는다.</strong>
+그 Ω는 전부 소화되지 않은 채 그녀 안에 쌓여 있다. 태우는 속도보다 삼키는 속도가 빠르기 때문이다.</p>
+<blockquote>
+<p><strong>관리국 추산: 그녀가 죽는 순간 방출될 Ω는 5급 상당.</strong>
+즉 <strong>그녀 자신이 걸어 다니는 5급 격리 대상</strong>이다.</p>
+</blockquote>
+<ul>
+<li>관리국이 그녀를 최전선에 아끼는 이유는 소중해서가 아니다. <strong>죽으면 도시 하나가 위험하기 때문이다.</strong></li>
+<li>그녀가 어디서 죽는지가 그녀가 무엇을 하는지보다 중요하다. 작전 계획서에 언제나 <strong>「종결 예정 지점」</strong> 항목이 있고, 그것은 그녀가 죽을 경우 피해가 가장 적은 좌표를 뜻한다.</li>
+<li><strong>그녀는 그 항목의 존재를 안다.</strong> 이의를 제기한 적은 없다.</li>
+</ul>
+<h3 id="s173">관리국 내 위치 — 세 노선의 표적</h3>
+<ul>
+<li><strong>활용파</strong>는 그녀를 <strong>인류 최초의 실효 타격 수단</strong>으로 본다. 상시 배치와 선제 투입을 요구해왔다.</li>
+<li><strong>관리파</strong>는 역류 때문에 사용을 억제한다. 30년간 승인된 실전 투입은 두 번뿐이다.</li>
+<li><strong>소각파</strong>는 그녀를 <strong>최악의 사례</strong>로 본다. 개체를 죽여 놓고 그 이야기를 몸에 담고 다니는 것은, 그들이 보기에 소멸이 아니라 <strong>보관</strong>이다.</li>
+</ul>
+<p>세 노선이 그녀 한 사람을 두고 30년째 싸운다. <strong>그녀는 어느 회의에도 의견을 낸 적이 없다.</strong></p>
+<h3 id="s174">실태</h3>
+<ul>
+<li><strong>발현 주기</strong>: 극도로 불규칙. 몇 년을 쓰지 않다가 한 번에 몰아 태운다.</li>
+<li><strong>Ω 잔량</strong>: <strong>다섯 중 유일하게 넉넉하다.</strong> 대신 <strong>누적 회수량이 그대로 위험도가 된다.</strong></li>
+<li><strong>잔향</strong>: 회수 뒤 며칠간 삼킨 개체의 현창 조각이 입에서 새어 나온다. 본인은 말한 줄 모른다. 30년치 잔향 필사본이 자료실에 있고, 전부 이미 소멸한 개체의 것이다.</li>
+<li><strong>성격</strong>: 말이 짧고 명령을 기다리지 않는다. 여전히 지급 장비를 쓰지 않는다 — 규칙이 사라졌는데도 손에 익지 않는다며 거절한다.</li>
+<li><strong>몸</strong>: 27세에서 고정되었으나 <strong>그때 이미 상처투성이였다.</strong> 18년치 흉과 부러졌다 붙은 뼈가 전부 그대로 남아 있고, 영원히 그대로일 것이다.</li>
+<li><strong>약점</strong>: 접근해야 하고, 접근하는 동안 무방비이며, <strong>어디를 쳐야 하는지 남이 알려줘야 한다.</strong></li>
+<li><strong>관리국 내 인지</strong>: 국장급 4명 + 한도경.</li>
+</ul>
+<blockquote>
+<p><strong>한도경과 한백설은 서로를 안다.</strong>
+세계에서 유일하게 <strong>서로를 확인한 완결자 두 사람</strong>이며, 같은 조직 소속이라는 우연 하나로 그렇게 되었다.
+성이 같은 것은 정말로 우연이고, 둘 다 그 이야기를 지겨워한다.</p>
+<p>한도경이 매년 『해안선』에 들어갈 때, 한백설은 밖에서 기다린다.
+30년간 한 번도 들어오라는 말을 들은 적이 없고, 한 번도 자리를 뜬 적이 없다.
+<strong>한도경은 그녀의 지시자 자격을 가진 유일한 사람이기도 하다.</strong> 무엇을 쳐야 하는지 정확히 아는 사람이 필요하고, 잊지 않는 사람보다 그 일에 맞는 사람은 없다.</p>
+</blockquote>
+<hr />
+<h2 id="s175">8-6. 다섯의 관계</h2>
+<h3 id="s176">대조표</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>한도경</th>
+<th>주가영</th>
+<th>명주하</th>
+<th>백서린</th>
+<th>한백설</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>소속</strong></td>
+<td>관리국</td>
+<td>컴퍼니</td>
+<td>교단</td>
+<td>미술관</td>
+<td>관리국</td>
+</tr>
+<tr>
+<td><strong>통칭</strong></td>
+<td>측량사</td>
+<td>단품</td>
+<td>곁</td>
+<td>미완</td>
+<td>무인</td>
+</tr>
+<tr>
+<td><strong>완결 권능</strong></td>
+<td>지워진 것을 되부름</td>
+<td>갈음 불가로 만듦</td>
+<td>죽음에서 고통 제거</td>
+<td>굳은 것을 되돌림</td>
+<td><strong>불락을 무시하는 일격</strong></td>
+</tr>
+<tr>
+<td><strong>성질</strong></td>
+<td>되찾음</td>
+<td>떼어냄</td>
+<td>덜어냄</td>
+<td>풂</td>
+<td><strong>뚫음</strong></td>
+</tr>
+<tr>
+<td><strong>담당 6급</strong></td>
+<td>해안선</td>
+<td>규격</td>
+<td>만종</td>
+<td>액자</td>
+<td><strong>없음 (전투 담당)</strong></td>
+</tr>
+<tr>
+<td><strong>Ω 조달</strong></td>
+<td>정기 발현</td>
+<td>정기 발현</td>
+<td>상시 발현</td>
+<td>통제된 발현</td>
+<td><strong>회수 (자급)</strong></td>
+</tr>
+<tr>
+<td><strong>Ω 상태</strong></td>
+<td>안정</td>
+<td><strong>소모 심각</strong></td>
+<td>풍족</td>
+<td>불안정 (통제됨)</td>
+<td><strong>넉넉</strong></td>
+</tr>
+<tr>
+<td><strong>은폐 수준</strong></td>
+<td>최고 (5명)</td>
+<td>중 (9명)</td>
+<td><strong>없음 (전면 공개)</strong></td>
+<td>최고 (2명)</td>
+<td>최고 (5명)</td>
+</tr>
+<tr>
+<td><strong>외견 / 실제</strong></td>
+<td>59 / 61</td>
+<td>41 / 52</td>
+<td>74 / 78</td>
+<td>38 / 44</td>
+<td><strong>27 / 55</strong></td>
+</tr>
+<tr>
+<td><strong>최대 위험</strong></td>
+<td>61세의 몸</td>
+<td>이제 갈음 가능함</td>
+<td>자기 임종</td>
+<td>자기만 완결되어 있음</td>
+<td><strong>역류 (5급 상당)</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>불로 격차가 곧 완결 연차다.</strong>
+한백설의 28년 격차는 그녀가 가장 먼저 완결했다는 뜻이고,
+주가영의 11년 격차는 <strong>최근 3년 사이 좁혀지기 시작했다.</strong></p>
+</blockquote>
+<h3 id="s177">권능의 구조 — 넷 + 하나</h3>
+<p>넷의 권능은 <strong>한 문제의 네 가지 답</strong>이다.</p>
+<blockquote>
+<p><strong>"돌이킬 수 없게 된 것을 어떻게 할 것인가."</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>답</th>
+<th>대응하는 6급</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한도경</td>
+<td><strong>없던 일이 되지 않게 한다</strong></td>
+<td>『해안선』 — 있었던 것을 없던 것으로 만든다</td>
+</tr>
+<tr>
+<td>주가영</td>
+<td><strong>아무나가 되지 않게 한다</strong></td>
+<td>『규격』 — 누구든 갈음할 수 있게 만든다</td>
+</tr>
+<tr>
+<td>명주하</td>
+<td><strong>혼자가 되지 않게 한다</strong></td>
+<td>『만종』 — 모두를 한꺼번에 재운다</td>
+</tr>
+<tr>
+<td>백서린</td>
+<td><strong>끝나지 않게 한다</strong></td>
+<td>『액자』 — 끝나지 않는 것으로 만든다</td>
+</tr>
+</tbody>
+</table>
+<p>앞의 셋은 자기 6급의 <strong>정반대</strong>를 한다.
+<strong>백서린만 자기 6급과 같은 일을 한다.</strong> 그녀는 액자를 막는 것이 아니라 <strong>액자가 이미 한 일을 유지하고 있다.</strong></p>
+<blockquote>
+<p>이 비대칭을 지적한 문서가 관리국 금고 부록에 한 줄 있다.
+<em>"다섯 중 하나는 격리자가 아니라 관리인일 가능성."</em> 서명은 없다.</p>
+</blockquote>
+<p><strong>한백설만 다른 질문에 답한다.</strong></p>
+<p>넷은 <strong>이미 벌어진 것을 어떻게 안고 갈 것인가</strong>에 대한 답이다. 넷 다 개체를 죽이지 못하고, 죽일 생각도 없다.
+그녀 하나만 <strong>"그냥 부수면 안 되는가"</strong> 라고 묻는다. 그리고 그녀만 그것이 가능하다.</p>
+<blockquote>
+<p>그래서 다섯 중 그녀만이 <strong>개체 쪽에서 위협으로 인식된다.</strong>
+나머지 넷은 개체에게 관리인이거나, 간병인이거나, 정비공이다.</p>
+</blockquote>
+<h3 id="s178">서로에 대해</h3>
+<ul>
+<li><strong>원칙적으로 다섯 중 누구도 다른 넷을 확인할 수 없다.</strong> 확인 방법이 완결 권능 발현 목격뿐인데, 아무도 남 앞에서 쓰지 않는다.</li>
+<li><strong>한도경 ↔ 한백설 — 유일한 예외.</strong>
+  같은 조직 소속이라는 우연 하나로, <strong>세계에서 유일하게 서로를 확인한 완결자 두 사람</strong>이 되었다. 성이 같은 것은 정말 우연이고, 둘 다 그 이야기를 지겨워한다.
+  그리고 실무적으로 짝을 이룬다 — <strong>한백설은 어디를 쳐야 하는지 모르고, 한도경은 무엇도 잊지 않는다.</strong> 관리국이 가진 가장 강력한 조합이며, 함께 투입된 기록은 두 건뿐이다.</li>
+<li><strong>한도경 ↔ 주가영</strong>: 관리국-컴퍼니 조달 협상 테이블에서 12년째 마주 앉는다. 서로를 강하게 의심하며, 협상 시간의 절반을 상대의 표정을 읽는 데 쓴다. <strong>둘 다 맞았고, 둘 다 확신하지 못한다.</strong></li>
+<li>둘의 권능은 가장 잘 맞물린다. 한도경이 지워진 것을 되부르고 주가영이 갈음 불가로 못 박으면 — 이론상 『해안선』이 삼킨 땅을 영구히 되찾을 수 있다. <strong>둘 다 이 계산을 혼자서 해봤다.</strong></li>
+<li><strong>명주하</strong>: 교단이 존재를 공개했으므로 <strong>나머지 넷은 그녀가 완결자임을 안다.</strong> 반대로 그녀는 아무도 확인하지 못한다. 정보가 한 방향으로만 흐르는 구조이며, 교단은 이것을 손해로 여기지 않는다.</li>
+<li>그녀는 <strong>회수를 한 번도 하지 않았다.</strong> 교단 교리상 금기이며, 그 이전에 그녀는 아무것도 죽이지 못한다.</li>
+<li><strong>백서린</strong>: 누구도 그녀를 의심하지 않는다. 미술관이 워낙 폐쇄적이라 <strong>의심의 대상조차 되지 못했다.</strong> 관주는 이것을 최대의 자산으로 여긴다.</li>
+<li><strong>「빈 의자 회의」</strong>: 6세력 최고위 회담장에 발언하지 않는 참석자가 몇 명 섞여 있다. 다섯 중 셋이 그 자리에 앉아본 적이 있다. <strong>백서린은 회담에 나가지 않고, 한백설은 회담장 밖 복도에 서 있다.</strong></li>
+</ul>
+<h3 id="s179">다섯을 다루는 원칙</h3>
+<ul>
+<li><strong>동시에 등장시키지 않는다.</strong> 세계의 균형은 이들이 서로를 모른다는 사실 위에 서 있다. 두 명이 서로를 확인하는 순간이 곧 이야기의 종반이다. <strong>관리국 두 사람은 이미 그 선을 넘었고, 그래서 관리국이 가장 위험하다.</strong></li>
+<li><strong>불로가 가장 좋은 단서다.</strong> 30년 전 사진과 얼굴이 같은 사람, 혹은 반대로 <strong>석 달 만에 십 년을 늙은 사람.</strong> 후자는 그가 완결자라는 사실과 <strong>곧 죽는다는 사실을 동시에 알려준다.</strong></li>
+<li><strong>가장 먼저 무너질 사람은 주가영이다.</strong> Ω 소모가 심각하고, 이미 갈음 가능한 몸이며, 후임 후보 명단이 이사회 손에 있다. 최근 3년의 이상 소모 이유를 그녀는 말하지 않는다.</li>
+<li><strong>가장 아이러니한 사람은 백서린이다.</strong> 끝나는 것을 견디지 못해 아무것도 완성하지 않았고, 그 결과 3,000명을 200년째 끝나지 못하게 붙잡아두는 일을 맡았다.</li>
+<li><strong>가장 위험한 사람은 명주하다.</strong> 만종 타종 승인권을 가졌고, 6급 격리 시설 어디든 걸어들어갈 수 있으며, 40년간 한 사람씩 재워왔다. <strong>조건을 만들 수 있는 사람과 방아쇠를 당길 사람이 동일 인물이다.</strong></li>
+<li><strong>가장 만나기 쉬운 사람은 한도경이다.</strong> 매년 한 번 야외로 나가고, 그때 지방 밤일꾼을 고용한다. 그들은 자기가 무엇을 호위했는지 모른 채 돌아온다.</li>
+<li><strong>주가영에게 지목당하는 것은 축복이 아니다.</strong> 지목된 자는 영구히 갈음 불가가 되어 죽는 순간 그 자리가 영원히 빈다. 그리고 <strong>잊는 것도 흐려지는 것도 허락되지 않는다.</strong></li>
+<li><strong>한백설은 유일하게 「이길 수 있는」 인물이지만, 이기는 것이 문제를 키운다.</strong> 부술수록 몸 안의 역류량이 늘어난다. 그녀를 활약시킬수록 그녀의 죽음이 비싸진다.</li>
+<li><strong>다섯 중 아무도 악당이 아니다.</strong> 그리고 아무도 이 일을 원해서 맡지 않았다. 이들을 적으로 세울 때는 <strong>적대의 이유가 그들의 임무 그 자체</strong>여야 한다.</li>
+</ul>
+<hr />
+</section>
+<section class="part part-coda"><h1 id="s180"><span class="eyebrow">부록</span><span class="h1-title">한 줄 요약</span></h1>
+<blockquote>
+<p><strong>ANE는 죽지 않는다. 잊혀야만 사라진다. 그리고 인류는 잊는 법을 잃었다.</strong>
+<strong>그래서 여섯 세력은 각자의 방식으로 ANE를 살려두고 있고, 그 위에 문명이 서 있다.</strong></p>
+<p>모든 개체에게는 단 하나의 급소가 있고, 그 위치의 단서는 반드시 규칙 안에 적혀 있다.
+자기 존재를 알리지 않고 존재할 수 있는 것은 없기 때문이다.</p>
+<p>그리고 가장 큰 것들은 힘을 쓸 때마다 <strong>스스로를 찬양하는 문장</strong>을 흘린다.
+인류가 그들에 대해 아는 거의 전부는, 그 한 줄들을 죽어가며 받아적은 것이다.</p>
+<p>낮에는 <strong>탑</strong>이 서서 모두에게 진실을 알리고,
+밤에는 <strong>아고라</strong>가 열려 모두가 이름을 벗는다.
+그리고 어느 종루에서는 매일 세 번, <strong>소리 나지 않는 종</strong>이 울린다.
+그 소리가 언젠가 들리는 날, 인류는 가장 좋았던 꿈을 꾸며 잠들 것이다.</p>
+<p>네 개의 재앙은 공학이 아니라 <strong>네 사람</strong>이 붙잡고 있다.
+하나는 지워진 것을 되부르고, 하나는 갈음되지 않게 하고,
+하나는 홀로 저물지 않게 하고, 하나는 끝나지 않게 한다.
+그들은 늙지 않으며, 힘을 쓸 때마다 자신을 향한 찬가를 흘린다.
+서로의 존재를 의심하지만 증명하지 못하고,
+세상은 그들이 없다고 알고 있으며,
+그 기록은 거짓이 아니다.</p>
+<p>그리고 다섯 번째가 있다.
+넷이 재앙을 안고 버티는 동안, 그 하나만이 <strong>규칙을 묻지 않고 친다.</strong>
+부순 것을 삼켜 스스로를 채우고, 삼킨 것을 몸에 쌓은 채로 걸어다닌다.
+그가 죽는 자리는 그가 무엇을 하는지보다 오래전에 정해져 있다.</p>
+<p><strong><em>무(武)는 창을 멈춘다는 뜻이다.</em></strong> 등재명을 그렇게 정한 것은 그녀 본인이었다.</p>
+</blockquote></section>
+  </div>
+</main>
+
+<footer>속삭이는 현실 · 확장 세계관 설정집 · 전 8부</footer>
+<button id="top" aria-label="맨 위로">↑</button>
+
+<script>
+(function(){
+  var idx=document.getElementById('index'), bg=document.getElementById('burger');
+  if(bg) bg.addEventListener('click',function(){
+    var o=idx.classList.toggle('open');
+    bg.textContent=o?'✕  닫기':'≡  색인';
+    bg.setAttribute('aria-expanded',o);
+  });
+  idx.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&window.innerWidth<=1080){
+      idx.classList.remove('open'); if(bg){bg.textContent='≡  색인';}
+    }
+  });
+
+  // 표 가로 스크롤
+  document.querySelectorAll('main table').forEach(function(t){
+    var w=document.createElement('div'); w.className='tbl-scroll';
+    t.parentNode.insertBefore(w,t); w.appendChild(t);
+  });
+
+  // 현창 — 상이 떠오름
+  var chants=document.querySelectorAll('.chant');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('dev'); io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -12% 0px'});
+    chants.forEach(function(c){io.observe(c)});
+  } else { chants.forEach(function(c){c.classList.add('dev')}); }
+
+  // 색인 현재 위치
+  var links={}, targets=[];
+  document.querySelectorAll('#index a').forEach(function(a){
+    var id=a.getAttribute('href').slice(1); links[id]=a;
+    var el=document.getElementById(id); if(el) targets.push(el);
+  });
+  var cur=null;
+  function spy(){
+    var best=null;
+    for(var i=0;i<targets.length;i++){
+      if(targets[i].getBoundingClientRect().top<160) best=targets[i]; else break;
+    }
+    if(best&&best.id!==cur){
+      if(cur&&links[cur]) links[cur].classList.remove('on');
+      cur=best.id; if(links[cur]) links[cur].classList.add('on');
+      var a=links[cur];
+      if(a&&a.classList.contains('toc-2')){
+        var r=a.getBoundingClientRect(), p=a.closest('.idx-scroll').getBoundingClientRect();
+        if(r.top<p.top+40||r.bottom>p.bottom-40) a.scrollIntoView({block:'center'});
+      }
+    }
+    var t=document.getElementById('top');
+    if(window.scrollY>900) t.classList.add('on'); else t.classList.remove('on');
+  }
+  var tick=false;
+  window.addEventListener('scroll',function(){
+    if(!tick){ tick=true; requestAnimationFrame(function(){spy(); tick=false;}); }
+  },{passive:true});
+  spy();
+
+  document.getElementById('top').addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
